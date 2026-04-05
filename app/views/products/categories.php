@@ -323,3 +323,107 @@ document.querySelectorAll('.mfp-cat-card').forEach(function(card) {
     });
 });
 </script>
+
+<style>
+/* ===== RESPONSIVE FIXES categories.php ===== */
+
+/* --- Tablette : 641px → 900px --- */
+@media (min-width: 641px) and (max-width: 900px) {
+    /* Colonnes égales sur tablette (au lieu de 1.45fr 1fr) */
+    .mfp-cat-row--gp,
+    .mfp-cat-row--pg {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Cartes moins hautes */
+    .mfp-cat-card {
+        min-height: 170px;
+        padding: 1.25rem 1.25rem;
+    }
+    /* Textes plus petits */
+    .mfp-cat-name       { font-size: 1.15rem; }
+    .mfp-cat-wide .mfp-cat-name { font-size: 1.3rem; }
+    .mfp-cat-num        { font-size: 64px; }
+}
+
+/* --- Mobile : ≤ 640px --- */
+@media (max-width: 640px) {
+    /* 1 seule colonne */
+    .mfp-cat-row--gp,
+    .mfp-cat-row--pg {
+        grid-template-columns: 1fr;
+    }
+    /* Hero moins haut */
+    .mfp-cat-hero {
+        padding: 2rem 0 1.5rem;
+    }
+    /* Form de recherche pleine largeur */
+    .mfp-cat-hero form {
+        flex-direction: column;
+    }
+    /* Cartes compactes */
+    .mfp-cat-card {
+        min-height: 150px;
+        padding: 1.25rem 1.25rem;
+    }
+    /* Chiffres décoratifs plus petits */
+    .mfp-cat-num { font-size: 56px; }
+    /* Titres adaptés */
+    .mfp-cat-name       { font-size: 1.1rem; }
+    .mfp-cat-wide .mfp-cat-name { font-size: 1.1rem; }
+    /* Stats */
+    .mfp-stat-value     { font-size: 1.5rem; }
+    .mfp-stats-bar      { gap: 1rem; margin-top: 1.5rem; }
+}
+</style>
+
+<style>
+/* ===== RESPONSIVE FIXES categories.php ===== */
+
+/* --- Tablette : 641px → 900px --- */
+@media (min-width: 641px) and (max-width: 900px) {
+    /* Colonnes égales sur tablette (au lieu de 1.45fr 1fr) */
+    .mfp-cat-row--gp,
+    .mfp-cat-row--pg {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Cartes moins hautes */
+    .mfp-cat-card {
+        min-height: 170px;
+        padding: 1.25rem 1.25rem;
+    }
+    /* Textes plus petits */
+    .mfp-cat-name       { font-size: 1.15rem; }
+    .mfp-cat-wide .mfp-cat-name { font-size: 1.3rem; }
+    .mfp-cat-num        { font-size: 64px; }
+}
+
+/* --- Mobile : ≤ 640px --- */
+@media (max-width: 640px) {
+    /* 1 seule colonne */
+    .mfp-cat-row--gp,
+    .mfp-cat-row--pg {
+        grid-template-columns: 1fr;
+    }
+    /* Hero moins haut */
+    .mfp-cat-hero {
+        padding: 2rem 0 1.5rem;
+    }
+    /* Form de recherche pleine largeur */
+    .mfp-cat-hero form {
+        flex-direction: column;
+    }
+    /* Cartes compactes */
+    .mfp-cat-card {
+        min-height: 150px;
+        padding: 1.25rem 1.25rem;
+    }
+    /* Chiffres décoratifs plus petits */
+    .mfp-cat-num { font-size: 56px; }
+    /* Titres adaptés */
+    .mfp-cat-name       { font-size: 1.1rem; }
+    .mfp-cat-wide .mfp-cat-name { font-size: 1.1rem; }
+    /* Stats */
+    .mfp-stat-value     { font-size: 1.5rem; }
+    .mfp-stats-bar      { gap: 1rem; margin-top: 1.5rem; }
+}
+</style>
