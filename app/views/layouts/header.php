@@ -39,13 +39,16 @@
     <link rel="stylesheet" href="<?= CSS_URL ?>/notifications.css">
     <link rel="stylesheet" href="<?= CSS_URL ?>/animations.css">
     <link rel="stylesheet" href="<?= CSS_URL ?>/search.css">
-<script src="<?= JS_URL ?>/search.js" defer></script>
+    <link rel="stylesheet" href="<?= CSS_URL ?>/interactions.css">
 
     <!-- JS -->
+    <script src="<?= JS_URL ?>/search.js" defer></script>
     <script src="<?= JS_URL ?>/app.js" defer></script>
     <script src="<?= JS_URL ?>/notifications.js" defer></script>
     <script src="<?= JS_URL ?>/wishlist.js" defer></script>
     <script src="<?= JS_URL ?>/animations.js" defer></script>
+    <script src="<?= JS_URL ?>/dark-mode.js" defer></script>
+    <script src="<?= JS_URL ?>/interactions.js" defer></script>
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="<?= APP_URL ?>/favicon.svg">
@@ -78,6 +81,20 @@
                 <span class="nav-logo-text">MarketFlow</span>
             </a>
 
+            <!-- HAMBURGER : visible uniquement mobile -->
+            <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Overlay sombre derrière le drawer -->
+            <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+
+            <!-- Drawer mobile + nav desktop -->
+            <div class="nav-drawer" id="navDrawer">
+                <div class="nav-drawer-header">
+                    <span class="nav-drawer-title">Menu</span>
+                    <button class="nav-drawer-close" onclick="closeNav()" aria-label="Fermer">&#x2715;</button>
+                </div>
             <!-- Liens principaux -->
             <ul class="nav-links">
                 <li>
@@ -96,6 +113,16 @@
                     </a>
                 </li>
             </ul>
+
+            <!-- Boutons auth dans le drawer (mobile uniquement) -->
+            <div class="nav-drawer-auth">
+                <?php if (!isLoggedIn()): ?>
+                    <a href="/login"    class="nav-drawer-btn-login">Connexion</a>
+                    <a href="/register" class="nav-drawer-btn-register">S'inscrire →</a>
+                <?php endif; ?>
+            </div>
+
+            </div><!-- /nav-drawer -->
 
 <!-- BARRE DE RECHERCHE AUTOCOMPLETE -->
 <div class="nav-search" id="navSearch">
@@ -143,6 +170,24 @@
                         <span class="icon-badge"><?= e($cartCount) ?></span>
                     <?php endif; ?>
                 </a>
+
+                <!-- Toggle Dark Mode -->
+                <button id="dark-mode-toggle" class="icon-btn" aria-label="Basculer mode sombre">
+                    <svg id="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg id="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" style="opacity:0">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
 
                 <div class="nav-sep"></div>
 
@@ -239,5 +284,23 @@
          data-flash-type="<?= e($flash['type']) ?>"
          style="display:none;"></div>
 <?php endif; ?>
+
+<script>
+function openNav() {
+    document.getElementById('navDrawer').classList.add('active');
+    document.getElementById('navOverlay').classList.add('active');
+    document.getElementById('navHamburger').setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+function closeNav() {
+    document.getElementById('navDrawer').classList.remove('active');
+    document.getElementById('navOverlay').classList.remove('active');
+    document.getElementById('navHamburger').setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+document.getElementById('navHamburger').addEventListener('click', function() {
+    this.getAttribute('aria-expanded') === 'true' ? closeNav() : openNav();
+});
+</script>
 
 <!-- CONTENU PRINCIPAL -->

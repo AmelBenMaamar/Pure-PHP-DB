@@ -1,441 +1,831 @@
 <?php
 /**
- * VUE CATÉGORIE - UX OPTIMISÉ
- * Affiche les produits d'une catégorie avec filtres et tri
+ * VUE CATÉGORIE — DESIGN MAQUETTE2
+ * ─────────────────────────────────────────────────────────────────
+ * Layout 2 colonnes : sidebar filtres (sticky) + grille produits
+ * Design system : fond #faf9f5 · Georgia titres · Manrope corps
+ * Accent violet #7c6cf0 · Beige doux pour les bordures #ede8df
+ * ─────────────────────────────────────────────────────────────────
+ * Données PHP attendues :
+ *   $category   → array ['name', 'description', 'slug']
+ *   $products   → array de produits
+ *   $categories → array de toutes les catégories ['name','slug','product_count']
+ *   $pagination → array ['current', 'total_pages'] (optionnel)
  */
 ?>
 
-<!-- Fil d'Ariane pour navigation contextuelle -->
-<nav class="container" style="margin-top: 2rem; position: relative; z-index: 1;" aria-label="Breadcrumb">
-    <ol style="
-        display: flex; 
-        align-items: center;
-        gap: 0.5rem; 
-        list-style: none; 
-        padding: 0; 
-        margin: 0; 
-        font-size: 0.875rem; 
-        color: var(--text-secondary);
-        flex-wrap: wrap;
-    ">
-        <!-- Lien vers accueil -->
-        <li style="display: flex; align-items: center;">
-            <a href="/" style="color: var(--text-secondary); text-decoration: none; transition: color var(--transition-fast);" 
-               onmouseover="this.style.color='var(--primary-600)'" 
-               onmouseout="this.style.color='var(--text-secondary)'">
-                Accueil
-            </a>
-        </li>
-        
-        <!-- Séparateur -->
-        <li aria-hidden="true" style="color: var(--text-tertiary); display: flex; align-items: center; user-select: none;">
-            /
-        </li>
-        
-        <!-- Lien vers toutes les catégories -->
-        <li style="display: flex; align-items: center;">
-            <a href="/category" style="color: var(--text-secondary); text-decoration: none; transition: color var(--transition-fast);"
-               onmouseover="this.style.color='var(--primary-600)'" 
-               onmouseout="this.style.color='var(--text-secondary)'">
-                Catégories
-            </a>
-        </li>
-        
-        <!-- Séparateur -->
-        <li aria-hidden="true" style="color: var(--text-tertiary); display: flex; align-items: center; user-select: none;">
-            /
-        </li>
-        
-        <!-- Catégorie actuelle -->
-        <li style="font-weight: 600; color: var(--primary-600); display: flex; align-items: center;" aria-current="page">
-            <?= e($category['name']) ?>
-        </li>
+<!-- ═══════════════════════════════════════════
+     FIL D'ARIANE — navigation contextuelle
+     ═══════════════════════════════════════════ -->
+<nav class="container breadcrumb-nav" aria-label="Fil d'Ariane">
+    <ol class="breadcrumb">
+        <li><a href="/" class="breadcrumb-link">Accueil</a></li>
+        <li aria-hidden="true" class="breadcrumb-sep">/</li>
+        <li><a href="/category" class="breadcrumb-link">Catégories</a></li>
+        <li aria-hidden="true" class="breadcrumb-sep">/</li>
+        <li class="breadcrumb-current" aria-current="page"><?= e($category[\'name\']) ?></li>
     </ol>
 </nav>
 
-<!-- En-tête de catégorie avec description -->
-<section class="container mt-8">
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
-        <!-- Titre et description -->
-        <div style="flex: 1; min-width: 300px;">
-            <h1 style="margin-bottom: 0.75rem;"><?= e($category['name']) ?></h1>
-            
-            <?php if (!empty($category['description'])): ?>
-                <!-- Description de la catégorie -->
-                <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7; margin-bottom: 0;">
-                    <?= e($category['description']) ?>
-                </p>
-            <?php endif; ?>
-            
-            <!-- Compteur de produits -->
-            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-tertiary); margin-bottom: 0;">
-                <strong><?= count($products) ?></strong> produit<?= count($products) > 1 ? 's' : '' ?> disponible<?= count($products) > 1 ? 's' : '' ?>
-            </p>
+<!-- ═══════════════════════════════════════════
+     EN-TÊTE CATÉGORIE — icône + titre + compteur
+     ═══════════════════════════════════════════ -->
+<section class="container category-header">
+    <div class="category-header-inner">
+
+        <!-- Cercle avec initiale de la catégorie -->
+        <div class="category-icon" aria-hidden="true">
+            <?= strtoupper(mb_substr(e($category[\'name\']), 0, 1)) ?>
         </div>
 
-        <!-- Filtres et tri (zone droite) -->
-        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-            <!-- Tri par prix -->
-            <select 
-                id="sortFilter" 
-                style="
-                    min-width: 180px;
-                    padding: 0.75rem 1rem;
-                    border: 1px solid var(--gray-300);
-                    border-radius: var(--radius-lg);
-                    font-size: 0.9375rem;
-                    cursor: pointer;
-                    transition: all var(--transition-base);
-                    background: white;
-                "
-                onchange="applySorting(this.value)"
-                onfocus="this.style.borderColor='var(--primary-500)'; this.style.outline='2px solid var(--primary-200)'; this.style.outlineOffset='0'"
-                onblur="this.style.borderColor='var(--gray-300)'; this.style.outline='none'"
-            >
-                <option value="newest">Plus récents</option>
-                <option value="price_asc">Prix croissant</option>
-                <option value="price_desc">Prix décroissant</option>
-                <option value="popular">Populaires</option>
-            </select>
+        <div class="category-header-text">
+            <h1 class="category-title"><?= e($category[\'name\']) ?></h1>
 
-            <!-- Bouton vue grille (actif par défaut) -->
-            <button 
-                id="gridView" 
-                class="btn-icon btn-primary"
-                onclick="switchView('grid')"
-                aria-label="Vue grille"
-                title="Vue grille"
-                style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"
-            >
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <!-- Icône grille (4 carrés) -->
-                    <rect x="3" y="3" width="8" height="8" rx="1"/>
-                    <rect x="13" y="3" width="8" height="8" rx="1"/>
-                    <rect x="3" y="13" width="8" height="8" rx="1"/>
-                    <rect x="13" y="13" width="8" height="8" rx="1"/>
-                </svg>
-            </button>
+            <?php if (!empty($category[\'description\'])): ?>
+                <p class="category-description"><?= e($category[\'description\']) ?></p>
+            <?php endif; ?>
+
+            <p class="category-count">
+                <strong><?= count($products) ?></strong>
+                produit<?= count($products) > 1 ? \'s\' : \'\' ?> disponible<?= count($products) > 1 ? \'s\' : \'\' ?>
+            </p>
         </div>
     </div>
 </section>
 
-<!-- Liste des produits -->
-<section class="container mb-16">
-    <?php if (empty($products)): ?>
-        <!-- État vide amélioré avec CTA -->
-        <div class="card text-center p-12" style="max-width: 600px; margin: 4rem auto;">
-            <!-- Icône illustrative -->
-            <div style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.3;">📦</div>
-            
-            <h3 style="margin-bottom: 1rem; color: var(--text-secondary);">
-                Aucun produit dans cette catégorie
-            </h3>
-            
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                Soyez le premier à ajouter un produit dans <strong><?= e($category['name']) ?></strong> !
-            </p>
-            
-            <!-- Boutons d'action -->
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="/category" class="btn btn-outline">
-                    Voir toutes les catégories
-                </a>
-                
-                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'seller'): ?>
-                    <a href="/seller/products/create" class="btn btn-primary">
-                        Ajouter un produit
-                    </a>
-                <?php endif; ?>
-            </div>
+<!-- Overlay sombre derrière la sidebar sur mobile -->
+<div class="filters-overlay" id="filtersOverlay" onclick="toggleFilters()"></div>
+
+<!-- ═══════════════════════════════════════════
+     LAYOUT PRINCIPAL — sidebar gauche + contenu
+     ═══════════════════════════════════════════ -->
+<div class="container catalog-grid">
+
+    <!-- ── SIDEBAR FILTRES ── -->
+    <aside class="filters-sidebar" id="filtersSidebar" aria-label="Filtres">
+
+        <!-- En-tête sidebar (bouton ✕ visible sur mobile uniquement) -->
+        <div class="sidebar-header">
+            <span class="sidebar-title">Filtres</span>
+            <button class="sidebar-close" onclick="toggleFilters()" aria-label="Fermer les filtres">✕</button>
         </div>
-        
-    <?php else: ?>
-        <!-- Grille de produits avec animations -->
-        <div class="grid grid-4" id="productsGrid">
+
+        <div class="filters-card">
+
+            <!-- Bloc 1 : Navigation catégories -->
+            <div class="filter-section" style="padding-top:0;border-top:none;">
+                <h3 class="filter-title">Catégories</h3>
+                <ul class="categories-list">
+                    <li class="category-item">
+                        <a href="/category" class="category-link">
+                            <span>Toutes les catégories</span>
+                        </a>
+                    </li>
+                    <?php foreach (($categories ?? []) as $cat): ?>
+                        <li class="category-item">
+                            <a href="/category/<?= e($cat[\'slug\']) ?>"
+                               class="category-link <?= ($cat[\'slug\'] === $category[\'slug\']) ? \'active\' : \'\' ?>">
+                                <span><?= e($cat[\'name\']) ?></span>
+                                <?php if (!empty($cat[\'product_count\'])): ?>
+                                    <span class="count"><?= (int)$cat[\'product_count\'] ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <!-- Bloc 2 : Slider prix -->
+            <div class="filter-section">
+                <h3 class="filter-title">Prix maximum</h3>
+                <input type="range" id="priceRange" class="price-range"
+                       min="0" max="500" step="5" value="500"
+                       oninput="updatePriceLabel(this.value)"
+                       aria-label="Prix maximum">
+                <div class="price-labels">
+                    <span>0 €</span>
+                    <span id="priceLabel">500 €</span>
+                </div>
+            </div>
+
+            <!-- Bloc 3 : Tags filtres rapides -->
+            <div class="filter-section">
+                <h3 class="filter-title">Affiner</h3>
+                <div class="tags-container">
+                    <button class="badge-secondary filter-tag" data-filter="new"   onclick="toggleTag(this)">Nouveautés</button>
+                    <button class="badge-secondary filter-tag" data-filter="promo" onclick="toggleTag(this)">En promo</button>
+                    <button class="badge-secondary filter-tag" data-filter="rated" onclick="toggleTag(this)">Bien notés</button>
+                </div>
+            </div>
+
+            <!-- Bouton appliquer -->
+            <div class="filter-section" style="border-top:none;margin-bottom:0;padding-top:8px;">
+                <button class="btn btn-primary" style="width:100%;" onclick="applyFilters()">
+                    Appliquer les filtres
+                </button>
+            </div>
+
+        </div><!-- /filters-card -->
+    </aside>
+
+    <!-- ── CONTENU PRINCIPAL ── -->
+    <div class="catalog-content">
+
+        <!-- Toolbar : compteur + filtres mobile + tri + vue -->
+        <div class="catalog-toolbar">
+
+            <span class="results-count">
+                <?= count($products) ?> résultat<?= count($products) > 1 ? \'s\' : \'\' ?>
+            </span>
+
+            <div class="toolbar-right">
+                <!-- Bouton "Filtres" visible uniquement sur mobile -->
+                <button class="btn btn-secondary btn-sm toggle-filters"
+                        id="toggleFiltersBtn"
+                        onclick="toggleFilters()"
+                        aria-expanded="false">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6"/>
+                        <line x1="8" y1="12" x2="16" y2="12"/>
+                        <line x1="11" y1="18" x2="13" y2="18"/>
+                    </svg>
+                    Filtres
+                </button>
+
+                <span class="sort-label">Trier :</span>
+
+                <!-- Sélecteur de tri — préserve la valeur GET au rechargement -->
+                <select id="sortFilter" class="form-select"
+                        onchange="applySorting(this.value)"
+                        aria-label="Trier les produits">
+                    <option value="newest"    <?= (($_GET[\'sort\'] ?? \'\') === \'newest\')    ? \'selected\' : \'\' ?>>Plus récents</option>
+                    <option value="price_asc" <?= (($_GET[\'sort\'] ?? \'\') === \'price_asc\') ? \'selected\' : \'\' ?>>Prix croissant</option>
+                    <option value="price_desc"<?= (($_GET[\'sort\'] ?? \'\') === \'price_desc\')? \'selected\' : \'\' ?>>Prix décroissant</option>
+                    <option value="popular"   <?= (($_GET[\'sort\'] ?? \'\') === \'popular\')   ? \'selected\' : \'\' ?>>Populaires</option>
+                    <option value="rating"    <?= (($_GET[\'sort\'] ?? \'\') === \'rating\')    ? \'selected\' : \'\' ?>>Mieux notés</option>
+                </select>
+
+                <!-- Bascule grille / liste -->
+                <div class="view-toggle" role="group" aria-label="Mode d\'affichage">
+                    <button id="btnViewGrid" class="btn-icon view-btn active"
+                            onclick="switchView(\'grid\')" title="Vue grille" aria-pressed="true">
+                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="8" height="8" rx="1"/>
+                            <rect x="13" y="3" width="8" height="8" rx="1"/>
+                            <rect x="3" y="13" width="8" height="8" rx="1"/>
+                            <rect x="13" y="13" width="8" height="8" rx="1"/>
+                        </svg>
+                    </button>
+                    <button id="btnViewList" class="btn-icon view-btn"
+                            onclick="switchView(\'list\')" title="Vue liste" aria-pressed="false">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- /catalog-toolbar -->
+
+        <!-- ══ ÉTAT VIDE ══ -->
+        <?php if (empty($products)): ?>
+            <div class="empty-state">
+                <div class="empty-icon">📦</div>
+                <h3 class="empty-title">Aucun produit pour l\'instant</h3>
+                <p class="empty-description">
+                    Soyez le premier à publier dans <strong><?= e($category[\'name\']) ?></strong> !
+                </p>
+                <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                    <a href="/category" class="btn btn-secondary">Voir toutes les catégories</a>
+                    <?php if (isset($_SESSION[\'user_role\']) && $_SESSION[\'user_role\'] === \'seller\'): ?>
+                        <a href="/seller/products/create" class="btn btn-primary">Ajouter un produit</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        <?php else: ?>
+
+        <!-- ══ GRILLE PRODUITS ══ -->
+        <div class="products-grid" id="productsGrid">
+
             <?php foreach ($products as $product): ?>
-                <!-- Card produit premium avec hover effects -->
+                <?php
+                // Badge "Nouveau" : produit créé il y a moins de 7 jours
+                $isNew = !empty($product[\'created_at\'])
+                    && (time() - strtotime($product[\'created_at\'])) < (7 * 24 * 3600);
+
+                // Badge promo : calcul du % de réduction
+                $hasPromo = !empty($product[\'original_price\'])
+                    && $product[\'original_price\'] > $product[\'price\'];
+                $discountPct = $hasPromo
+                    ? round((1 - $product[\'price\'] / $product[\'original_price\']) * 100)
+                    : 0;
+
+                // Note arrondie à 0.5 pour les demi-étoiles
+                $rating = !empty($product[\'rating_average\'])
+                    ? round($product[\'rating_average\'] * 2) / 2
+                    : 0;
+                ?>
+
                 <article class="product-card">
-                    <!-- Container image avec placeholder si pas d'image -->
-                    <a href="/products/<?= e($product['slug']) ?>" class="product-image-container">
-                        <?php if (!empty($product['thumbnail_url'])): ?>
-                            <!-- Image du produit avec lazy loading -->
-                            <img 
-                                src="<?= e($product['thumbnail_url']) ?>" 
-                                alt="<?= e($product['title']) ?>"
-                                loading="lazy"
-                                onerror="this.src='/public/images/placeholder-product.jpg'"
-                            />
+
+                    <!-- Image cliquable -->
+                    <a href="/products/<?= e($product[\'slug\']) ?>"
+                       class="product-image-container"
+                       tabindex="-1" aria-hidden="true">
+
+                        <?php if (!empty($product[\'thumbnail_url\'])): ?>
+                            <img class="product-image"
+                                 src="<?= e($product[\'thumbnail_url\']) ?>"
+                                 alt="<?= e($product[\'title\']) ?>"
+                                 loading="lazy"
+                                 onerror="this.src=\'/public/images/placeholder-product.jpg\'">
                         <?php else: ?>
-                            <!-- Placeholder si pas d'image -->
-                            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);">
-                                <svg width="64" height="64" fill="currentColor" style="opacity: 0.3;">
+                            <!-- Placeholder si pas d\'image -->
+                            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#f5f1eb;">
+                                <svg width="44" height="44" fill="currentColor" viewBox="0 0 24 24" style="opacity:.2;">
                                     <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                                 </svg>
                             </div>
                         <?php endif; ?>
-                        
-                        <!-- Badge "Nouveau" si produit récent (moins de 7 jours) -->
-                        <?php 
-                        $isNew = (time() - strtotime($product['created_at'])) < (7 * 24 * 3600);
-                        if ($isNew): 
-                        ?>
+
+                        <!-- Badge Nouveau prioritaire sur badge Promo -->
+                        <?php if ($isNew): ?>
                             <span class="product-badge">Nouveau</span>
+                        <?php elseif ($hasPromo): ?>
+                            <span class="product-badge" style="background:#fbe8ef;color:#c0305a;">-<?= $discountPct ?>%</span>
                         <?php endif; ?>
                     </a>
 
-                    <!-- Contenu de la card -->
+                    <!-- Contenu texte -->
                     <div class="product-content">
-                        <!-- Catégorie (tag supérieur) -->
-                        <span class="product-category">
-                            <?= e($category['name']) ?>
-                        </span>
 
-                        <!-- Titre du produit avec lien -->
+                        <!-- Ligne haute : tag catégorie + étoiles -->
+                        <div class="product-header">
+                            <span class="badge-primary"><?= e($category[\'name\']) ?></span>
+
+                            <?php if ($rating > 0): ?>
+                                <div class="product-rating" title="<?= number_format($product[\'rating_average\'], 1) ?>/5">
+                                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                                        <span class="rating-star">
+                                            <?php
+                                            if ($i <= $rating)           echo \'★\';
+                                            elseif ($i - 0.5 <= $rating) echo \'⯨\';
+                                            else                          echo \'☆\';
+                                            ?>
+                                        </span>
+                                    <?php endfor; ?>
+                                    <span class="rating-count">(<?= (int)($product[\'rating_count\'] ?? 0) ?>)</span>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <!-- Titre cliquable -->
                         <h3 class="product-title">
-                            <a href="/products/<?= e($product['slug']) ?>">
-                                <?= e($product['title']) ?>
-                            </a>
+                            <a href="/products/<?= e($product[\'slug\']) ?>"><?= e($product[\'title\']) ?></a>
                         </h3>
 
-                        <!-- Description courte (2 lignes max) -->
-                        <?php if (!empty($product['description'])): ?>
+                        <!-- Description tronquée à 100 caractères -->
+                        <?php if (!empty($product[\'description\'])): ?>
                             <p class="product-description">
-                                <?= e(substr($product['description'], 0, 120)) ?>...
+                                <?= e(mb_substr($product[\'description\'], 0, 100)) ?>…
                             </p>
                         <?php endif; ?>
 
-                        <!-- Footer avec prix et rating -->
+                        <!-- Nom du vendeur avec lien profil public -->
+                        <?php if (!empty($product[\'seller_name\'])): ?>
+                            <p class="product-seller">
+                                par
+                                <?php if (!empty($product[\'seller_slug\'])): ?>
+                                    <a href="/seller/<?= e($product[\'seller_slug\']) ?>" class="seller-link">
+                                        <?= e($product[\'seller_name\']) ?>
+                                    </a>
+                                <?php else: ?>
+                                    <strong><?= e($product[\'seller_name\']) ?></strong>
+                                <?php endif; ?>
+                            </p>
+                        <?php endif; ?>
+
+                        <!-- Footer card : prix + actions -->
                         <div class="product-footer">
-                            <!-- Prix -->
-                            <div class="product-price">
-                                <span class="price-current"><?= number_format($product['price'], 2, ',', ' ') ?> €</span>
-                                
-                                <!-- Ancien prix si promo -->
-                                <?php if (!empty($product['original_price']) && $product['original_price'] > $product['price']): ?>
-                                    <span class="price-old"><?= number_format($product['original_price'], 2, ',', ' ') ?> €</span>
+
+                            <!-- Bloc prix (avec ancien prix barré si promo) -->
+                            <div class="price-container">
+                                <span class="product-price">
+                                    <?= number_format($product[\'price\'], 2, \',\', \' \') ?> €
+                                </span>
+                                <?php if ($hasPromo): ?>
+                                    <span class="product-price-original">
+                                        <?= number_format($product[\'original_price\'], 2, \',\', \' \') ?> €
+                                    </span>
                                 <?php endif; ?>
                             </div>
 
-                            <!-- Note et vendeur -->
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end;">
-                                <!-- Rating étoiles -->
-                                <?php if (!empty($product['rating_average'])): ?>
-                                    <div class="product-rating">
-                                        <?php 
-                                        // Affichage des étoiles (5 max)
-                                        $rating = round($product['rating_average'] * 2) / 2; // Arrondi à 0.5
-                                        for ($i = 1; $i <= 5; $i++): 
-                                        ?>
-                                            <span class="star">
-                                                <?php if ($i <= $rating): ?>
-                                                    ★
-                                                <?php elseif ($i - 0.5 <= $rating): ?>
-                                                    ⯨
-                                                <?php else: ?>
-                                                    ☆
-                                                <?php endif; ?>
-                                            </span>
-                                        <?php endfor; ?>
-                                        <span style="font-size: 0.875rem; color: var(--text-tertiary);">
-                                            (<?= $product['rating_count'] ?? 0 ?>)
-                                        </span>
-                                    </div>
+                            <!-- Boutons : wishlist (si connecté) + voir détails -->
+                            <div class="product-actions">
+                                <?php if (isLoggedIn()): ?>
+                                    <button class="btn-wishlist"
+                                            data-product-id="<?= (int)$product[\'id\'] ?>"
+                                            title="Ajouter aux favoris"
+                                            aria-label="Ajouter <?= e($product[\'title\']) ?> aux favoris">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                        </svg>
+                                    </button>
                                 <?php endif; ?>
 
-                                <!-- Nom du vendeur -->
-                                <p style="font-size: 0.75rem; color: var(--text-tertiary); margin: 0;">
-                                    par <strong><?= e($product['seller_name']) ?></strong>
-                                </p>
+                                <a href="/products/<?= e($product[\'slug\']) ?>" class="btn btn-primary btn-sm">
+                                    Voir
+                                </a>
                             </div>
-                        </div>
+                        </div><!-- /product-footer -->
 
-                        <!-- Bouton d'action principal -->
-                        <a href="/products/<?= e($product['slug']) ?>" class="btn btn-primary w-full mt-4">
-                            Voir les détails
-                        </a>
-                    </div>
+                    </div><!-- /product-content -->
                 </article>
+
             <?php endforeach; ?>
-        </div>
-    <?php endif; ?>
-</section>
+        </div><!-- /products-grid -->
 
-<!-- Pagination si nécessaire -->
-<?php if (!empty($pagination) && $pagination['total_pages'] > 1): ?>
-    <section class="container mb-16">
-        <nav aria-label="Pagination" style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-            <!-- Bouton précédent -->
-            <?php if ($pagination['current'] > 1): ?>
-                <a 
-                    href="?page=<?= $pagination['current'] - 1 ?>" 
-                    class="btn btn-outline btn-sm"
-                    aria-label="Page précédente"
-                >
-                    ← Précédent
-                </a>
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <!-- Numéros de pages -->
-            <?php for ($i = 1; $i <= $pagination['total_pages']; $i++): ?>
-                <?php if ($i === $pagination['current']): ?>
-                    <!-- Page actuelle -->
-                    <span class="btn btn-primary btn-sm" aria-current="page">
-                        <?= $i ?>
-                    </span>
-                <?php else: ?>
-                    <!-- Autres pages -->
-                    <a href="?page=<?= $i ?>" class="btn btn-outline btn-sm">
-                        <?= $i ?>
-                    </a>
+        <!-- ══ PAGINATION avec ellipsis ══ -->
+        <?php if (!empty($pagination) && $pagination[\'total_pages\'] > 1): ?>
+            <?php
+            $cur   = $pagination[\'current\'];
+            $total = $pagination[\'total_pages\'];
+            $range = 2; // pages affichées de chaque côté de la page courante
+            $from  = max(1, $cur - $range);
+            $to    = min($total, $cur + $range);
+            // Préserve le paramètre sort dans les liens de pagination
+            $sortParam = !empty($_GET[\'sort\']) ? \'&sort=\' . e($_GET[\'sort\']) : \'\';
+            ?>
+            <nav class="pagination-container" aria-label="Pagination" style="margin-top:32px;">
+
+                <?php if ($cur > 1): ?>
+                    <a href="?page=<?= $cur - 1 ?><?= $sortParam ?>" class="btn btn-secondary btn-sm">← Précédent</a>
                 <?php endif; ?>
-            <?php endfor; ?>
 
-            <!-- Bouton suivant -->
-            <?php if ($pagination['current'] < $pagination['total_pages']): ?>
-                <a 
-                    href="?page=<?= $pagination['current'] + 1 ?>" 
-                    class="btn btn-outline btn-sm"
-                    aria-label="Page suivante"
-                >
-                    Suivant →
-                </a>
-            <?php endif; ?>
-        </nav>
-    </section>
-<?php endif; ?>
+                <?php if ($from > 1): ?>
+                    <a href="?page=1<?= $sortParam ?>" class="btn btn-secondary btn-sm">1</a>
+                    <?php if ($from > 2): ?><span class="pagination-ellipsis">…</span><?php endif; ?>
+                <?php endif; ?>
 
-<!-- Script pour le tri dynamique -->
+                <?php for ($i = $from; $i <= $to; $i++): ?>
+                    <?php if ($i === $cur): ?>
+                        <span class="btn btn-primary btn-sm" aria-current="page"><?= $i ?></span>
+                    <?php else: ?>
+                        <a href="?page=<?= $i ?><?= $sortParam ?>" class="btn btn-secondary btn-sm"><?= $i ?></a>
+                    <?php endif; ?>
+                <?php endfor; ?>
+
+                <?php if ($to < $total): ?>
+                    <?php if ($to < $total - 1): ?><span class="pagination-ellipsis">…</span><?php endif; ?>
+                    <a href="?page=<?= $total ?><?= $sortParam ?>" class="btn btn-secondary btn-sm"><?= $total ?></a>
+                <?php endif; ?>
+
+                <?php if ($cur < $total): ?>
+                    <a href="?page=<?= $cur + 1 ?><?= $sortParam ?>" class="btn btn-secondary btn-sm">Suivant →</a>
+                <?php endif; ?>
+
+            </nav>
+        <?php endif; ?>
+
+    </div><!-- /catalog-content -->
+</div><!-- /catalog-grid -->
+
+
+<!-- ═══════════════════════════════════════════
+     STYLES SPÉCIFIQUES À LA PAGE CATÉGORIE
+     (complète le <style>
+/* ═══════════════════════════════════════════════════
+   PAGE CATÉGORIE — CSS COMPLET MAQUETTE2
+   ═══════════════════════════════════════════════════ */
+
+/* FIL D'ARIANE */
+.breadcrumb-nav { margin-top: 1.5rem; margin-bottom: 0; }
+.breadcrumb {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: 0.4rem; list-style: none; padding: 0; margin: 0;
+    font-family: "Manrope", sans-serif; font-size: 0.8rem;
+}
+.breadcrumb-link { color: #8a7060; text-decoration: none; transition: color 0.15s; }
+.breadcrumb-link:hover { color: #7c6cf0; }
+.breadcrumb-sep { color: #c4b8a8; user-select: none; }
+.breadcrumb-current { font-weight: 600; color: #7c6cf0; }
+
+/* EN-TÊTE CATÉGORIE */
+.category-header {
+    padding: 1.5rem 0 1.25rem;
+    border-bottom: 0.5px solid #ede8df;
+    margin-bottom: 0;
+}
+.category-header-inner { display: flex; align-items: flex-start; gap: 1rem; }
+.category-icon {
+    width: 48px; height: 48px; min-width: 48px;
+    border-radius: 12px; background: #ede9fe; color: #534ab7;
+    font-family: Georgia, serif; font-size: 1.4rem;
+    display: flex; align-items: center; justify-content: center;
+}
+.category-title {
+    font-family: Georgia, serif; font-size: 1.6rem;
+    font-weight: 400; color: #1e1208; margin: 0 0 0.35rem;
+}
+.category-description {
+    font-family: "Manrope", sans-serif; font-size: 0.875rem;
+    color: #6b5c4e; line-height: 1.65; margin: 0 0 0.35rem; max-width: 560px;
+}
+.category-count {
+    font-family: "Manrope", sans-serif; font-size: 0.775rem; color: #a0907e; margin: 0;
+}
+
+/* ─── LAYOUT 2 COLONNES ─── */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    padding: 24px 0 56px;
+    align-items: start;
+}
+.catalog-content { min-width: 0; }
+
+/* ─── SIDEBAR ─── */
+.filters-sidebar {
+    position: sticky;
+    top: 68px;
+}
+.filters-card {
+    background: #fff;
+    border: 0.5px solid #ede8df;
+    border-radius: 14px;
+    padding: 18px 16px;
+}
+.sidebar-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 14px;
+}
+.sidebar-title { font-family: Georgia, serif; font-size: 1rem; color: #1e1208; }
+.sidebar-close {
+    display: none; background: none; border: none;
+    font-size: 1.1rem; color: #8a7060; cursor: pointer;
+    padding: 4px 8px; border-radius: 6px; line-height: 1;
+}
+.sidebar-close:hover { background: #f5f1eb; }
+
+.filter-section {
+    padding: 14px 0;
+    border-top: 0.5px solid #ede8df;
+    margin-bottom: 0;
+}
+.filter-title {
+    font-family: "Manrope", sans-serif; font-size: 0.7rem;
+    font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    color: #a0907e; margin: 0 0 10px;
+}
+
+/* Liste catégories sidebar */
+.categories-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+.category-item { margin: 0; }
+.category-link {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 7px 10px; border-radius: 8px;
+    font-family: "Manrope", sans-serif; font-size: 0.8125rem; color: #6b5c4e;
+    text-decoration: none; transition: all 0.15s;
+}
+.category-link:hover { background: #f5f1eb; color: #1e1208; }
+.category-link.active { background: #ede9fe; color: #534ab7; font-weight: 600; }
+.category-link .count {
+    font-size: 0.7rem; background: #f5f1eb; color: #a0907e;
+    padding: 1px 7px; border-radius: 10px;
+}
+.category-link.active .count { background: #c9c4f5; color: #2a2165; }
+
+/* Slider prix */
+.price-range {
+    width: 100%; height: 4px; border-radius: 4px;
+    background: #ede8df; outline: none; cursor: pointer;
+    -webkit-appearance: none; appearance: none;
+    padding: 0; border: none; box-shadow: none;
+}
+.price-range::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 16px; height: 16px;
+    border-radius: 50%; background: #7c6cf0;
+    border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.2); cursor: pointer;
+}
+.price-range:focus { box-shadow: none; border: none; }
+.price-labels {
+    display: flex; justify-content: space-between;
+    font-family: "Manrope", sans-serif; font-size: 0.75rem; color: #a0907e;
+    margin-top: 8px;
+}
+
+/* Tags filtres */
+.tags-container { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter-tag {
+    font-family: "Manrope", sans-serif; font-size: 0.75rem;
+    padding: 5px 12px; border-radius: 20px; border: none;
+    cursor: pointer; transition: all 0.15s;
+}
+
+/* ─── TOOLBAR ─── */
+.catalog-toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0 16px; border-bottom: 0.5px solid #ede8df; margin-bottom: 20px;
+    flex-wrap: wrap; gap: 8px;
+}
+.results-count {
+    font-family: "Manrope", sans-serif; font-size: 0.8125rem; color: #8a7060;
+}
+.toolbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sort-label {
+    font-family: "Manrope", sans-serif; font-size: 0.8rem; color: #a0907e;
+}
+.form-select {
+    font-family: "Manrope", sans-serif; font-size: 0.8rem; color: #1e1208;
+    background: #fff; border: 0.5px solid #ddd6c8; border-radius: 8px;
+    padding: 6px 10px; cursor: pointer; min-width: auto;
+    width: auto;
+}
+.form-select:focus { box-shadow: none; border-color: #c9c4f5; }
+
+/* Toggle vue grille/liste */
+.view-toggle { display: flex; gap: 3px; }
+.view-btn {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 0.5px solid #ddd6c8;
+    border-radius: 7px; cursor: pointer; color: #8a7060;
+    transition: all 0.15s;
+}
+.view-btn:hover { background: #f5f1eb; color: #1e1208; }
+.view-btn.active { background: #ede9fe; color: #534ab7; border-color: #c9c4f5; }
+
+/* Bouton toggle filtres — masqué sur desktop */
+.toggle-filters { display: none; }
+
+/* ─── GRILLE PRODUITS ─── */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 14px;
+}
+
+/* ─── PRODUCT CARD — maquette2 ─── */
+.product-card {
+    background: #fff; border-radius: 14px; border: 0.5px solid #ede8df;
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform 0.2s ease; cursor: pointer;
+    box-shadow: none;
+}
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+.product-card::before { display: none; }
+
+.product-image-container {
+    position: relative; aspect-ratio: 16/10; overflow: hidden;
+    background: #f5f1eb; display: block;
+}
+.product-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.product-card:hover .product-image { transform: scale(1.05); }
+.product-image-container::after { display: none; }
+
+.product-badge {
+    position: absolute; top: 10px; left: 10px;
+    font-family: "Manrope", sans-serif; font-size: 10px; font-weight: 500;
+    padding: 4px 10px; border-radius: 10px;
+    background: rgba(255,255,255,.92); color: #534ab7;
+}
+
+.product-content { padding: 13px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+
+.product-header { display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; }
+.badge-primary {
+    display: inline-block;
+    font-family: "Manrope", sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: #ede9fe; color: #534ab7;
+    padding: 3px 8px; border-radius: 20px;
+}
+.product-rating { display: flex; align-items: center; gap: 3px; font-size: 11px; }
+.rating-star { color: #ba7517; }
+.rating-count { font-family: "Manrope", sans-serif; font-size: 10px; color: #a0907e; }
+
+.product-title {
+    font-family: Georgia, serif; font-size: 14px; font-weight: 400;
+    color: #1e1208; line-height: 1.4; margin: 0;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+}
+.product-title a { color: inherit; text-decoration: none; }
+.product-title a:hover { color: #7c6cf0; }
+
+.product-description {
+    font-family: "Manrope", sans-serif; font-size: 11px; color: #8a7060;
+    line-height: 1.6; margin: 0;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+}
+
+.product-seller { font-family: "Manrope", sans-serif; font-size: 11px; color: #a0907e; margin: 0; }
+.seller-link { color: #7c6cf0; text-decoration: none; }
+.seller-link:hover { text-decoration: underline; }
+
+.product-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 0.5px solid #ede8df; padding-top: 10px; margin-top: auto;
+    gap: 8px;
+}
+.price-container { display: flex; flex-direction: column; gap: 1px; }
+.product-price {
+    font-family: Georgia, serif; font-size: 17px; font-weight: 400;
+    color: #1e1208; line-height: 1;
+    background: none; -webkit-text-fill-color: #1e1208;
+}
+.product-price-original {
+    font-family: "Manrope", sans-serif; font-size: 11px;
+    color: #a0907e; text-decoration: line-through;
+}
+.product-actions { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+.btn-wishlist {
+    width: 32px; height: 32px; background: #fff;
+    border: 0.5px solid #ede8df; border-radius: 8px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s; padding: 0; color: #a0907e;
+}
+.btn-wishlist:hover { border-color: #c9c4f5; background: #ede9fe; color: #7c6cf0; transform: none; }
+.btn.btn-primary.btn-sm {
+    font-family: "Manrope", sans-serif; font-size: 11px;
+    padding: 5px 12px; border-radius: 8px;
+    background: #ede9fe; color: #534ab7;
+    border: none; box-shadow: none;
+    transition: background 0.15s;
+}
+.btn.btn-primary.btn-sm:hover { background: #c9c4f5; color: #2a2165; transform: none; box-shadow: none; }
+.btn.btn-primary.btn-sm::before { display: none; }
+
+/* ─── ÉTAT VIDE ─── */
+.empty-state {
+    text-align: center; padding: 64px 20px;
+    background: #fff; border-radius: 14px; border: 0.5px solid #ede8df;
+}
+.empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.empty-title { font-family: Georgia, serif; font-size: 1.25rem; font-weight: 400; color: #1e1208; margin-bottom: 8px; }
+.empty-description { font-family: "Manrope", sans-serif; font-size: 0.875rem; color: #8a7060; margin-bottom: 20px; }
+
+/* ─── PAGINATION ─── */
+.pagination-container {
+    display: flex; justify-content: center; align-items: center;
+    gap: 6px; margin-top: 28px; flex-wrap: wrap;
+}
+.pagination-container .btn.btn-secondary.btn-sm {
+    background: #fff; border: 0.5px solid #ddd6c8; color: #6b5c4e;
+    font-family: "Manrope", sans-serif; font-size: 0.8rem;
+    padding: 6px 12px; border-radius: 8px; box-shadow: none;
+}
+.pagination-container .btn.btn-secondary.btn-sm:hover { background: #f5f1eb; transform: none; }
+.pagination-container .btn.btn-primary.btn-sm { background: #7c6cf0; color: #fff; font-size: 0.8rem; padding: 6px 12px; border-radius: 8px; box-shadow: none; }
+.pagination-ellipsis { font-family: "Manrope", sans-serif; font-size: 13px; color: #a0907e; padding: 0 4px; }
+
+/* ─── OVERLAY MOBILE ─── */
+.filters-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,.4); z-index: 998;
+}
+.filters-overlay.active { display: block; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+    .catalog-grid { grid-template-columns: 1fr; }
+    .filters-sidebar {
+        position: fixed; top: 0; left: -280px; width: 280px; height: 100vh;
+        overflow-y: auto; z-index: 999; background: #faf9f5;
+        padding: 16px; transition: left 0.3s ease;
+        box-shadow: none;
+    }
+    .filters-sidebar.active { left: 0; box-shadow: 4px 0 20px rgba(0,0,0,.15); }
+    .sidebar-close { display: block; }
+    .toggle-filters { display: inline-flex; }
+    .sort-label { display: none; }
+}
+
+@media (max-width: 640px) {
+    .catalog-toolbar { flex-direction: column; align-items: flex-start; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 420px) {
+    .products-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT — tri, vue, filtres, sidebar
+     ═══════════════════════════════════════════ -->
 <script>
 /**
- * Applique le tri sélectionné en rechargeant la page avec le paramètre
+ * Applique le tri en rechargeant la page.
+ * Préserve TOUS les paramètres GET existants (page, filtres, etc.)
+ * sauf "sort" qui est remplacé.
  */
 function applySorting(sortValue) {
-    // Récupère l'URL actuelle
     const url = new URL(window.location.href);
-    
-    // Ajoute ou modifie le paramètre 'sort'
-    url.searchParams.set('sort', sortValue);
-    
-    // Recharge la page avec le nouveau paramètre
+    url.searchParams.set("sort", sortValue);
     window.location.href = url.toString();
 }
 
 /**
- * Change le mode d'affichage (grille/liste)
- * Note: actuellement seule la grille est implémentée
+ * Bascule entre vue grille et vue liste.
+ * Met à jour aria-pressed sur les deux boutons.
  */
 function switchView(viewType) {
-    const grid = document.getElementById('productsGrid');
-    
-    if (viewType === 'grid') {
-        // Active la vue grille (par défaut)
-        grid.className = 'grid grid-4';
-    } else if (viewType === 'list') {
-        // Vue liste (à implémenter si besoin)
-        grid.className = 'grid grid-1';
+    const grid    = document.getElementById("productsGrid");
+    const btnGrid = document.getElementById("btnViewGrid");
+    const btnList = document.getElementById("btnViewList");
+    if (!grid) return;
+
+    if (viewType === "grid") {
+        grid.className = "products-grid";          // retour grille auto-fill
+        btnGrid.classList.add("active");    btnGrid.setAttribute("aria-pressed", "true");
+        btnList.classList.remove("active"); btnList.setAttribute("aria-pressed", "false");
+    } else {
+        grid.style.cssText = "display:flex;flex-direction:column;gap:12px;"; // vue liste
+        btnList.classList.add("active");    btnList.setAttribute("aria-pressed", "true");
+        btnGrid.classList.remove("active"); btnGrid.setAttribute("aria-pressed", "false");
     }
 }
 
 /**
- * Préserve le tri sélectionné au chargement de la page
+ * Ouvre/ferme la sidebar filtres sur mobile.
+ * Active également l'overlay sombre.
  */
-document.addEventListener('DOMContentLoaded', function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const sortValue = urlParams.get('sort');
-    
-    if (sortValue) {
-        // Restaure la sélection du tri
-        document.getElementById('sortFilter').value = sortValue;
+function toggleFilters() {
+    const sidebar = document.getElementById("filtersSidebar");
+    const overlay = document.getElementById("filtersOverlay");
+    const btn     = document.getElementById("toggleFiltersBtn");
+    const isOpen  = sidebar.classList.toggle("active");
+
+    overlay.classList.toggle("active", isOpen);
+    if (btn) btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+    // Empêche le scroll du body quand la sidebar est ouverte
+    document.body.style.overflow = isOpen ? "hidden" : "";
+}
+
+/**
+ * Active/désactive un tag filtre (toggle visuel uniquement pour l'instant).
+ * À brancher sur un filtre AJAX ou rechargement selon votre logique métier.
+ */
+function toggleTag(btn) {
+    btn.classList.toggle("badge-primary");
+    btn.classList.toggle("badge-secondary");
+}
+
+/**
+ * Met à jour le label du prix maximum en temps réel.
+ */
+function updatePriceLabel(value) {
+    const label = document.getElementById("priceLabel");
+    if (label) label.textContent = value + " €";
+}
+
+/**
+ * Applique les filtres actifs en les ajoutant à l'URL.
+ * Prix max + tags sélectionnés sont transmis en GET.
+ */
+function applyFilters() {
+    const url      = new URL(window.location.href);
+    const maxPrice = document.getElementById("priceRange").value;
+    const activeTags = [...document.querySelectorAll(".filter-tag.badge-primary")]
+        .map(btn => btn.dataset.filter);
+
+    url.searchParams.set("price_max", maxPrice);
+    url.searchParams.delete("tag");
+    activeTags.forEach(tag => url.searchParams.append("tag", tag));
+    url.searchParams.delete("page"); // reset pagination quand on filtre
+
+    window.location.href = url.toString();
+}
+
+/**
+ * Au chargement : restaure l'état des filtres depuis les params GET.
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+
+    // Restaure la valeur du slider prix
+    const maxPrice = params.get("price_max");
+    if (maxPrice) {
+        const slider = document.getElementById("priceRange");
+        if (slider) { slider.value = maxPrice; updatePriceLabel(maxPrice); }
     }
+
+    // Restaure les tags actifs
+    params.getAll("tag").forEach(function (tagVal) {
+        const btn = document.querySelector(\'.filter-tag[data-filter="\' + tagVal + \'"]\');
+        if (btn) {
+            btn.classList.remove("badge-secondary");
+            btn.classList.add("badge-primary");
+        }
+    });
 });
 </script>
-<style>
-/* === DESIGN MAQUETTE2 — PAGES PRODUITS === */
-.container{background:#faf9f5}
-h1,h2,h3{font-family:Georgia,serif;font-weight:400;color:#1e1208}
-.catalog-grid{display:grid;grid-template-columns:250px 1fr;gap:20px;align-items:start}
-.filters-sidebar{position:sticky;top:80px;height:fit-content}
-.filters-card,.card{background:#fff;border:0.5px solid #ede8df;border-radius:14px;padding:22px;box-shadow:none}
-.filter-section{margin-bottom:20px;padding-top:20px;border-top:0.5px solid #ede8df}
-.filter-section:first-child{padding-top:0;border-top:none}
-.filter-title{font-family:Georgia,serif;font-size:15px;font-weight:400;color:#1e1208;margin-bottom:10px}
-.categories-list{list-style:none;padding:0;margin:0}
-.category-item{margin-bottom:2px}
-.category-link{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:8px;font-family:'Manrope',sans-serif;font-size:13px;color:#6b5c4e;text-decoration:none;transition:all 0.15s}
-.category-link:hover{background:#faf9f5;color:#1e1208}
-.category-link.active{color:#534ab7;background:#ede9fe;font-weight:500}
-.category-link .count{font-size:11px;color:#a0907e}
-.price-range{width:100%;accent-color:#7c6cf0;height:4px}
-.price-labels{display:flex;justify-content:space-between;font-family:'Manrope',sans-serif;font-size:12px;color:#a0907e;margin-top:8px}
-.tags-container{display:flex;flex-wrap:wrap;gap:6px}
-.badge-secondary{background:#f5f1eb;color:#6b5c4e;border-radius:6px;font-family:'Manrope',sans-serif;font-size:11px;padding:4px 10px;text-decoration:none;transition:all 0.15s;cursor:pointer;border:none}
-.badge-secondary:hover{background:#ede9fe;color:#534ab7}
-.badge-primary{background:#ede9fe!important;color:#534ab7!important;border-radius:6px;font-family:'Manrope',sans-serif;font-size:11px;padding:3px 9px;text-decoration:none;border:none}
-.catalog-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px;padding:11px 14px;background:#fff;border:0.5px solid #ede8df;border-radius:11px}
-.results-count{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060}
-.sort-label{font-family:'Manrope',sans-serif;font-size:12px;color:#8a7060;white-space:nowrap}
-.form-select{padding:7px 12px;border:0.5px solid #ddd6c8;border-radius:8px;background:#faf9f5;font-family:'Manrope',sans-serif;font-size:12px;color:#1e1208;outline:none;cursor:pointer;min-width:155px}
-.form-select:focus{border-color:#7c6cf0}
-.products-grid,.grid.grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px!important}
-.product-card{background:#fff!important;border:0.5px solid #ede8df!important;border-radius:14px!important;overflow:hidden;display:flex;flex-direction:column;box-shadow:none!important;transition:transform 0.2s ease}
-.product-card:hover{transform:translateY(-3px);box-shadow:none!important}
-.product-image-container{position:relative;width:100%;padding-bottom:62%;overflow:hidden;background:#f5f1eb;display:block;text-decoration:none}
-.product-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
-.product-card:hover .product-image{transform:scale(1.04)}
-.product-content{padding:14px;display:flex;flex-direction:column;flex:1;gap:7px}
-.product-header{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap}
-.product-rating{display:flex;gap:4px;align-items:center}
-.rating-star{color:#ba7517;font-size:12px}
-.rating-score{font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;color:#1e1208}
-.rating-count{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
-.product-title{font-family:Georgia,serif;font-size:15px;font-weight:400;color:#1e1208;line-height:1.4;margin:0;min-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.product-title a{color:inherit;text-decoration:none}
-.product-title a:hover{color:#7c6cf0}
-.product-seller{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;margin:0}
-.seller-link{color:#7c6cf0;text-decoration:none}
-.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:0.5px solid #ede8df;gap:8px}
-.price-container{display:flex;flex-direction:column;gap:2px}
-.product-price,.price-current{font-family:Georgia,serif;font-size:18px;font-weight:400;color:#1e1208;line-height:1}
-.product-price-original,.price-old{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;text-decoration:line-through}
-.product-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
-.btn-wishlist{width:32px;height:32px;background:#fff;border:0.5px solid #ede8df;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;font-size:13px;padding:0}
-.btn-wishlist:hover{border-color:#d4537e;background:#fbeaf0}
-.btn-wishlist.in-wishlist{background:#fbeaf0;border-color:#d4537e}
-.product-stats{display:flex;gap:12px;font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
-.product-badge,.product-category{background:#ede9fe;color:#534ab7;border-radius:6px;font-family:'Manrope',sans-serif;font-size:10px;padding:3px 8px;position:absolute;top:10px;left:10px}
-.product-description{font-family:'Manrope',sans-serif;font-size:12px;color:#8a7060;line-height:1.6;margin:0}
-.empty-state{padding:64px 32px;text-align:center;background:#fff;border:0.5px solid #ede8df;border-radius:14px}
-.empty-icon{font-size:48px;margin-bottom:16px}
-.empty-title{font-family:Georgia,serif;font-size:20px;font-weight:400;color:#1e1208;margin-bottom:10px}
-.empty-description{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060;margin-bottom:20px}
-.btn,.btn-primary,.btn.btn-primary{background:#7c6cf0!important;color:#fff!important;border:none!important;border-radius:8px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;padding:7px 14px;text-decoration:none;transition:background 0.15s;cursor:pointer;display:inline-block}
-.btn:hover,.btn-primary:hover,.btn.btn-primary:hover{background:#6558d4!important;color:#fff!important}
-.btn-secondary,.btn.btn-secondary{background:#f5f1eb!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important;border-radius:8px;font-family:'Manrope',sans-serif;font-size:12px;padding:7px 14px;text-decoration:none;transition:all 0.15s;cursor:pointer;display:inline-block}
-.btn-secondary:hover,.btn.btn-secondary:hover{background:#ede8df!important;color:#1e1208!important}
-.btn-sm{padding:5px 10px!important;font-size:11px!important}
-.btn-ghost{background:transparent!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important}
-.btn-ghost:hover{background:#faf9f5!important;color:#1e1208!important}
-.btn-outline{background:transparent!important;color:#7c6cf0!important;border:0.5px solid #7c6cf0!important}
-.btn-outline:hover{background:#ede9fe!important}
-.btn-icon{background:#ede9fe;color:#534ab7;border:none;border-radius:8px;cursor:pointer;transition:background 0.15s}
-.btn-icon:hover{background:#c9c4f5}
-.pagination-container{display:flex;justify-content:center;gap:6px;margin-top:40px;flex-wrap:wrap}
-.search-header{border-bottom:0.5px solid #ede8df;padding-bottom:20px;margin-bottom:24px}
-.search-title{font-family:Georgia,serif;font-size:26px;font-weight:400;color:#1e1208}
-.search-query{color:#7c6cf0}
-.search-form-inner{display:flex;gap:10px;max-width:520px}
-.search-form-input{flex:1;padding:9px 14px;border:0.5px solid #ddd6c8;border-radius:10px;font-family:'Manrope',sans-serif;font-size:13px;background:#faf9f5;color:#1e1208;outline:none;transition:border-color 0.15s}
-.search-form-input:focus{border-color:#7c6cf0;background:#fff}
-.toggle-filters{display:none}
-.filters-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:999}
-@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:1024px){
-  .catalog-grid{grid-template-columns:1fr}
-  .filters-sidebar{position:fixed;top:0;left:-100%;width:300px;height:100vh;background:#faf9f5;z-index:1000;overflow-y:auto;transition:left 0.3s;padding:20px}
-  .filters-sidebar.active{left:0}
-  .toggle-filters{display:flex;align-items:center;gap:6px}
-  .filters-overlay.active{display:block}
-}
-@media(max-width:768px){.products-grid,.grid.grid-4{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:480px){.products-grid,.grid.grid-4{grid-template-columns:1fr!important}.search-form-inner{flex-direction:column}}
-</style>

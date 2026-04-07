@@ -1,0 +1,349 @@
+/**
+ * ================================================================
+ * MARKETFLOW PRO — INTERACTIONS v1.0
+ * Améliore l'interactivité sans modifier le style existant.
+ * Fichier : public/css/interactions.css
+ * ================================================================
+ */
+
+/* ── SCROLL REVEAL ── */
+.sr-hidden {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+.sr-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.sr-delay-1 { transition-delay: 0.07s; }
+.sr-delay-2 { transition-delay: 0.14s; }
+.sr-delay-3 { transition-delay: 0.21s; }
+
+/* ── PRODUCT IMAGE OVERLAY ── */
+.prod-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 18, 8, 0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    z-index: 5;
+    text-decoration: none;
+}
+.prod-card-new:hover .prod-img-overlay {
+    opacity: 1;
+}
+.prod-img-overlay-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1e1208;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transform: translateY(8px);
+    transition: transform 0.22s ease, background 0.15s, color 0.15s;
+    display: inline-block;
+    white-space: nowrap;
+}
+.prod-card-new:hover .prod-img-overlay-btn {
+    transform: translateY(0);
+}
+.prod-img-overlay-btn:hover {
+    background: #fff;
+    color: #534ab7;
+}
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 0.5px solid #ede8df;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease,
+                background 0.15s, border-color 0.15s;
+    box-shadow: 0 4px 16px rgba(30, 18, 8, 0.08);
+}
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background: #ede9fe;
+    border-color: #c9c4f5;
+}
+.back-to-top svg {
+    width: 16px;
+    height: 16px;
+    stroke: #534ab7;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ── NAV SHADOW AU SCROLL ── */
+nav.nav-scrolled {
+    box-shadow: 0 2px 18px rgba(30, 18, 8, 0.07) !important;
+    transition: box-shadow 0.3s ease;
+}
+
+/* ── FEATURE CARDS — underline animé ── */
+.feat-card-new {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+}
+.feat-card-new::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #7c6cf0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.32s ease;
+}
+.feat-card-new:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 28px rgba(124, 108, 240, 0.13) !important;
+}
+.feat-card-new:hover::after {
+    transform: scaleX(1);
+}
+
+/* ── CAT CARDS — ombre hover ── */
+.cat-card {
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.22s ease !important;
+}
+.cat-card:hover {
+    box-shadow: 0 8px 28px rgba(30, 18, 8, 0.1) !important;
+}
+
+/* ── BOUTONS — feedback clic ── */
+.btn:active,
+.auth-btn:active,
+.cta-btn-new:active,
+.cat-btn:active,
+.prod-btn-new:active {
+    transform: scale(0.97);
+    transition: transform 0.08s ease;
+}
+
+/* ── INPUT FOCUS RING ── */
+.ai:focus {
+    box-shadow: 0 0 0 3px rgba(124, 108, 240, 0.12) !important;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* ── READING PROGRESS BAR ── */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: #7c6cf0;
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+/* ── TAB CONTENT — transition douce ── */
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.tab-content[style*="display: block"],
+.tab-content.tab-active {
+    animation: tabFadeIn 0.25s ease-out;
+}
+
+/* ── PRICE RANGE — style visuel ── */
+.price-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: #ede8df;
+    border-radius: 2px;
+    outline: none;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.price-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #7c6cf0;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 6px rgba(124, 108, 240, 0.3);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.price-range::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    box-shadow: 0 2px 10px rgba(124, 108, 240, 0.4);
+}
+.price-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #7c6cf0;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+/* ── WISHLIST BTN — micro-animation ── */
+@keyframes wishPop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.35); }
+    70%  { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+.btn-wishlist.wish-pop {
+    animation: wishPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .back-to-top { bottom: 20px; right: 16px; }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+    .sr-hidden  { transition: none; }
+    .feat-card-new { transition: none !important; }
+    .prod-img-overlay { transition: none; }
+    .back-to-top { transition: none; }
+}
+
+/* ── HERO CTA — réactivation thème clair ── */
+.hero-cta {
+    display: flex !important;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+.hero-btn-primary {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: #7c6cf0;
+    border: none;
+    border-radius: 20px;
+    padding: 11px 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.hero-btn-primary:hover {
+    background: #6558d4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 108, 240, 0.28);
+}
+.hero-btn-secondary {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b5c4e;
+    background: #fff;
+    border: 0.5px solid #ddd6c8;
+    border-radius: 20px;
+    padding: 11px 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.hero-btn-secondary:hover {
+    background: #f5f1eb;
+    border-color: #c9b99a;
+    color: #1e1208;
+    transform: translateY(-2px);
+}
+
+/* ── HERO TRUST — ligne de réassurance ── */
+.hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+.hero-trust-item {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    color: #a0907e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.hero-trust-item svg {
+    width: 13px;
+    height: 13px;
+    stroke: #7c6cf0;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+.hero-trust-sep {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #ddd6c8;
+    flex-shrink: 0;
+}
+
+/* ── SCROLL REVEAL — classes JS (js-reveal / is-visible) ── */
+/* Harmonisation avec interactions.js qui utilise ces classes */
+.js-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+.js-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.js-reveal-d1 { transition-delay: 0.07s; }
+.js-reveal-d2 { transition-delay: 0.14s; }
+.js-reveal-d3 { transition-delay: 0.21s; }
+.js-reveal-d4 { transition-delay: 0.28s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .js-reveal { transition: none; }
+}

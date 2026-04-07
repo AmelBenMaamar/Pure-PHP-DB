@@ -30,6 +30,33 @@
         <div class="hero-content">
             <h1 class="hero-title">Produits digitaux pour votre <em class="hero-accent">autonomie</em></h1>
             <p class="hero-subtitle">Découvrez des ressources premium pour le développement personnel,<br>l'autonomie et un mode de vie plus conscient.</p>
+
+            <div class="hero-cta">
+                <a href="/products" class="hero-btn-primary">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    Explorer les ressources
+                </a>
+                <a href="/register" class="hero-btn-secondary">
+                    Devenir vendeur →
+                </a>
+            </div>
+
+            <div class="hero-trust">
+                <span class="hero-trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                    Téléchargement instantané
+                </span>
+                <span class="hero-trust-sep"></span>
+                <span class="hero-trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Paiement sécurisé Stripe
+                </span>
+                <span class="hero-trust-sep"></span>
+                <span class="hero-trust-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    Accès immédiat
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -44,14 +71,24 @@
                 <div class="cat-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 26V10" stroke="#0f6e56" stroke-width="1.6" stroke-linecap="round"/><path d="M10 16L16 10L22 16" stroke="#0f6e56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 22h12" stroke="#0f6e56" stroke-width="1.6" stroke-linecap="round"/></svg></div>
                 <p class="cat-label">01 · Croissance</p>
                 <h3 class="cat-title">Développement personnel</h3>
-                <span class="cat-btn">— ressources</span>
+                <?php $c1 = $categoryCounts['developpement-personnel'] ?? 0; ?>
+                <?php if ($c1 > 0): ?>
+                    <span class="cat-btn cat-btn--active">Explorer <?= $c1 ?> ressource<?= $c1 > 1 ? 's' : '' ?> →</span>
+                <?php else: ?>
+                    <span class="cat-btn cat-btn--empty">Bientôt disponible</span>
+                <?php endif; ?>
             </a>
             <a href="/category/sante-alimentation" class="cat-card cat-card--2">
                 <span class="cat-num">02</span>
                 <div class="cat-icon"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="14" r="6" stroke="#3b6d11" stroke-width="1.6"/><path d="M13 14h6M16 11v6" stroke="#3b6d11" stroke-width="1.6" stroke-linecap="round"/><path d="M16 20v5M12 25h8" stroke="#3b6d11" stroke-width="1.6" stroke-linecap="round"/></svg></div>
                 <p class="cat-label">02 · Nutrition</p>
                 <h3 class="cat-title">Santé &amp; alimentation</h3>
-                <span class="cat-btn">— ressources</span>
+                <?php $c2 = $categoryCounts['sante-alimentation'] ?? 0; ?>
+                <?php if ($c2 > 0): ?>
+                    <span class="cat-btn cat-btn--active">Explorer <?= $c2 ?> ressource<?= $c2 > 1 ? 's' : '' ?> →</span>
+                <?php else: ?>
+                    <span class="cat-btn cat-btn--empty">Bientôt disponible</span>
+                <?php endif; ?>
             </a>
         </div>
 
@@ -61,16 +98,25 @@
                 <div class="cat-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 6C14 9 13 12 13 15a3 3 0 006 0C19 12 18 9 16 6z" stroke="#854f0b" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 12C8 14 7 17 7 20a3 3 0 006 0C13 17 12 14 10 12z" stroke="#854f0b" stroke-width="1.6" stroke-linejoin="round"/><path d="M22 12C20 14 19 17 19 20a3 3 0 006 0C25 17 24 14 22 12z" stroke="#854f0b" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
                 <p class="cat-label">03 · Jardinage</p>
                 <h3 class="cat-title">Jardin &amp; autonomie</h3>
-                <span class="cat-btn">— ressources</span>
+                <?php $c3 = $categoryCounts['jardin-autonomie'] ?? 0; ?>
+                <?php if ($c3 > 0): ?>
+                    <span class="cat-btn cat-btn--active">Explorer <?= $c3 ?> ressource<?= $c3 > 1 ? 's' : '' ?> →</span>
+                <?php else: ?>
+                    <span class="cat-btn cat-btn--empty">Bientôt disponible</span>
+                <?php endif; ?>
             </a>
             <a href="/category/maison-energie" class="cat-card cat-card--4">
                 <span class="cat-num">04</span>
                 <div class="cat-icon"><svg viewBox="0 0 32 32" fill="none"><path d="M4 28h24M8 28V18L16 10L24 18V28" stroke="#185fa5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="20" width="6" height="8" rx="1" stroke="#185fa5" stroke-width="1.6"/></svg></div>
                 <p class="cat-label">04 · Habitat</p>
                 <h3 class="cat-title">Maison &amp; énergie</h3>
-                <span class="cat-btn">— ressources</span>
+                <?php $c4 = $categoryCounts['maison-energie'] ?? 0; ?>
+                <?php if ($c4 > 0): ?>
+                    <span class="cat-btn cat-btn--active">Explorer <?= $c4 ?> ressource<?= $c4 > 1 ? 's' : '' ?> →</span>
+                <?php else: ?>
+                    <span class="cat-btn cat-btn--empty">Bientôt disponible</span>
+                <?php endif; ?>
             </a>
-        </div>
         </div>
 
     </div>

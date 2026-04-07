@@ -21,3 +21,13 @@ function getCurrentUser() {
 function e($value) {
     return htmlspecialchars($value ?? '', ENT_QUOTES, 'UTF-8');
 }
+
+function isInWishlist($productId) {
+    if (!isLoggedIn()) return false;
+    try {
+        $wishlistModel = new \App\Models\Wishlist();
+        return $wishlistModel->exists($_SESSION['user_id'], $productId);
+    } catch (\Exception $e) {
+        return false;
+    }
+}

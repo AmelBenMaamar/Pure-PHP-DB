@@ -61,12 +61,10 @@ class HomeController extends Controller {
         // Appelle la méthode countByCategory() qui compte en base de données
         // Les chiffres se mettent à jour automatiquement quand on ajoute des produits
         $categoryCounts = [
-            'courses' => $productModel->countByCategory('courses'),
-            'design' => $productModel->countByCategory('design'),
-            'templates' => $productModel->countByCategory('templates'),
-            'code' => $productModel->countByCategory('code'),
-            'audio' => $productModel->countByCategory('audio'),
-            'visual' => $productModel->countByCategory('visual'),
+            'developpement-personnel' => $productModel->countByCategory('developpement-personnel'),
+            'sante-alimentation'      => $productModel->countByCategory('sante-alimentation'),
+            'jardin-autonomie'        => $productModel->countByCategory('jardin-autonomie'),
+            'maison-energie'          => $productModel->countByCategory('maison-energie'),
         ];
 
         // Transmettre les données à la vue

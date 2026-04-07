@@ -1,429 +1,390 @@
 <?php
 /**
- * MARKETFLOW PRO - LISTE DES CATÉGORIES
- * Design pastel éditorial — version intégrée
+ * MARKETFLOW PRO - PAGE CATÉGORIES (v2 — maquette2)
+ * Fichier : app/views/products/categories.php
  */
 
-// Palette pastel par slug de catégorie
+/* ── Icônes SVG par slug ── */
 $svgIcons = [
-    'developpement-personnel' => '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><line x1="16" y1="26" x2="16" y2="8" stroke="#0F6E56" stroke-width="1.5" stroke-linecap="round"/><polyline points="11,13 16,8 21,13" fill="none" stroke="#0F6E56" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 22 Q16 19 23 22" stroke="#5DCAA5" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>',
-    'sante-alimentation' => '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 5 C11 5 8 9 8 14 C8 20 12 27 16 27 C20 27 24 20 24 14 C24 9 21 5 16 5Z" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><path d="M13 17 L16 20 L21 13" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    'jardin-autonomie' => '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 6C14 9 13 12 13 15a3 3 0 006 0C19 12 18 9 16 6z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 12C8 14 7 17 7 20a3 3 0 006 0C13 17 12 14 10 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 12C20 14 19 17 19 20a3 3 0 006 0C25 17 24 14 22 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/></svg>',
-    'maison-energie' => '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 28h24M8 28V18L16 10L24 18V28" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="20" width="6" height="8" rx="1" stroke="#185FA5" stroke-width="1.5"/></svg>',
+    'developpement-personnel' => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><line x1="16" y1="26" x2="16" y2="8" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/><polyline points="11,13 16,8 21,13" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 22 Q16 19 23 22" stroke="#AFA9EC" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>',
+    'sante-alimentation'      => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 5 C11 5 8 9 8 14 C8 20 12 27 16 27 C20 27 24 20 24 14 C24 9 21 5 16 5Z" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><path d="M13 17 L16 20 L21 13" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    'jardin-autonomie'        => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 6C14 9 13 12 13 15a3 3 0 006 0C19 12 18 9 16 6z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 12C8 14 7 17 7 20a3 3 0 006 0C13 17 12 14 10 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 12C20 14 19 17 19 20a3 3 0 006 0C25 17 24 14 22 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+    'maison-energie'          => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M4 28h24M8 28V18L16 10L24 18V28" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="20" width="6" height="8" rx="1" stroke="#185FA5" stroke-width="1.5"/></svg>',
 ];
+$svgIconFallback = '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="20" height="20" rx="4" fill="none" stroke="#534AB7" stroke-width="1.5"/><line x1="11" y1="16" x2="21" y2="16" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="11" x2="16" y2="21" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>';
 
-$svgIconFallback = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="20" height="20" rx="4" fill="#B5D4F4" stroke="#185FA5" stroke-width="1.5"/><line x1="11" y1="16" x2="21" y2="16" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="11" x2="16" y2="21" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>';
-
-$categoryStyles = [
-    'developpement-personnel' => ['bg'=>'#EEEDFE','bar'=>'#534AB7','badge-bg'=>'#AFA9EC','badge-text'=>'#26215C','num'=>'#534AB7'],
-    'sante-alimentation'      => ['bg'=>'#EAF3DE','bar'=>'#3B6D11','badge-bg'=>'#C0DD97','badge-text'=>'#173404','num'=>'#639922'],
-    'jardin-autonomie'        => ['bg'=>'#FAEEDA','bar'=>'#854F0B','badge-bg'=>'#FAC775','badge-text'=>'#412402','num'=>'#BA7517'],
-    'maison-energie'          => ['bg'=>'#E6F1FB','bar'=>'#185FA5','badge-bg'=>'#85B7EB','badge-text'=>'#042C53','num'=>'#378ADD'],
+/* ── Correspondance slug → numéro de thème couleur ── */
+$slugToTheme = [
+    'developpement-personnel' => 1,
+    'sante-alimentation'      => 2,
+    'jardin-autonomie'        => 4,
+    'maison-energie'          => 6,
 ];
+$fallbackThemes = [1, 2, 3, 4, 5, 6, 7, 8];
 
-// Fallback palette tournante pour catégories non listées
-$fallbackStyles = [
-    ['bg'=>'#E6F1FB','bar'=>'#185FA5','badge-bg'=>'#85B7EB','badge-text'=>'#042C53','num'=>'#378ADD'],
-    ['bg'=>'#EEEDFE','bar'=>'#534AB7','badge-bg'=>'#AFA9EC','badge-text'=>'#26215C','num'=>'#534AB7'],
-    ['bg'=>'#E1F5EE','bar'=>'#0F6E56','badge-bg'=>'#9FE1CB','badge-text'=>'#04342C','num'=>'#1D9E75'],
-    ['bg'=>'#EAF3DE','bar'=>'#3B6D11','badge-bg'=>'#C0DD97','badge-text'=>'#173404','num'=>'#639922'],
-    ['bg'=>'#FAEEDA','bar'=>'#854F0B','badge-bg'=>'#FAC775','badge-text'=>'#412402','num'=>'#BA7517'],
-    ['bg'=>'#FAECE7','bar'=>'#993C1D','badge-bg'=>'#F0997B','badge-text'=>'#4A1B0C','num'=>'#D85A30'],
-    ['bg'=>'#FBEAF0','bar'=>'#993556','badge-bg'=>'#ED93B1','badge-text'=>'#4B1528','num'=>'#D4537E'],
-    ['bg'=>'#FCEBEB','bar'=>'#A32D2D','badge-bg'=>'#F09595','badge-text'=>'#501313','num'=>'#E24B4A'],
-];
+/* ── Totaux pour le hero ── */
+$totalProducts = array_sum(array_column($categories, 'product_count'));
 ?>
 
 <style>
-.mfp-cat-hero {
-    padding: 3.5rem 0 2.5rem;
-    border-bottom: 0.5px solid var(--gray-200);
-    margin-bottom: 2.5rem;
+/* ================================================================
+   CATEGORIES PAGE — styles complémentaires (maquette2)
+   ================================================================ */
+
+/* Hero */
+.cat-hero {
+    background: #faf9f5;
+    padding: 40px 0 32px;
+    border-bottom: 0.5px solid #ede8df;
+    margin-bottom: 0;
 }
-.mfp-cat-grid {
-    display: grid;
-    grid-template-columns: 1.45fr 1fr;
-    gap: 16px;
+.cat-hero-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
-/* Row 2 inversée : petit → grand */
-.mfp-cat-row { display: grid; gap: 16px; margin-bottom: 16px; }
-.mfp-cat-row--gp { grid-template-columns: 1.45fr 1fr; } /* grand-petit */
-.mfp-cat-row--pg { grid-template-columns: 1fr 1.45fr; } /* petit-grand */
-@media (max-width: 640px) {
-    .mfp-cat-row--gp, .mfp-cat-row--pg { grid-template-columns: 1fr; }
-}
-@media (max-width: 900px) {
-    .mfp-cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .mfp-cat-wide { grid-column: span 2 !important; }
-    .mfp-cat-full { grid-column: span 2 !important; flex-direction: column !important; }
-    .mfp-cat-full .mfp-cat-badge { margin-left: 0 !important; margin-top: 1rem; }
-}
-@media (max-width: 560px) {
-    .mfp-cat-grid { grid-template-columns: 1fr; }
-    .mfp-cat-wide, .mfp-cat-full { grid-column: span 1 !important; flex-direction: column !important; }
-    .mfp-cat-full .mfp-cat-badge { margin-left: 0 !important; margin-top: 1rem; }
-}
-.mfp-cat-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 14px;
-    padding: 1.75rem 2rem;
-    text-decoration: none;
+.cat-breadcrumb {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 210px;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-.mfp-cat-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-}
-.mfp-cat-full {
-    flex-direction: row !important;
     align-items: center;
-    min-height: 140px !important;
-    gap: 2rem;
-}
-.mfp-cat-full .mfp-cat-num { top: auto; right: 1.5rem; bottom: 0; opacity: 0.07; }
-.mfp-cat-full .mfp-cat-name { margin-bottom: 0 !important; }
-.mfp-cat-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 14px 14px 0 0;
-}
-.mfp-cat-num {
-    position: absolute;
-    top: -0.75rem; right: 1rem;
-    font-size: 88px;
-    font-weight: 600;
-    opacity: 0.08;
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-    font-family: Georgia, 'Times New Roman', serif;
-}
-.mfp-cat-icon {
-    font-size: 2.25rem;
-    margin-bottom: 1.1rem;
-    display: inline-block;
-    transition: transform 0.22s ease;
-    flex-shrink: 0;
-}
-.mfp-cat-card:hover .mfp-cat-icon {
-    transform: scale(1.15) rotate(5deg);
-}
-.mfp-cat-label {
+    gap: 8px;
+    font-family: 'Manrope', sans-serif;
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    opacity: 0.65;
-    margin-bottom: 5px;
-    text-transform: none;
+    color: #6b5e52;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
 }
-.mfp-cat-name {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.45rem;
+.cat-breadcrumb a {
+    color: #6b5e52;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+}
+.cat-breadcrumb a:hover {
+    color: #534ab7;
+    border-bottom-color: #c9c4f5;
+}
+.cat-breadcrumb-sep {
+    color: #c9c4f5;
+    font-size: 10px;
+    user-select: none;
+}
+.cat-breadcrumb-current {
+    color: #1e1208;
     font-weight: 500;
+}
+
+.cat-hero-title {
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 400;
+    color: #1e1208;
     line-height: 1.2;
-    margin: 0 0 1.1rem;
+    margin: 0 0 6px;
 }
-.mfp-cat-wide .mfp-cat-name {
-    font-size: 1.75rem;
+.cat-hero-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #8a7060;
+    margin: 0 0 24px;
+    line-height: 1.7;
 }
-.mfp-cat-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    padding: 0.4rem 1.1rem;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-.mfp-stats-bar {
+
+/* .cat-search-bar supprimé — recherche centralisée dans la nav */
+
+/* Compteurs */
+.cat-stats {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    gap: 28px;
     flex-wrap: wrap;
 }
-.mfp-stat-item {
+.cat-stat {
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
-.mfp-stat-value {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--text-primary);
+.cat-stat-val {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #1e1208;
     line-height: 1;
 }
-.mfp-stat-label {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-top: 4px;
+.cat-stat-lbl {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    color: #a0907e;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
 }
-@keyframes mfpFadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+.cat-stat-sep {
+    width: 0.5px;
+    background: #ede8df;
+    align-self: stretch;
+    min-height: 24px;
+}
+
+/* Grille principale */
+.cat-page-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 32px 40px 56px;
+}
+
+/* En-tête section */
+.cat-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.cat-section-head h2 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #1e1208;
+    margin: 0;
+}
+.cat-section-count {
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    color: #a0907e;
+}
+
+/* Layout asymétrique des rangées */
+.cat-rows { display: flex; flex-direction: column; gap: 12px; }
+
+.cat-row-2col   { display: grid; grid-template-columns: 1.5fr 1fr;   gap: 12px; }
+.cat-row-2col-r { display: grid; grid-template-columns: 1fr 1.5fr;   gap: 12px; }
+.cat-row-3col   { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.cat-row-1col   { display: grid; grid-template-columns: 1fr;         gap: 12px; }
+
+/* CTA vendeur */
+.cat-cta {
+    background: #ebe8fb;
+    border: 0.5px solid #c9c4f5;
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+.cat-cta-text h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #2a2165;
+    margin: 0 0 6px;
+}
+.cat-cta-text p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #534ab7;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 380px;
+}
+.cat-cta-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: #7c6cf0;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+.cat-cta-btn:hover { background: #6558d4; color: #fff; }
+
+/* État vide */
+.cat-empty {
+    text-align: center;
+    padding: 64px 20px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    color: #a0907e;
+}
+.cat-empty-icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .cat-hero-inner { padding: 0 20px; }
+    .cat-page-grid  { padding: 24px 20px 40px; }
+    .cat-row-2col,
+    .cat-row-2col-r,
+    .cat-row-3col   { grid-template-columns: 1fr 1fr; }
+    .cat-cta        { flex-direction: column; padding: 28px 24px; }
+    .cat-cta-btn    { width: 100%; text-align: center; }
+}
+@media (max-width: 600px) {
+    .cat-hero { padding: 28px 0 22px; }
+    .cat-search-bar { flex-direction: column; }
+    .cat-search-bar input  { width: 100%; }
+    .cat-search-bar button { width: 100%; }
+    .cat-stats { gap: 16px; }
+    .cat-stat-sep { display: none; }
+    .cat-row-2col,
+    .cat-row-2col-r,
+    .cat-row-3col   { grid-template-columns: 1fr; }
+    .cat-card .cat-title { font-size: 20px; }
 }
 </style>
 
-<!-- Hero -->
-<section class="mfp-cat-hero container">
-    <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--text-secondary); margin: 0 0 0.6rem; text-transform: uppercase;">
-        MarketFlow Pro
-    </p>
-    <h1 style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; margin: 0 0 0.75rem; color: var(--text-primary); line-height: 1.15;">
-        Nos catégories
-    </h1>
-    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 560px; margin: 0 0 2rem;">
-        Explorez nos univers dédiés à l'autonomie et au bien-être
-    </p>
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="cat-hero">
+    <div class="cat-hero-inner">
 
-    <!-- Barre de recherche -->
-    <form action="/products" method="GET" style="display: flex; gap: 0.75rem; max-width: 560px;">
-        <input
-            type="text"
-            name="q"
-            placeholder="Rechercher une ressource, une catégorie…"
-            style="flex: 1; padding: 0.75rem 1.25rem; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 0.975rem; transition: border-color 0.2s;"
-            onfocus="this.style.borderColor='var(--primary-500)'"
-            onblur="this.style.borderColor='var(--gray-200)'"
-        />
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-    </form>
+        <!-- Fil d'Ariane -->
+        <nav class="cat-breadcrumb" aria-label="Fil d'Ariane">
+            <a href="/">Accueil</a>
+            <span class="cat-breadcrumb-sep">›</span>
+            <span class="cat-breadcrumb-current">Catégories</span>
+        </nav>
 
-    <!-- Stats réelles -->
-    <div class="mfp-stats-bar" style="margin-top: 2.5rem;">
-        <div class="mfp-stat-item">
-            <span class="mfp-stat-value"><?= count($categories) ?></span>
-            <span class="mfp-stat-label">Catégories</span>
-        </div>
-        <div style="width: 0.5px; background: var(--gray-200); align-self: stretch;"></div>
-        <div class="mfp-stat-item">
-            <span class="mfp-stat-value">
-                <?php
-                $totalProducts = array_sum(array_column($categories, 'product_count'));
-                echo number_format($totalProducts, 0, ',', ' ');
-                ?>
-            </span>
-            <span class="mfp-stat-label">Ressources disponibles</span>
-        </div>
-    </div>
-</section>
+        <h1 class="cat-hero-title">Explorez nos univers</h1>
+        <p class="cat-hero-sub">Autonomie, bien-être, jardin… trouvez les ressources qui vous correspondent.</p>
 
-<!-- Grille des catégories -->
-<section class="container mb-16">
-    <!-- Ligne 1 : grand-petit -->
-    <div class="mfp-cat-row mfp-cat-row--gp">
-        <?php foreach (array_slice($categories, 0, 2) as $index => $category):
-            $slug  = $category['slug'];
-            $style = $categoryStyles[$slug] ?? $fallbackStyles[$index % count($fallbackStyles)];
-            $num   = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
-            $icon  = $svgIcons[$slug] ?? $svgIconFallback;
-            $cardClass = 'mfp-cat-card';
-
-            $count = (int)($category['product_count'] ?? 0);
-            $countLabel = $count > 0
-                ? number_format($count, 0, ',', ' ') . ' ressource' . ($count > 1 ? 's' : '')
-                : '— ressources';
-        ?>
-        <a
-            href="/category/<?= e($slug) ?>"
-            class="<?= $cardClass ?>"
-            style="
-                background: <?= $style['bg'] ?>;
-                animation: mfpFadeUp 0.5s ease-out <?= $index * 0.06 ?>s both;
-            "
-        >
-            <div class="mfp-cat-bar" style="background: <?= $style['bar'] ?>;"></div>
-            <span class="mfp-cat-num" style="color: <?= $style['num'] ?>;"><?= $num ?></span>
-
-            <span class="mfp-cat-icon"><?= $icon ?></span>
-
-            <div class="mfp-cat-label" style="color: <?= $style['bar'] ?>;">
-                <?= $num ?> · <?= e($category['name']) ?>
+        <!-- Statistiques -->
+        <div class="cat-stats">
+            <div class="cat-stat">
+                <span class="cat-stat-val"><?= count($categories) ?></span>
+                <span class="cat-stat-lbl">Catégories</span>
             </div>
-            <h3 class="mfp-cat-name" style="color: <?= $style['badge-text'] ?>;">
-                <?= e($category['name']) ?>
-            </h3>
-
-            <span class="mfp-cat-badge" style="background: <?= $style['badge-bg'] ?>; color: <?= $style['badge-text'] ?>;">
-                <?= $countLabel ?>
-            </span>
-        </a>
-        <?php endforeach; ?>
-    </div>
-
-    <!-- Ligne 2 : petit-grand -->
-    <div class="mfp-cat-row mfp-cat-row--pg">
-        <?php foreach (array_slice($categories, 2, 2) as $i => $category):
-            $index = $i + 2;
-            $slug  = $category['slug'];
-            $style = $categoryStyles[$slug] ?? $fallbackStyles[$index % count($fallbackStyles)];
-            $num   = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
-            $icon  = $svgIcons[$slug] ?? $svgIconFallback;
-            $cardClass = 'mfp-cat-card';
-            $count = (int)($category['product_count'] ?? 0);
-            $countLabel = $count > 0
-                ? number_format($count, 0, ',', ' ') . ' ressource' . ($count > 1 ? 's' : '')
-                : '— ressources';
-        ?>
-        <a href="/category/<?= e($slug) ?>" class="<?= $cardClass ?>"
-           style="background: <?= $style['bg'] ?>; animation: mfpFadeUp 0.5s ease-out <?= $index * 0.06 ?>s both;">
-            <div class="mfp-cat-bar" style="background: <?= $style['bar'] ?>;"></div>
-            <span class="mfp-cat-num" style="color: <?= $style['num'] ?>;"><?= $num ?></span>
-            <span class="mfp-cat-icon"><?= $icon ?></span>
-            <div class="mfp-cat-label" style="color: <?= $style['bar'] ?>"><?= $num ?> · <?= e($category['name']) ?></div>
-            <h3 class="mfp-cat-name" style="color: <?= $style['badge-text'] ?>"><?= e($category['name']) ?></h3>
-            <span class="mfp-cat-badge" style="background: <?= $style['badge-bg'] ?>; color: <?= $style['badge-text'] ?>"><?= $countLabel ?></span>
-        </a>
-        <?php endforeach; ?>
-    </div>
-</section>
-
-<!-- CTA Vendeur -->
-<section class="container mb-16">
-    <div class="card text-center p-12" style="background: var(--gradient-primary); color: white; position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; opacity: 0.08; background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.15) 35px, rgba(255,255,255,.15) 70px);"></div>
-        <div style="position: relative; z-index: 1;">
-            <h2 style="color: white; margin-bottom: 1rem; font-size: 2rem; font-family: Georgia, 'Times New Roman', serif; font-weight: 500;">
-                Vous êtes créateur ?
-            </h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.92;">
-                Rejoignez notre communauté et partagez vos ressources avec le monde
-            </p>
-            <?php if (!isset($_SESSION['user_id'])): ?>
-                <a href="/register?role=seller" class="btn btn-lg" style="background: white; color: var(--primary-600); font-weight: 700; box-shadow: 0 8px 24px rgba(0,0,0,0.18);">
-                    Devenir vendeur →
-                </a>
-            <?php elseif ($_SESSION['user_role'] === 'seller'): ?>
-                <a href="/seller/products/create" class="btn btn-lg" style="background: white; color: var(--primary-600); font-weight: 700; box-shadow: 0 8px 24px rgba(0,0,0,0.18);">
-                    Ajouter une ressource →
-                </a>
+            <?php if ($totalProducts > 0): ?>
+            <div class="cat-stat-sep"></div>
+            <div class="cat-stat">
+                <span class="cat-stat-val"><?= number_format($totalProducts, 0, ',', ' ') ?></span>
+                <span class="cat-stat-lbl">Ressources disponibles</span>
+            </div>
             <?php endif; ?>
         </div>
+
     </div>
 </section>
 
-<script>
-/* Délégation d'événements — un seul listener pour toutes les cards */
-document.querySelectorAll('.mfp-cat-card').forEach(function(card) {
-    card.addEventListener('mouseenter', function() {
-        var icon = this.querySelector('.mfp-cat-icon');
-        if (icon) icon.style.transform = 'scale(1.15) rotate(5deg)';
-    });
-    card.addEventListener('mouseleave', function() {
-        var icon = this.querySelector('.mfp-cat-icon');
-        if (icon) icon.style.transform = '';
-    });
-});
-</script>
+<!-- ══════════════════════════════════════
+     GRILLE DES CATÉGORIES
+══════════════════════════════════════ -->
+<div class="cat-page-grid">
 
-<style>
-/* ===== RESPONSIVE FIXES categories.php ===== */
+    <?php if (empty($categories)): ?>
+        <div class="cat-empty">
+            <span class="cat-empty-icon">🗂️</span>
+            Aucune catégorie disponible pour le moment.
+        </div>
+    <?php else: ?>
 
-/* --- Tablette : 641px → 900px --- */
-@media (min-width: 641px) and (max-width: 900px) {
-    /* Colonnes égales sur tablette (au lieu de 1.45fr 1fr) */
-    .mfp-cat-row--gp,
-    .mfp-cat-row--pg {
-        grid-template-columns: 1fr 1fr;
-    }
-    /* Cartes moins hautes */
-    .mfp-cat-card {
-        min-height: 170px;
-        padding: 1.25rem 1.25rem;
-    }
-    /* Textes plus petits */
-    .mfp-cat-name       { font-size: 1.15rem; }
-    .mfp-cat-wide .mfp-cat-name { font-size: 1.3rem; }
-    .mfp-cat-num        { font-size: 64px; }
-}
+    <!-- En-tête section -->
+    <div class="cat-section-head">
+        <h2>Toutes les catégories</h2>
+        <span class="cat-section-count"><?= count($categories) ?> univers</span>
+    </div>
 
-/* --- Mobile : ≤ 640px --- */
-@media (max-width: 640px) {
-    /* 1 seule colonne */
-    .mfp-cat-row--gp,
-    .mfp-cat-row--pg {
-        grid-template-columns: 1fr;
-    }
-    /* Hero moins haut */
-    .mfp-cat-hero {
-        padding: 2rem 0 1.5rem;
-    }
-    /* Form de recherche pleine largeur */
-    .mfp-cat-hero form {
-        flex-direction: column;
-    }
-    /* Cartes compactes */
-    .mfp-cat-card {
-        min-height: 150px;
-        padding: 1.25rem 1.25rem;
-    }
-    /* Chiffres décoratifs plus petits */
-    .mfp-cat-num { font-size: 56px; }
-    /* Titres adaptés */
-    .mfp-cat-name       { font-size: 1.1rem; }
-    .mfp-cat-wide .mfp-cat-name { font-size: 1.1rem; }
-    /* Stats */
-    .mfp-stat-value     { font-size: 1.5rem; }
-    .mfp-stats-bar      { gap: 1rem; margin-top: 1.5rem; }
-}
-</style>
+    <!-- Layout adaptatif selon le nombre de catégories -->
+    <div class="cat-rows">
+    <?php
+    $total = count($categories);
+    $index = 0;
+    $rowNum = 0;
 
-<style>
-/* ===== RESPONSIVE FIXES categories.php ===== */
+    /*
+     * Stratégie de layout :
+     * Rangée 0 : 2 colonnes larges (1.5fr / 1fr)
+     * Rangée 1 : 2 colonnes inversées (1fr / 1.5fr)
+     * Rangée 2 : 3 colonnes égales
+     * Rangée 3 : 2 colonnes larges (1.5fr / 1fr)
+     * … puis on repart
+     */
+    $rowLayouts = [
+        'cat-row-2col',    // rangée 0 : 2 cartes
+        'cat-row-2col-r',  // rangée 1 : 2 cartes
+        'cat-row-3col',    // rangée 2 : 3 cartes
+        'cat-row-2col',    // rangée 3 : 2 cartes
+    ];
+    $rowSizes = [2, 2, 3, 2];
 
-/* --- Tablette : 641px → 900px --- */
-@media (min-width: 641px) and (max-width: 900px) {
-    /* Colonnes égales sur tablette (au lieu de 1.45fr 1fr) */
-    .mfp-cat-row--gp,
-    .mfp-cat-row--pg {
-        grid-template-columns: 1fr 1fr;
-    }
-    /* Cartes moins hautes */
-    .mfp-cat-card {
-        min-height: 170px;
-        padding: 1.25rem 1.25rem;
-    }
-    /* Textes plus petits */
-    .mfp-cat-name       { font-size: 1.15rem; }
-    .mfp-cat-wide .mfp-cat-name { font-size: 1.3rem; }
-    .mfp-cat-num        { font-size: 64px; }
-}
+    while ($index < $total):
+        $rIdx   = $rowNum % count($rowLayouts);
+        $size   = $rowSizes[$rIdx];
+        $layout = $rowLayouts[$rIdx];
 
-/* --- Mobile : ≤ 640px --- */
-@media (max-width: 640px) {
-    /* 1 seule colonne */
-    .mfp-cat-row--gp,
-    .mfp-cat-row--pg {
-        grid-template-columns: 1fr;
-    }
-    /* Hero moins haut */
-    .mfp-cat-hero {
-        padding: 2rem 0 1.5rem;
-    }
-    /* Form de recherche pleine largeur */
-    .mfp-cat-hero form {
-        flex-direction: column;
-    }
-    /* Cartes compactes */
-    .mfp-cat-card {
-        min-height: 150px;
-        padding: 1.25rem 1.25rem;
-    }
-    /* Chiffres décoratifs plus petits */
-    .mfp-cat-num { font-size: 56px; }
-    /* Titres adaptés */
-    .mfp-cat-name       { font-size: 1.1rem; }
-    .mfp-cat-wide .mfp-cat-name { font-size: 1.1rem; }
-    /* Stats */
-    .mfp-stat-value     { font-size: 1.5rem; }
-    .mfp-stats-bar      { gap: 1rem; margin-top: 1.5rem; }
-}
-</style>
+        // Dernière rangée : si 1 seul restant → pleine largeur
+        $remaining = $total - $index;
+        if ($remaining === 1) { $layout = 'cat-row-1col'; $size = 1; }
+        if ($remaining < $size) { $size = $remaining; }
+    ?>
+    <div class="<?= $layout ?>">
+    <?php for ($i = 0; $i < $size && $index < $total; $i++, $index++):
+        $cat     = $categories[$index];
+        $slug    = $cat['slug'] ?? '';
+        $name    = $cat['name'] ?? 'Catégorie';
+        $count   = (int)($cat['product_count'] ?? 0);
+        $desc    = $cat['description'] ?? '';
+        $theme   = $slugToTheme[$slug] ?? $fallbackThemes[$index % count($fallbackThemes)];
+        $icon    = $svgIcons[$slug]    ?? $svgIconFallback;
+        $num     = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
+        $countLabel = $count > 0
+            ? 'Explorer ' . number_format($count, 0, ',', ' ') . ' ressource' . ($count > 1 ? 's' : '') . ' →'
+            : null;
+    ?>
+        <a href="/category/<?= htmlspecialchars($slug, ENT_QUOTES) ?>"
+           class="cat-card cat-card--<?= $theme ?>"
+           aria-label="Voir la catégorie <?= htmlspecialchars($name, ENT_QUOTES) ?>">
+
+            <!-- Numéro en filigrane -->
+            <span class="cat-num" aria-hidden="true"><?= $num ?></span>
+
+            <!-- Icône -->
+            <div class="cat-icon"><?= $icon ?></div>
+
+            <!-- Label + titre -->
+            <span class="cat-label"><?= $num ?> · <?= htmlspecialchars($name, ENT_QUOTES) ?></span>
+            <span class="cat-title"><?= htmlspecialchars($name, ENT_QUOTES) ?></span>
+
+            <?php if ($desc): ?>
+                <p style="font-family:'Manrope',sans-serif;font-size:12px;line-height:1.6;opacity:.7;margin:8px 0 0;position:relative;z-index:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
+                    <?= htmlspecialchars($desc, ENT_QUOTES) ?>
+                </p>
+            <?php endif; ?>
+
+            <!-- Bouton avec compteur -->
+            <?php if ($countLabel): ?>
+                <span class="cat-btn cat-btn--active"><?= $countLabel ?></span>
+            <?php else: ?>
+                <span class="cat-btn cat-btn--empty">Bientôt disponible</span>
+            <?php endif; ?>
+
+        </a>
+    <?php endfor; ?>
+    </div>
+    <?php $rowNum++; endwhile; ?>
+    </div>
+
+    <?php endif; ?>
+
+    <!-- ── CTA Vendeur ── -->
+    <div class="cat-cta">
+        <div class="cat-cta-text">
+            <h3>Vous créez du contenu ?</h3>
+            <p>Rejoignez nos vendeurs et partagez vos ressources avec notre communauté d'apprenants.</p>
+        </div>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="/register?role=seller" class="cat-cta-btn">Devenir vendeur →</a>
+        <?php elseif (($_SESSION['user_role'] ?? '') === 'seller'): ?>
+            <a href="/seller/products/create" class="cat-cta-btn">Ajouter une ressource →</a>
+        <?php elseif (($_SESSION['user_role'] ?? '') === 'admin'): ?>
+            <a href="/admin" class="cat-cta-btn">Administration →</a>
+        <?php endif; ?>
+    </div>
+
+</div>
