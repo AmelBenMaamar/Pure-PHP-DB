@@ -232,7 +232,7 @@ a.btn.btn-secondary {
 }
 .card h2 { font-family: Georgia, serif !important; font-weight: 400 !important; color: #1e1208 !important; font-size: 26px !important; }
 /* Chiffre vendeurs (violet) */
-h2[style*="color: var(--primary)"] { color: #7c6cf0 !important; }
+h2[style*="color: var(--primary)"] { color: #6B74D6 !important; }
 /* Chiffre acheteurs (vert) */
 h2[style*="color: var(--success)"] { color: #3a7d44 !important; }
 
@@ -246,14 +246,14 @@ input[type="text"].input, select.input {
     color: #1e1208 !important;
 }
 input[type="text"].input:focus, select.input:focus {
-    border-color: #7c6cf0 !important;
-    box-shadow: 0 0 0 3px rgba(124,108,240,.1) !important;
+    border-color: #6B74D6 !important;
+    box-shadow: 0 0 0 3px rgba(107, 116, 214,.1) !important;
     background: #fff !important;
 }
 
 /* Bouton filtrer */
 button.btn.btn-primary, a.btn.btn-primary {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 8px !important;
@@ -288,8 +288,8 @@ td[style*="padding: 1rem"] { font-family: 'Manrope', sans-serif !important; font
 
 /* Avatar placeholder */
 div[style*="background: var(--primary)"][style*="border-radius: 50%"] {
-    background: #ede9fe !important;
-    color: #534ab7 !important;
+    background: #e0f7fa !important;
+    color: #5B8ED6 !important;
 }
 /* Nom utilisateur */
 div[style*="font-weight: 600"] { color: #1e1208 !important; }
@@ -300,7 +300,7 @@ div[style*="color: var(--text-secondary)"], td[style*="color: var(--text-seconda
 }
 
 /* Badges rôle et statut */
-.badge.badge-primary { background: #ede9fe !important; color: #534ab7 !important; border-radius: 6px !important; font-size: 10px !important; padding: 2px 8px !important; }
+.badge.badge-primary { background: #e0f7fa !important; color: #5B8ED6 !important; border-radius: 6px !important; font-size: 10px !important; padding: 2px 8px !important; }
 .badge.badge-warning { background: #fef9e7 !important; color: #7d5a00 !important; border-radius: 6px !important; font-size: 10px !important; padding: 2px 8px !important; }
 .badge.badge-secondary { background: #f5f1eb !important; color: #6b5c4e !important; border-radius: 6px !important; font-size: 10px !important; padding: 2px 8px !important; }
 .badge.badge-success { background: #e4f1d8 !important; color: #2d6a35 !important; border-radius: 6px !important; font-size: 10px !important; padding: 2px 8px !important; }

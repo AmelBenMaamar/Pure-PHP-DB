@@ -6,10 +6,10 @@
 
 /* ── Icônes SVG par slug ── */
 $svgIcons = [
-    'developpement-personnel' => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><line x1="16" y1="26" x2="16" y2="8" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/><polyline points="11,13 16,8 21,13" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M9 22 Q16 19 23 22" stroke="#AFA9EC" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>',
-    'sante-alimentation'      => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 5 C11 5 8 9 8 14 C8 20 12 27 16 27 C20 27 24 20 24 14 C24 9 21 5 16 5Z" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/><path d="M13 17 L16 20 L21 13" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    'jardin-autonomie'        => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 6C14 9 13 12 13 15a3 3 0 006 0C19 12 18 9 16 6z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 12C8 14 7 17 7 20a3 3 0 006 0C13 17 12 14 10 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/><path d="M22 12C20 14 19 17 19 20a3 3 0 006 0C25 17 24 14 22 12z" stroke="#854F0B" stroke-width="1.5" stroke-linejoin="round"/></svg>',
-    'maison-energie'          => '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M4 28h24M8 28V18L16 10L24 18V28" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="20" width="6" height="8" rx="1" stroke="#185FA5" stroke-width="1.5"/></svg>',
+    'developpement-personnel' => '<div class="cat-icon-frame" style="padding:1.5px;border-radius:10px;background:linear-gradient(135deg,#6BD1D6 0%,#6B94D6 25%,#6B74D6 50%,#6BC6D6 75%,#6BC6D6 100%);display:inline-flex;flex-shrink:0"><div style="background:#fff;border-radius:8.5px;width:41px;height:41px;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6BD1D6"/><stop offset="50%" stop-color="#6B74D6"/><stop offset="100%" stop-color="#6BC6D6"/></linearGradient></defs><circle cx="14" cy="14" r="9" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polygon points="14,7 16.2,13 14,12 11.8,13" fill="url(#g1)" stroke="none"/><polygon points="14,21 16.2,15 14,16 11.8,15" fill="#6BC6D6" opacity=".35" stroke="none"/><line x1="14" y1="5" x2="14" y2="7" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="21" x2="14" y2="23" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="5" y1="14" x2="7" y2="14" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="21" y1="14" x2="23" y2="14" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>',
+    'sante-alimentation'      => '<div class="cat-icon-frame" style="padding:1.5px;border-radius:10px;background:linear-gradient(135deg,#6BD1D6 0%,#6B94D6 25%,#6B74D6 50%,#6BC6D6 75%,#6BC6D6 100%);display:inline-flex;flex-shrink:0"><div style="background:#fff;border-radius:8.5px;width:41px;height:41px;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6BD1D6"/><stop offset="50%" stop-color="#6B74D6"/><stop offset="100%" stop-color="#6BC6D6"/></linearGradient></defs><path d="M14 22 Q5 16 5 10.5 A5 5 0 0 1 14 8.5 A5 5 0 0 1 23 10.5 Q23 16 14 22Z" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="13" x2="14" y2="17" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.5" y1="15" x2="16.5" y2="15" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>',
+    'jardin-autonomie'        => '<div class="cat-icon-frame" style="padding:1.5px;border-radius:10px;background:linear-gradient(135deg,#6BD1D6 0%,#6B94D6 25%,#6B74D6 50%,#6BC6D6 75%,#6BC6D6 100%);display:inline-flex;flex-shrink:0"><div style="background:#fff;border-radius:8.5px;width:41px;height:41px;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6BD1D6"/><stop offset="50%" stop-color="#6B74D6"/><stop offset="100%" stop-color="#6BC6D6"/></linearGradient></defs><path d="M10 22 L18 22 L17 26 L11 26 Z" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="14" y1="22" x2="14" y2="15" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 18 Q14 12 8 10 Q8 16 14 18" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 16 Q14 10 20 8 Q20 14 14 16" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>',
+    'maison-energie'          => '<div class="cat-icon-frame" style="padding:1.5px;border-radius:10px;background:linear-gradient(135deg,#6BD1D6 0%,#6B94D6 25%,#6B74D6 50%,#6BC6D6 75%,#6BC6D6 100%);display:inline-flex;flex-shrink:0"><div style="background:#fff;border-radius:8.5px;width:41px;height:41px;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6BD1D6"/><stop offset="50%" stop-color="#6B74D6"/><stop offset="100%" stop-color="#6BC6D6"/></linearGradient></defs><polyline points="4,13 14,4 24,13" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 13 L7 24 L21 24 L21 13" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="11" y="18" width="6" height="6" rx="1" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16,10 14,14 17,14 15,18" stroke="url(#g4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"/></svg></div></div>',
 ];
 $svgIconFallback = '<svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="20" height="20" rx="4" fill="none" stroke="#534AB7" stroke-width="1.5"/><line x1="11" y1="16" x2="21" y2="16" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/><line x1="16" y1="11" x2="16" y2="21" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg>';
 
@@ -26,217 +26,6 @@ $fallbackThemes = [1, 2, 3, 4, 5, 6, 7, 8];
 $totalProducts = array_sum(array_column($categories, 'product_count'));
 ?>
 
-<style>
-/* ================================================================
-   CATEGORIES PAGE — styles complémentaires (maquette2)
-   ================================================================ */
-
-/* Hero */
-.cat-hero {
-    background: #faf9f5;
-    padding: 40px 0 32px;
-    border-bottom: 0.5px solid #ede8df;
-    margin-bottom: 0;
-}
-.cat-hero-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-.cat-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    color: #6b5e52;
-    margin-bottom: 20px;
-    letter-spacing: 0.01em;
-}
-.cat-breadcrumb a {
-    color: #6b5e52;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.15s, border-color 0.15s;
-}
-.cat-breadcrumb a:hover {
-    color: #534ab7;
-    border-bottom-color: #c9c4f5;
-}
-.cat-breadcrumb-sep {
-    color: #c9c4f5;
-    font-size: 10px;
-    user-select: none;
-}
-.cat-breadcrumb-current {
-    color: #1e1208;
-    font-weight: 500;
-}
-
-.cat-hero-title {
-    font-family: Georgia, serif;
-    font-size: clamp(26px, 4vw, 36px);
-    font-weight: 400;
-    color: #1e1208;
-    line-height: 1.2;
-    margin: 0 0 6px;
-}
-.cat-hero-sub {
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    color: #8a7060;
-    margin: 0 0 24px;
-    line-height: 1.7;
-}
-
-/* .cat-search-bar supprimé — recherche centralisée dans la nav */
-
-/* Compteurs */
-.cat-stats {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-}
-.cat-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-.cat-stat-val {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: #1e1208;
-    line-height: 1;
-}
-.cat-stat-lbl {
-    font-family: 'Manrope', sans-serif;
-    font-size: 10px;
-    color: #a0907e;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-}
-.cat-stat-sep {
-    width: 0.5px;
-    background: #ede8df;
-    align-self: stretch;
-    min-height: 24px;
-}
-
-/* Grille principale */
-.cat-page-grid {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 32px 40px 56px;
-}
-
-/* En-tête section */
-.cat-section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-.cat-section-head h2 {
-    font-family: Georgia, serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #1e1208;
-    margin: 0;
-}
-.cat-section-count {
-    font-family: 'Manrope', sans-serif;
-    font-size: 11px;
-    color: #a0907e;
-}
-
-/* Layout asymétrique des rangées */
-.cat-rows { display: flex; flex-direction: column; gap: 12px; }
-
-.cat-row-2col   { display: grid; grid-template-columns: 1.5fr 1fr;   gap: 12px; }
-.cat-row-2col-r { display: grid; grid-template-columns: 1fr 1.5fr;   gap: 12px; }
-.cat-row-3col   { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-.cat-row-1col   { display: grid; grid-template-columns: 1fr;         gap: 12px; }
-
-/* CTA vendeur */
-.cat-cta {
-    background: #ebe8fb;
-    border: 0.5px solid #c9c4f5;
-    border-radius: 16px;
-    padding: 36px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-}
-.cat-cta-text h3 {
-    font-family: Georgia, serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: #2a2165;
-    margin: 0 0 6px;
-}
-.cat-cta-text p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    color: #534ab7;
-    margin: 0;
-    line-height: 1.6;
-    max-width: 380px;
-}
-.cat-cta-btn {
-    font-family: 'Manrope', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: #fff;
-    background: #7c6cf0;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 24px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.15s;
-    flex-shrink: 0;
-}
-.cat-cta-btn:hover { background: #6558d4; color: #fff; }
-
-/* État vide */
-.cat-empty {
-    text-align: center;
-    padding: 64px 20px;
-    font-family: 'Manrope', sans-serif;
-    font-size: 14px;
-    color: #a0907e;
-}
-.cat-empty-icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
-
-/* ── Responsive ── */
-@media (max-width: 900px) {
-    .cat-hero-inner { padding: 0 20px; }
-    .cat-page-grid  { padding: 24px 20px 40px; }
-    .cat-row-2col,
-    .cat-row-2col-r,
-    .cat-row-3col   { grid-template-columns: 1fr 1fr; }
-    .cat-cta        { flex-direction: column; padding: 28px 24px; }
-    .cat-cta-btn    { width: 100%; text-align: center; }
-}
-@media (max-width: 600px) {
-    .cat-hero { padding: 28px 0 22px; }
-    .cat-search-bar { flex-direction: column; }
-    .cat-search-bar input  { width: 100%; }
-    .cat-search-bar button { width: 100%; }
-    .cat-stats { gap: 16px; }
-    .cat-stat-sep { display: none; }
-    .cat-row-2col,
-    .cat-row-2col-r,
-    .cat-row-3col   { grid-template-columns: 1fr; }
-    .cat-card .cat-title { font-size: 20px; }
-}
-</style>
 
 <!-- ══════════════════════════════════════
      HERO
@@ -378,11 +167,11 @@ $totalProducts = array_sum(array_column($categories, 'product_count'));
             <h3>Vous créez du contenu ?</h3>
             <p>Rejoignez nos vendeurs et partagez vos ressources avec notre communauté d'apprenants.</p>
         </div>
-        <?php if (!isset($_SESSION['user_id'])): ?>
+        <?php if (!isLoggedIn()): ?>
             <a href="/register?role=seller" class="cat-cta-btn">Devenir vendeur →</a>
-        <?php elseif (($_SESSION['user_role'] ?? '') === 'seller'): ?>
+        <?php elseif ((getCurrentUser()['role'] ?? '') === 'seller'): ?>
             <a href="/seller/products/create" class="cat-cta-btn">Ajouter une ressource →</a>
-        <?php elseif (($_SESSION['user_role'] ?? '') === 'admin'): ?>
+        <?php elseif ((getCurrentUser()['role'] ?? '') === 'admin'): ?>
             <a href="/admin" class="cat-cta-btn">Administration →</a>
         <?php endif; ?>
     </div>

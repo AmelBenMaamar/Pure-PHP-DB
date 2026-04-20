@@ -69,3 +69,18 @@ desktop.ini
 *.bak_*
 public/phpinfo_test.php
 rapport_audit.txt
+
+# Uploads utilisateurs
+public/uploads/
+
+# Logs et cache
+data/logs/
+data/cache/
+
+# Fichiers locaux
+local_schema.sql
+local_tables.txt
+structure_local.sql
+rapport_audit.txt
+audit_verification.sh
+*.jsc

@@ -76,14 +76,14 @@ h1 {
 .card p {
     font-family: Georgia, serif !important;
     font-weight: 400 !important;
-    color: #7c6cf0 !important;
+    color: #6B74D6 !important;
     font-size: 16px !important;
     margin: 0 !important;
 }
 
 /* Bouton voir */
 .btn.btn-primary.btn-sm {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 8px !important;

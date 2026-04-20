@@ -183,7 +183,7 @@
 <style>
 /* =====================================================
    SELLER INDEX — palette maquette2
-   Fond crème #faf9f5, violet #7c6cf0, Georgia + Manrope
+   Fond crème #faf9f5, violet #6B74D6, Georgia + Manrope
    ===================================================== */
 
 /* Header page */
@@ -196,8 +196,8 @@
 
 /* Bouton principal → violet */
 .btn.btn-primary {
-    background: #7c6cf0;
-    border-color: #7c6cf0;
+    background: #6B74D6;
+    border-color: #6B74D6;
     color: #fff;
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
@@ -225,8 +225,8 @@
     transition: border-color .2s, box-shadow .2s;
 }
 .input:focus {
-    border-color: #7c6cf0;
-    box-shadow: 0 0 0 3px rgba(124,108,240,.12);
+    border-color: #6B74D6;
+    box-shadow: 0 0 0 3px rgba(107, 116, 214,.12);
     outline: none;
 }
 
@@ -239,14 +239,14 @@
     transition: box-shadow .2s, transform .2s;
 }
 .grid .card:hover {
-    box-shadow: 0 6px 24px rgba(124,108,240,.10);
+    box-shadow: 0 6px 24px rgba(107, 116, 214,.10);
     transform: translateY(-2px);
 }
 
 /* Avatar initiale */
 .grid .card > div:first-child > div {
-    background: #ede9fe !important;
-    color: #7c6cf0 !important;
+    background: #e0f7fa !important;
+    color: #6B74D6 !important;
     font-family: 'Manrope', sans-serif;
 }
 
@@ -265,7 +265,7 @@
 
 /* Nombre produits → violet */
 .grid .card > div[style*="grid-template-columns"] > div:first-child > div:first-child {
-    color: #7c6cf0 !important;
+    color: #6B74D6 !important;
 }
 
 /* Étoile note */
@@ -276,7 +276,7 @@
 /* Bouton ghost pagination */
 .btn.btn-ghost {
     border: 1px solid #e2ddf5;
-    color: #7c6cf0;
+    color: #6B74D6;
     border-radius: 8px;
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
@@ -289,7 +289,7 @@
 /* CTA lavande en bas */
 .container > .card[style*="gradient"],
 .container > .card[style*="gradient-primary"] {
-    background: linear-gradient(135deg, #7c6cf0 0%, #9d91f5 100%) !important;
+    background: linear-gradient(135deg, #6B74D6 0%, #9d91f5 100%) !important;
     border-radius: 16px;
     border: none;
 }

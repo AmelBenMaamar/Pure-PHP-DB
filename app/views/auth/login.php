@@ -42,30 +42,3 @@
 function tp(){var f=document.getElementById('password');f.type=f.type==='password'?'text':'password';}
 document.getElementById('lf').addEventListener('submit',function(){var b=document.getElementById('lsb');b.textContent='Connexion…';b.disabled=true;});
 </script>
-<style>
-.auth-wrap{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:#faf9f5}
-.auth-card{background:#fff;border:0.5px solid #ede8df;border-radius:20px;padding:40px;max-width:440px;width:100%}
-.auth-head{text-align:center;margin-bottom:28px}
-.auth-logo{width:48px;height:48px;border-radius:14px;background:#ede9fe;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;color:#6c63d4;margin:0 auto 16px;line-height:1}
-.auth-title{font-family:Georgia,serif;font-size:26px;font-weight:400;color:#1e1208;margin-bottom:6px}
-.auth-sub{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060;margin:0}
-.auth-err{display:flex;align-items:center;gap:8px;background:#fce5df;border-radius:10px;padding:12px 14px;font-family:'Manrope',sans-serif;font-size:13px;color:#993c1d;margin-bottom:20px}
-.af{margin-bottom:16px}
-.al{font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;color:#1e1208;display:block;margin-bottom:6px}
-.ai{width:100%;padding:10px 14px;border:0.5px solid #ddd6c8;border-radius:10px;background:#faf9f5;font-family:'Manrope',sans-serif;font-size:13px;color:#1e1208;outline:none;box-sizing:border-box;transition:border-color 0.15s}
-.ai:focus{border-color:#7c6cf0;background:#fff;box-shadow:0 0 0 3px rgba(124,108,240,.1)}
-.auth-fgt{font-family:'Manrope',sans-serif;font-size:12px;color:#7c6cf0;text-decoration:none}
-.auth-eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#a0907e;padding:4px;display:flex}
-.auth-eye svg{width:15px;height:15px}
-.auth-btn{width:100%;padding:11px;background:#7c6cf0;color:#fff;border:none;border-radius:10px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.15s;margin-top:4px}
-.auth-btn:hover{background:#6558d4}
-.auth-btn:disabled{opacity:.65;cursor:not-allowed}
-.auth-sep{display:flex;align-items:center;gap:12px;margin:24px 0}
-.auth-sep::before,.auth-sep::after{content:'';flex:1;height:0.5px;background:#ede8df}
-.auth-sep span{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
-.auth-sw{text-align:center;font-family:'Manrope',sans-serif;font-size:13px;color:#6b5c4e;margin:0 0 14px}
-.auth-sw a{color:#7c6cf0;text-decoration:none;font-weight:500}
-.auth-legal{text-align:center;font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;line-height:1.7;margin:0;padding-top:16px;border-top:0.5px solid #ede8df}
-.auth-legal a{color:#7c6cf0;text-decoration:none}
-@media(max-width:500px){.auth-card{padding:28px 20px}}
-</style>

@@ -403,21 +403,21 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:400;color:#1e1208}
 div[style*="color: var(--primary-600)"][style*="font-size: 1.25rem"]{color:#1e1208!important;font-family:Georgia,serif!important;font-size:18px!important;font-weight:400!important}
 /* Total récap */
 div[style*="font-size: 1.5rem"][style*="font-weight: 7"]{font-family:Georgia,serif!important;font-size:20px!important;font-weight:400!important}
-span[style*="color: var(--primary-600)"][style*="font-weight: 7"]{color:#7c6cf0!important;font-family:Georgia,serif!important}
+span[style*="color: var(--primary-600)"][style*="font-weight: 7"]{color:#6B74D6!important;font-family:Georgia,serif!important}
 /* Clé de licence fond */
 div[style*="background: var(--bg-secondary)"][style*="border-radius: var(--radius)"]{background:#faf9f5!important;border:0.5px solid #ede8df!important;border-radius:10px!important}
 /* Lien vendeur */
-a[style*="color: var(--primary-600)"]{color:#7c6cf0!important}
+a[style*="color: var(--primary-600)"]{color:#6B74D6!important}
 /* Bloc paiement vert */
 div[style*="background: var(--success-light)"][style*="border-radius: var(--radius)"]{background:#e4f1d8!important;border-radius:10px!important}
 /* Bloc info violet */
 .card[style*="background: var(--primary-50)"]{background:#f5f3ff!important;border:0.5px solid #c9c4f5!important}
-li[style*="color: var(--primary-700)"]{color:#534ab7!important;font-family:'Manrope',sans-serif;font-size:12px}
+li[style*="color: var(--primary-700)"]{color:#5B8ED6!important;font-family:'Manrope',sans-serif;font-size:12px}
 /* Boutons */
-.btn-primary{background:#7c6cf0!important;color:#fff!important;border:none!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important;font-weight:500!important}
+.btn-primary{background:#6B74D6!important;color:#fff!important;border:none!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important;font-weight:500!important}
 .btn-primary:hover{background:#6558d4!important}
 .btn-secondary{background:#f5f1eb!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important}
-.btn-outline{background:transparent!important;color:#7c6cf0!important;border:0.5px solid #7c6cf0!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important}
+.btn-outline{background:transparent!important;color:#6B74D6!important;border:0.5px solid #6B74D6!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important}
 .btn-ghost{background:transparent!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:11px!important}
 /* Avertissement attente paiement */
 div[style*="background: var(--warning-light)"][style*="border-radius: var(--radius)"]{background:#fef9e7!important;border-radius:10px!important;color:#7d5a00!important}

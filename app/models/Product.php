@@ -434,14 +434,28 @@ class Product extends Model {
         }
 
         // Mise à jour des champs principaux
-        $this->update($id, [
+        $updateData = [
             'title'          => $data['title'],
             'description'    => $data['description'],
             'category_id'    => $data['category_id'],
             'price'          => $data['price'],
             'original_price'=> $data['original_price'] ?? null,
+            'license_type'   => $data['license_type'] ?? 'single',
             'demo_url'       => $data['demo_url'] ?? null
-        ]);
+        ];
+
+        // Mise à jour de la miniature si une nouvelle image est fournie
+        if (!empty($files['thumbnail']['name'])) {
+            $updateData['thumbnail_url'] = $this->uploadThumbnail($files['thumbnail']);
+        }
+
+        // Mise à jour du fichier produit si un nouveau fichier est fourni
+        if (!empty($files['product_file']['name'])) {
+            $updateData['file_url']  = $this->uploadProductFile($files['product_file']);
+            $updateData['file_size'] = $files['product_file']['size'];
+        }
+
+        $this->update($id, $updateData);
 
         // Remplacement des tags existants
         if (!empty($data['tags'])) {

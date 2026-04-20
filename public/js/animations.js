@@ -72,7 +72,7 @@
      * au fur et à mesure du défilement - VERSION SIMPLIFIÉE
      */
     function initScrollReveal() {
-        const elements = document.querySelectorAll('.scroll-reveal, .product-card, .card, .category-card');
+        const elements = document.querySelectorAll('.scroll-reveal, .product-card');
 
         if (elements.length === 0) return;
 

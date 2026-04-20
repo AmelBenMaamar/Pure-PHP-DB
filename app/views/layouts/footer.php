@@ -6,12 +6,17 @@
 
             <div>
                 <div class="ft-logo">
-                    <div class="ft-logo-ic">M</div>
+                    <div class="ft-logo-ic">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="none"><defs><linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6BD1D6"/><stop offset="25%" stop-color="#6B94D6"/><stop offset="50%" stop-color="#6B74D6"/><stop offset="75%" stop-color="#6BC6D6"/><stop offset="85%" stop-color="#6BC6D6"/><stop offset="89%" stop-color="#DAF7DA" stop-opacity="0.9"/><stop offset="93%" stop-color="#6BC6D6"/><stop offset="100%" stop-color="#6BC6D6"/></linearGradient></defs>
+                        <path d="M4 18V7l8 5 8-5v11" stroke="url(#mg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 7l8 5 8-5" stroke="url(#mg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
                     <span class="ft-logo-txt">MarketFlow</span>
                 </div>
                 <p class="ft-tagline">La marketplace pour le développement personnel et l'autonomie.</p>
                 <a class="ft-cta-vendeur" href="/register?type=seller">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#534ab7" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#5B8ED6" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
                     <span class="ft-cta-txt">Devenir vendeur sur MarketFlow</span>
                     <span class="ft-cta-arrow">→</span>
                 </a>

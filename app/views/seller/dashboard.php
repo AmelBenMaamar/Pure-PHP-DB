@@ -482,7 +482,7 @@ h1,h2,h3{font-family:Georgia,serif;font-weight:400;color:#1e1208}
 .hover-lift:hover{transform:translateY(-2px)!important;box-shadow:none!important}
 /* Icônes stats */
 div[style*="background:linear-gradient(135deg,#43e97b"]{background:#e4f1d8!important;border-radius:10px!important}
-div[style*="background:linear-gradient(135deg,#667eea"]{background:#ede9fe!important;border-radius:10px!important}
+div[style*="background:linear-gradient(135deg,#667eea"]{background:#e0f7fa!important;border-radius:10px!important}
 div[style*="background:linear-gradient(135deg,#f093fb"]{background:#fce5df!important;border-radius:10px!important}
 div[style*="background:linear-gradient(135deg,#fa709a"]{background:#fef3e0!important;border-radius:10px!important}
 /* Chiffres h3 dans stats */
@@ -493,7 +493,7 @@ div[style*="background:linear-gradient(135deg,#fa709a"]{background:#fef3e0!impor
 /* Séparateurs border */
 [style*="border-bottom:1px solid var(--border-color)"]{border-bottom:0.5px solid #ede8df!important}
 /* Lien commande */
-a[style*="color:var(--primary-600)"]{color:#7c6cf0!important}
+a[style*="color:var(--primary-600)"]{color:#6B74D6!important}
 /* Montant vente */
 div[style*="color:var(--success)"][style*="white-space:nowrap"]{color:#3a7d44!important;font-family:Georgia,serif!important;font-size:15px!important;font-weight:400!important}
 /* Rows ventes/produits */
@@ -502,13 +502,13 @@ div[style*="background:var(--bg-secondary)"][style*="border-radius:8px"]{backgro
 .badge-success{background:#e4f1d8!important;color:#2d6a35!important;border-radius:6px!important;font-size:10px!important;padding:2px 7px!important}
 .badge-warning{background:#fef9e7!important;color:#7d5a00!important;border-radius:6px!important;font-size:10px!important;padding:2px 7px!important}
 /* Boutons */
-.btn-primary{background:#7c6cf0!important;color:#fff!important;border:none!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important;font-weight:500!important}
+.btn-primary{background:#6B74D6!important;color:#fff!important;border:none!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:12px!important;font-weight:500!important}
 .btn-primary:hover{background:#6558d4!important}
-.btn-outline{background:transparent!important;color:#7c6cf0!important;border:0.5px solid #7c6cf0!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:11px!important}
+.btn-outline{background:transparent!important;color:#6B74D6!important;border:0.5px solid #6B74D6!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:11px!important}
 .btn-ghost{background:transparent!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important;border-radius:8px!important;font-family:'Manrope',sans-serif!important;font-size:11px!important}
 .btn-sm{padding:5px 10px!important;font-size:11px!important}
 /* Bouton période actif */
-.active-period{background:#ede9fe!important;color:#534ab7!important;font-weight:600!important;border:0.5px solid #c9c4f5!important}
+.active-period{background:#e0f7fa!important;color:#5B8ED6!important;font-weight:600!important;border:0.5px solid #c9c4f5!important}
 @media(max-width:1024px){[class*="lg:grid-cols-2"]{grid-template-columns:1fr!important}[class*="lg:grid-cols-4"]{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:640px){[class*="md:grid-cols-2"],[class*="lg:grid-cols-4"]{grid-template-columns:1fr!important}}
 </style>

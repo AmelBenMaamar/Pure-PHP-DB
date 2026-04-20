@@ -576,7 +576,7 @@ body.dark-mode .cat-card--7 { background: #2a0f18; }
 body.dark-mode .cat-card--8 { background: #2a140e; }
 
 /* Titres et labels cat cards — inverser sans casser la couleur de chaque thème */
-body.dark-mode .cat-card--1 .cat-title { color: #c4bfff; }
+body.dark-mode .cat-card--1 .cat-title { color: #b8eef1; }
 body.dark-mode .cat-card--2 .cat-title { color: #86efcc; }
 body.dark-mode .cat-card--3 .cat-title { color: #fdba9a; }
 body.dark-mode .cat-card--4 .cat-title { color: #fcd48a; }
@@ -612,7 +612,7 @@ body.dark-mode .cta-inner-new {
     background: #1e1b3a;
     border-color: #3730a3;
 }
-body.dark-mode .cta-title-new { color: #c4bfff; }
+body.dark-mode .cta-title-new { color: #b8eef1; }
 body.dark-mode .cta-desc-new  { color: #a5b4fc; }
 
 /* Section titles */
@@ -640,7 +640,7 @@ body.dark-mode .ft-social {
 body.dark-mode .ft-social:hover {
     background: #312e81;
     border-color: #4338ca;
-    color: #c4bfff;
+    color: #b8eef1;
 }
 
 /* Dropdown */

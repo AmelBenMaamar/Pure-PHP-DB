@@ -324,6 +324,7 @@ class SellerController extends Controller {
      * Mettre à jour un produit
      */
     public function updateProduct($id) {
+        $this->requireSeller();
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             $this->redirect('/seller/products');
         }

@@ -90,6 +90,6 @@ h1{font-family:Georgia,serif;font-weight:400;color:#1e1208;font-size:26px;margin
 h2{font-family:Georgia,serif;font-weight:400;color:#1e1208;font-size:18px;margin:28px 0 12px;padding-bottom:8px;border-bottom:0.5px solid #ede8df}
 p,li{font-family:'Manrope',sans-serif;font-size:13px;color:#6b5c4e;line-height:1.7}
 section{background:#fff;border:0.5px solid #ede8df;border-radius:14px;padding:22px 26px;margin-bottom:14px}
-a{color:#7c6cf0;text-decoration:none}
+a{color:#6B74D6;text-decoration:none}
 a:hover{text-decoration:underline}
 </style>

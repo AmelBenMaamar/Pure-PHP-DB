@@ -161,6 +161,6 @@ section {
 }
 
 /* Liens */
-a { color: #7c6cf0; text-decoration: none; }
+a { color: #6B74D6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 </style>

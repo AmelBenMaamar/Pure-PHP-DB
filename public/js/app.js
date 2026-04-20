@@ -28,33 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // DROPDOWNS - Menus déroulants
 // ================================================================
 function initDropdowns() {
-    const dropdowns = document.querySelectorAll('[data-dropdown]');
-    
-    dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('button');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        
-        if (!button || !menu) return;
-        
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            
-            // Fermer les autres dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(m => {
-                if (m !== menu) m.classList.add('hidden');
-            });
-            
-            menu.classList.toggle('hidden');
-        });
-        
-        document.addEventListener('click', () => {
-            menu.classList.add('hidden');
-        });
-        
-        menu.addEventListener('click', (e) => e.stopPropagation());
-    });
-    
-    console.log(`   ✅ ${dropdowns.length} dropdown(s) initialisé(s)`);
+    // Désactivé : géré par le script inline du header (openDropdown/closeDropdown)
+    console.log('   ✅ Dropdowns gérés par header.php');
 }
 
 // ================================================================
@@ -269,47 +244,6 @@ async function handleCheckout(e) {
 /**
  * Alternative: Si vous utilisez Stripe.js (méthode recommandée)
  */
-async function handleCheckoutWithStripeJS(e) {
-    e.preventDefault();
-
-    const stripe = Stripe('<?php echo STRIPE_PUBLIC_KEY; ?>'); // Clé publique
-    const btn = e.target;
-    const originalText = btn.textContent;
-
-    btn.disabled = true;
-    btn.textContent = '⏳ Préparation...';
-
-    try {
-        // Créer la session
-        const response = await fetch('/stripe/create-checkout-session', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        const data = await response.json();
-
-        if (data.error) {
-            throw new Error(data.error);
-        }
-
-        // Rediriger avec Stripe.js
-        const { error } = await stripe.redirectToCheckout({
-            sessionId: data.session_id // Si vous retournez session_id au lieu de checkout_url
-        });
-
-        if (error) {
-            throw new Error(error.message);
-        }
-
-    } catch (error) {
-        console.error('Erreur:', error);
-        showToast(error.message, 'error');
-        btn.disabled = false;
-        btn.textContent = originalText;
-    }
-}
 
 
 // ================================================================

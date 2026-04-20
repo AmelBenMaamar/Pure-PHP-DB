@@ -1,0 +1,104 @@
+/* ================================================================
+   MARKETFLOW PRO — SURCHARGES MAQUETTE2 (extrait des vues)
+   Chargé après style.css pour respecter la cascade
+   ================================================================ */
+
+/* ── BASE & TYPOGRAPHIE ── */
+.container { background: #faf9f5; }
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; font-weight: 400; color: #1e1208; }
+.card { background: #fff; border: 0.5px solid #ede8df; border-radius: 14px; box-shadow: none !important; }
+[style*="box-shadow: var(--shadow-lg)"], [style*="box-shadow: 0 20px"], [style*="box-shadow: var(--shadow"] { box-shadow: none !important; }
+
+/* ── COULEURS & ÉLÉMENTS COMMUNS ── */
+[style*="color: var(--primary-600)"] { color: #6B74D6 !important; }
+[style*="var(--primary-600)"] { color: #6B74D6; }
+[style*="background: var(--primary-600)"] { background: #6B74D6 !important; }
+[style*="background: var(--gradient-primary)"] { background: #e0f7fa !important; }
+[style*="background: linear-gradient"] { background: #e0f7fa !important; color: #5B8ED6 !important; }
+[style*="color: white"]:not(button):not(.auth-btn) { color: #5B8ED6 !important; }
+[style*="background: var(--success-light)"] { background: #e4f1d8 !important; }
+[style*="border-left: 3px solid var(--primary"] { border-left: 2px solid #6B74D6 !important; }
+[style*="background: var(--bg-secondary)"] { background: #faf9f5 !important; }
+
+/* ── BOUTONS ── */
+.btn, .btn-primary, .btn.btn-primary {
+  background: #6B74D6 !important; color: #fff !important; border: none !important;
+  border-radius: 8px; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 500;
+  padding: 7px 14px; transition: background 0.15s; cursor: pointer;
+}
+.btn:hover, .btn-primary:hover, .btn.btn-primary:hover { background: #5a67c0 !important; }
+.btn-secondary, .btn.btn-secondary {
+  background: #f5f1eb !important; color: #6b5c4e !important;
+  border: 0.5px solid #ddd6c8 !important; border-radius: 8px;
+}
+.btn-ghost { background: transparent !important; color: #6b5c4e !important; border: 0.5px solid #ddd6c8 !important; }
+.btn-outline { background: transparent !important; color: #6B74D6 !important; border: 0.5px solid #6B74D6 !important; border-radius: 8px; }
+.btn-sm { padding: 5px 10px !important; font-size: 11px !important; }
+.btn-lg { padding: 12px 24px !important; font-size: 14px !important; }
+
+/* ── FICHE PRODUIT (show.php) ── */
+.tab-btn { font-family: 'Manrope', sans-serif; font-size: 13px; color: #6b5c4e; background: none; transition: all 0.15s; }
+.tab-btn.active, [style*="border-bottom: 2px solid var(--primary-600)"] { border-bottom: 1.5px solid #6B74D6 !important; color: #6B74D6 !important; }
+[style*="font-size: 2.5rem"][style*="font-weight: 700"] { font-family: Georgia, serif; font-size: 32px !important; font-weight: 400 !important; color: #1e1208 !important; }
+[style*="font-size: 1.35rem"][style*="font-weight: 7"] { font-family: Georgia, serif; font-size: 20px !important; font-weight: 400 !important; color: #1e1208 !important; }
+.thumbnail-item { cursor: pointer; border: 1.5px solid transparent; border-radius: 8px; overflow: hidden; opacity: 0.65; transition: all 0.15s; }
+.thumbnail-item:hover, .thumbnail-item.active { opacity: 1; border-color: #6B74D6; }
+.star-rating span, [class*="star"] { color: #ba7517; }
+.product-image { border-radius: 12px !important; }
+
+/* ── PANIER (cart/index.php) ── */
+[style*="grid-template-columns: 1fr 400px"] { gap: 20px; }
+[style*="font-size: 1.25rem"][style*="font-weight: 7"]:not(h2) { font-family: Georgia, serif; font-size: 18px !important; font-weight: 400 !important; color: #1e1208 !important; }
+.form-input, .form-label { font-family: 'Manrope', sans-serif; font-size: 13px; }
+.form-input {
+  border: 0.5px solid #ddd6c8; border-radius: 8px; background: #faf9f5;
+  color: #1e1208; outline: none; padding: 9px 12px; transition: border-color 0.15s;
+}
+.form-input:focus { border-color: #6B74D6; background: #fff; box-shadow: 0 0 0 3px rgba(107, 116, 214,.1); }
+img[style*="border-radius: var(--radius)"] { border-radius: 10px !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  [style*="grid-template-columns: 1fr 400px"], [style*="grid-template-columns: 120px 1fr auto"] { grid-template-columns: 1fr !important; }
+  aside { position: relative !important; top: 0 !important; }
+}
+@media (max-width: 768px) {
+  .products-grid, .grid.grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .products-grid, .grid.grid-4 { grid-template-columns: 1fr !important; }
+  .search-form-inner { flex-direction: column; }
+}
+
+/* ── Logo bounce hover ─────────────────────────────────── */
+@keyframes logo-bounce {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.25); }
+    60%  { transform: scale(1.1); }
+    80%  { transform: scale(1.2); }
+    100% { transform: scale(1.15); }
+}
+
+@keyframes logo-bounce-out {
+    0%   { transform: scale(1.15); }
+    40%  { transform: scale(0.9); }
+    70%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.nav-logo-icon,
+.ft-logo-ic {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-logo:hover .nav-logo-icon,
+.ft-logo:hover .ft-logo-ic {
+    animation: logo-bounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.nav-logo-icon,
+.ft-logo-ic {
+    animation: none;
+}
+

@@ -526,18 +526,18 @@ input.input, select.input {
     color: #1e1208 !important;
 }
 input.input:focus, select.input:focus {
-    border-color: #7c6cf0 !important;
-    box-shadow: 0 0 0 3px rgba(124,108,240,.1) !important;
+    border-color: #6B74D6 !important;
+    box-shadow: 0 0 0 3px rgba(107, 116, 214,.1) !important;
     background: #fff !important;
 }
-.btn.btn-primary { background: #7c6cf0 !important; color: #fff !important; border: none !important; border-radius: 8px !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; box-shadow: none !important; }
+.btn.btn-primary { background: #6B74D6 !important; color: #fff !important; border: none !important; border-radius: 8px !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; box-shadow: none !important; }
 .btn.btn-ghost { background: transparent !important; color: #6b5c4e !important; border: 0.5px solid #ddd6c8 !important; border-radius: 8px !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
 
 /* Tableau header */
 .bg-bg-tertiary.sticky { background: #faf9f5 !important; }
 thead th { font-family: 'Manrope', sans-serif !important; font-size: 10px !important; font-weight: 600 !important; color: #a0907e !important; text-transform: uppercase !important; }
 /* Prix produit */
-.text-primary-600.font-semibold { color: #7c6cf0 !important; font-family: Georgia, serif !important; font-weight: 400 !important; font-size: 14px !important; }
+.text-primary-600.font-semibold { color: #6B74D6 !important; font-family: Georgia, serif !important; font-weight: 400 !important; font-size: 14px !important; }
 /* Lignes hover */
 tr:hover { background: #faf9f5 !important; }
 /* Catégorie / ID / dates */
@@ -562,7 +562,7 @@ tr:hover { background: #faf9f5 !important; }
 .bg-bg-tertiary.rounded-b-lg { background: #faf9f5 !important; border-top: 0.5px solid #ede8df !important; }
 
 /* Spinner */
-.spinner { border-color: #ede8df !important; border-top-color: #7c6cf0 !important; }
+.spinner { border-color: #ede8df !important; border-top-color: #6B74D6 !important; }
 
 /* Modals */
 .modal-content {
@@ -586,5 +586,5 @@ button.btn.btn-error { background: #993c1d !important; color: #fff !important; b
 button.btn.btn-secondary { background: #f5f1eb !important; color: #6b5c4e !important; border: 0.5px solid #ddd6c8 !important; border-radius: 8px !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
 
 /* Checkbox */
-input[type="checkbox"] { accent-color: #7c6cf0 !important; }
+input[type="checkbox"] { accent-color: #6B74D6 !important; }
 </style>

@@ -210,6 +210,13 @@ if (isset($_SESSION['user_id'])) {
             $inWishlist = $stmt->fetch() !== false;
         }
 
+        // ✅ MVC FIX : Passage des IDs wishlist à la vue (évite new Model dans le template)
+        $data["wishlistIds"] = [];
+        if (isset($_SESSION["user_id"])) {
+            $wishlistModel = new \App\Models\Wishlist();
+            $data["wishlistIds"] = $wishlistModel->getUserWishlistIds($_SESSION["user_id"]);
+        }
+
         $this->render('products/show', [
             'title' => $product['title'],
             'product' => $product,
@@ -402,7 +409,8 @@ $this->jsonResponse(['products' => [], 'tags' => []]);
 
             $this->render('products/categories', [
                 'title' => 'Toutes les catégories',
-                'categories' => $categories
+                'categories' => $categories,
+                'extraCss'   => ['pages-categories.css']
             ]);
         }
 
@@ -440,13 +448,24 @@ $this->jsonResponse(['products' => [], 'tags' => []]);
         // Récupération des produits via le modèle
         $result = $this->productModel->getProducts($filters, $page, $perPage);
 
+        // Récupération de toutes les catégories pour la sidebar
+        $stmtCats = $this->db->query("
+            SELECT c.*, COUNT(p.id) as product_count
+            FROM categories c
+            LEFT JOIN products p ON c.id = p.category_id AND p.status = 'approved'
+            GROUP BY c.id
+            ORDER BY c.name ASC
+        ");
+        $categories = $stmtCats->fetchAll();
+
         // Rendu de la vue avec toutes les données
         $this->render('products/category', [
-            'title' => $category['name'],
-            'category' => $category,
-            'products' => $result['products'],
+            'title'      => $category['name'],
+            'category'   => $category,
+            'categories' => $categories,
+            'products'   => $result['products'],
             'pagination' => [
-                'current' => $result['page'],
+                'current'     => $result['page'],
                 'total_pages' => $result['total_pages'],
                 'total_items' => $result['total']
             ]

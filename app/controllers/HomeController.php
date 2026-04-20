@@ -60,18 +60,35 @@ class HomeController extends Controller {
         // 🆕 Récupérer le nombre RÉEL de produits par catégorie (dynamique)
         // Appelle la méthode countByCategory() qui compte en base de données
         // Les chiffres se mettent à jour automatiquement quand on ajoute des produits
-        $categoryCounts = [
-            'developpement-personnel' => $productModel->countByCategory('developpement-personnel'),
-            'sante-alimentation'      => $productModel->countByCategory('sante-alimentation'),
-            'jardin-autonomie'        => $productModel->countByCategory('jardin-autonomie'),
-            'maison-energie'          => $productModel->countByCategory('maison-energie'),
-        ];
+        $stmt = $this->db->query("
+            SELECT c.slug, c.description, COUNT(p.id) as product_count
+            FROM categories c
+            LEFT JOIN products p ON c.id = p.category_id
+                AND p.status IN ('approved','active')
+            WHERE c.is_active = TRUE
+            GROUP BY c.id
+        ");
+        $catRows = $stmt->fetchAll();
+        $categoryCounts = [];
+        $categoryDescs  = [];
+        foreach ($catRows as $row) {
+            $categoryCounts[$row['slug']] = (int)$row['product_count'];
+            $categoryDescs[$row['slug']]  = $row['description'] ?? '';
+        }
 
         // Transmettre les données à la vue
+        // Stats globales pour la hero bar (calcul depuis les compteurs existants)
+        $totalProducts   = array_sum($categoryCounts);
+        $totalCategories = count(array_filter($categoryCounts, fn($v) => $v > 0));
+
         return $this->render('home/index', [
-            'title' => 'Accueil - MarketFlow Pro',
-            'products' => $products,
-            'categoryCounts' => $categoryCounts // Compteurs dynamiques transmis à la vue
+            'title'          => 'Accueil - MarketFlow Pro',
+            'products'       => $products,
+            'categoryCounts' => $categoryCounts,
+            'categoryDescs'  => $categoryDescs,
+            'totalProducts'  => $totalProducts,
+            'totalCategories'=> $totalCategories,
+            'extraCss'       => ['maquette2-overrides.css', 'pages-override.css', 'pages-home.css', 'pages-categories.css'],
         ]);
     }
 

@@ -1,0 +1,283 @@
+/* ================================================================
+   CATEGORIES PAGE — Maquette2 (extrait inline → fichier externe)
+   ================================================================ */
+.cat-hero { background: #faf9f5; padding: 40px 0 32px; border-bottom: 0.5px solid #ede8df; margin-bottom: 0; }
+.cat-hero-inner { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+.cat-breadcrumb { display: flex; align-items: center; gap: 8px; font-family: 'Manrope', sans-serif; font-size: 12px; color: #6b5e52; margin-bottom: 20px; }
+.cat-breadcrumb a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; }
+.cat-breadcrumb a:hover { color: #5B8ED6; border-bottom-color: #c9c4f5; }
+.cat-breadcrumb-sep { color: #c9c4f5; font-size: 10px; user-select: none; }
+.cat-breadcrumb-current { color: #1e1208; font-weight: 500; }
+.cat-hero-title { font-family: Georgia, serif; font-size: clamp(26px, 4vw, 36px); font-weight: 400; color: #1e1208; line-height: 1.2; margin: 0 0 6px; }
+.cat-hero-sub { font-family: 'Manrope', sans-serif; font-size: 13px; color: #8a7060; margin: 0 0 24px; line-height: 1.7; }
+.cat-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.cat-stat { display: flex; flex-direction: column; gap: 2px; }
+.cat-stat-val { font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: #1e1208; line-height: 1; }
+.cat-stat-lbl { font-family: 'Manrope', sans-serif; font-size: 10px; color: #a0907e; text-transform: uppercase; letter-spacing: 0.07em; }
+.cat-stat-sep { width: 0.5px; background: #ede8df; align-self: stretch; min-height: 24px; }
+.cat-page-grid { max-width: 1240px; margin: 0 auto; padding: 32px 40px 56px; }
+.cat-section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+.cat-section-head h2 { font-family: Georgia, serif; font-size: 18px; font-weight: 400; color: #1e1208; margin: 0; }
+.cat-section-count { font-family: 'Manrope', sans-serif; font-size: 11px; color: #a0907e; }
+.cat-rows { display: flex; flex-direction: column; gap: 12px; }
+.cat-row-2col   { display: grid; grid-template-columns: 1.5fr 1fr;   gap: 12px; }
+.cat-row-2col-r { display: grid; grid-template-columns: 1fr 1.5fr;   gap: 12px; }
+.cat-row-3col   { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.cat-row-1col   { display: grid; grid-template-columns: 1fr;         gap: 12px; }
+.cat-cta { background: #ebe8fb; border: 0.5px solid #c9c4f5; border-radius: 16px; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 32px; flex-wrap: wrap; }
+.cat-cta-text h3 { font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: #2a2165; margin: 0 0 6px; }
+.cat-cta-text p { font-family: 'Manrope', sans-serif; font-size: 13px; color: #5B8ED6; margin: 0; line-height: 1.6; max-width: 380px; }
+.cat-cta-btn { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 500; color: #fff; background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%); background-size: 200% auto; border: none; border-radius: 20px; padding: 10px 24px; text-decoration: none; white-space: nowrap; transition: background 0.15s; flex-shrink: 0; }
+.cat-cta-btn:hover { background-position: right center; color: #fff; }
+.cat-empty { text-align: center; padding: 64px 20px; font-family: 'Manrope', sans-serif; font-size: 14px; color: #a0907e; }
+.cat-empty-icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+
+@media (max-width: 900px) {
+  .cat-hero-inner { padding: 0 20px; }
+  .cat-page-grid  { padding: 24px 20px 40px; }
+  .cat-row-2col, .cat-row-2col-r, .cat-row-3col { grid-template-columns: 1fr 1fr; }
+  .cat-cta        { flex-direction: column; padding: 28px 24px; }
+  .cat-cta-btn    { width: 100%; text-align: center; }
+}
+@media (max-width: 600px) {
+  .cat-hero { padding: 28px 0 22px; }
+  .cat-stats { gap: 16px; }
+  .cat-stat-sep { display: none; }
+  .cat-row-2col, .cat-row-2col-r, .cat-row-3col { grid-template-columns: 1fr; }
+  .cat-card .cat-title { font-size: 20px; }
+}
+
+/* ================================================================
+   BREADCRUMB — fix spécificité + cohérence maquette2
+   ================================================================ */
+
+/* Force la couleur contre l'override du 'a' global de style.css */
+.cat-breadcrumb a {
+    color: #6b5e52 !important;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-bottom-color 0.15s ease;
+    font-family: 'Manrope', sans-serif;
+}
+
+.cat-breadcrumb a:hover {
+    color: #5B8ED6 !important;
+    border-bottom-color: #c9c4f5;
+}
+
+/* Séparateur › plus visible et bien espacé */
+.cat-breadcrumb-sep {
+    color: #c9c4f5;
+    font-size: 12px;
+    line-height: 1;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+/* Texte courant : sobre et lisible */
+.cat-breadcrumb-current {
+    color: #1e1208;
+    font-weight: 500;
+}
+
+/* Conteneur : alignement et espacement corrects */
+.cat-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #6b5e52;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+}
+
+/* ================================================================
+   BREADCRUMB STYLISÉ v2 — pill flottante, harmonie maquette2
+   ================================================================ */
+
+/* Reset des anciennes règles */
+.cat-breadcrumb,
+.cat-breadcrumb a,
+.cat-breadcrumb-sep,
+.cat-breadcrumb-current { all: revert; }
+
+/* ── Conteneur pill ── */
+.cat-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    margin-bottom: 24px;
+
+    background: #ffffff;
+    border: 0.5px solid #ddd6c8;
+    border-radius: 20px;
+    padding: 5px 14px 5px 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+
+    transition: box-shadow 0.2s ease;
+}
+
+.cat-breadcrumb:hover {
+    box-shadow: 0 3px 12px rgba(107, 116, 214, 0.12);
+}
+
+/* ── Icône maison ── */
+.cat-breadcrumb-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #e0f7fa;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+    transition: background 0.15s ease;
+}
+
+.cat-breadcrumb-home svg {
+    width: 11px;
+    height: 11px;
+    stroke: #6B74D6;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ── Lien Accueil ── */
+.cat-breadcrumb a {
+    color: #6b5e52 !important;
+    text-decoration: none !important;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+    line-height: 1;
+    border: none !important;
+}
+
+.cat-breadcrumb a:hover {
+    color: #5B8ED6 !important;
+}
+
+.cat-breadcrumb a:hover ~ .cat-breadcrumb-home,
+.cat-breadcrumb:hover .cat-breadcrumb-home {
+    background: #ddd8f8;
+}
+
+/* ── Séparateur chevron SVG ── */
+.cat-breadcrumb-sep {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 7px;
+    color: transparent !important;
+    font-size: 0 !important;
+    flex-shrink: 0;
+}
+
+.cat-breadcrumb-sep::after {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpolyline points='4,2 8,6 4,10' stroke='%23c9c4f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+/* ── Page courante : badge violet doux ── */
+.cat-breadcrumb-current {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #5B8ED6;
+    background: #e0f7fa;
+    border-radius: 10px;
+    padding: 2px 9px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .cat-breadcrumb {
+        font-size: 11px;
+        padding: 4px 12px 4px 6px;
+    }
+}
+
+/* ================================================================
+   FIN BREADCRUMB v2
+   ================================================================ */
+
+/* ── GRADIENT sur bouton CTA catégories ── */
+.cat-cta-btn {
+    background: linear-gradient(
+        90deg,
+        #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%,
+        #6BC6D6 75%, rgba(218,247,218,0.9) 89%, #6BD1D6 100%
+    ) !important;
+    background-size: 200% auto !important;
+    animation: cat-brand-slide 6s linear infinite !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+@keyframes cat-brand-slide {
+    0%   { background-position: 0%   center; }
+    100% { background-position: 200% center; }
+}
+
+.cat-cta-btn:hover {
+    background-position: right center !important;
+    box-shadow: 0 6px 20px rgba(107, 116, 214, 0.3) !important;
+    transform: translateY(-2px) !important;
+    color: #fff !important;
+}
+
+
+/* ================================================================
+   ICÔNE FRAME — bounce au survol (version unique, sans conflit)
+   ================================================================ */
+
+/* Neutralise la rotation héritée de style.css sur le wrapper */
+.cat-card:hover .cat-icon {
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Transition repos → hover sur le cadre */
+.cat-icon-frame {
+    display: inline-flex;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: transform;
+}
+
+/* Bounce déclenché au hover de la carte */
+.cat-card:hover .cat-icon-frame {
+    animation: icon-bounce 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    box-shadow: 0 6px 16px rgba(107, 116, 214, 0.28);
+}
+
+@keyframes icon-bounce {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-9px); }
+    50%  { transform: translateY(-4px); }
+    70%  { transform: translateY(-7px); }
+    90%  { transform: translateY(-1px); }
+    100% { transform: translateY(0); }
+}
+
+/* ================================================================
+   FIN ICÔNE FRAME BOUNCE
+   ================================================================ */

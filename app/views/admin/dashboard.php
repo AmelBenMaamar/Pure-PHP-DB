@@ -535,7 +535,7 @@ body { background: #faf9f5 !important; color: #1e1208 !important; }
     box-shadow: none !important;
 }
 .btn-icon:hover {
-    border-color: #7c6cf0 !important;
+    border-color: #6B74D6 !important;
     box-shadow: none !important;
     transform: none !important;
     background: #f5f3ff !important;
@@ -555,13 +555,13 @@ body { background: #faf9f5 !important; color: #1e1208 !important; }
     box-shadow: none !important;
 }
 /* Barre couleur au survol : remplace le dégradé bleu */
-.stat-card::before { background: #7c6cf0 !important; }
+.stat-card::before { background: #6B74D6 !important; }
 .stat-card:hover { transform: translateY(-2px) !important; box-shadow: none !important; }
 
 /* Icônes de stats : dégradés vivifiants → pastels maquette2 */
 .stat-icon { box-shadow: none !important; }
 /* Icône bleue par défaut → violet pastel */
-.stat-card .stat-icon { background: #ede9fe !important; }
+.stat-card .stat-icon { background: #e0f7fa !important; }
 /* Icône verte (success) → vert naturel */
 .stat-card.success .stat-icon { background: #e4f1d8 !important; }
 /* Icône rose (warning) → abricot doux */
@@ -622,14 +622,14 @@ body { background: #faf9f5 !important; color: #1e1208 !important; }
 .list-item:hover { background: #f0ece4 !important; transform: none !important; }
 
 /* Avatar placeholder : remplace le dégradé bleu */
-.list-item-avatar-placeholder { background: #ede9fe !important; color: #534ab7 !important; border-radius: 10px !important; font-weight: 500 !important; }
+.list-item-avatar-placeholder { background: #e0f7fa !important; color: #5B8ED6 !important; border-radius: 10px !important; font-weight: 500 !important; }
 
 /* Sous-titre item liste */
 .list-item-subtitle { color: #a0907e !important; font-size: 11px !important; font-family: 'Manrope', sans-serif !important; }
 
 /* === BOUTONS === */
 .btn-primary {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     box-shadow: none !important;
     border-radius: 8px !important;
@@ -655,7 +655,7 @@ body { background: #faf9f5 !important; color: #1e1208 !important; }
     font-size: 12px !important;
     box-shadow: none !important;
 }
-.btn-outline:hover { border-color: #7c6cf0 !important; color: #7c6cf0 !important; }
+.btn-outline:hover { border-color: #6B74D6 !important; color: #6B74D6 !important; }
 
 /* === TABLEAU COMMANDES RÉCENTES === */
 thead tr { border-bottom: 0.5px solid #ede8df !important; }
@@ -665,7 +665,7 @@ tbody tr:hover { background: #faf9f5 !important; }
 td { font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
 
 /* Lien n° commande */
-a[style*="color: var(--primary)"] { color: #7c6cf0 !important; }
+a[style*="color: var(--primary)"] { color: #6B74D6 !important; }
 /* Montant commande */
 td[style*="font-weight: 600"] { font-family: Georgia, serif !important; font-weight: 400 !important; color: #1e1208 !important; }
 /* Date commande */

@@ -91,8 +91,8 @@
     </div>
     <div class="af" style="margin-top:6px">
       <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;color:#6b5c4e;line-height:1.6">
-        <input type="checkbox" name="terms" required style="margin-top:2px;accent-color:#7c6cf0;flex-shrink:0">
-        <span>J'accepte les <a href="/terms" target="_blank" style="color:#7c6cf0;text-decoration:none">CGU</a> et la <a href="/privacy" target="_blank" style="color:#7c6cf0;text-decoration:none">Politique de confidentialité</a></span>
+        <input type="checkbox" name="terms" required style="margin-top:2px;accent-color:#6B74D6;flex-shrink:0">
+        <span>J'accepte les <a href="/terms" target="_blank" style="color:#6B74D6;text-decoration:none">CGU</a> et la <a href="/privacy" target="_blank" style="color:#6B74D6;text-decoration:none">Politique de confidentialité</a></span>
       </label>
     </div>
     <button type="submit" class="auth-btn" id="rsb" style="margin-top:10px">Créer mon compte</button>
@@ -114,15 +114,3 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-<style>
-.rtype-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.rtype-card{border:0.5px solid #ddd6c8;border-radius:12px;padding:14px 12px;cursor:pointer;text-align:center;transition:all 0.15s;display:flex;flex-direction:column;align-items:center;gap:5px}
-.rtype-card svg{width:18px;height:18px;color:#8a7060}
-.rtype-card.active{border-color:#7c6cf0;background:#f5f3ff}
-.rtype-card.active svg{color:#534ab7}
-.rtype-nm{font-family:'Manrope',sans-serif;font-size:13px;font-weight:500;color:#1e1208}
-.rtype-ds{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
-.ai-err{border-color:#d85a30!important}
-.fhint{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;display:block;margin-top:4px}
-.ferr{font-family:'Manrope',sans-serif;font-size:11px;color:#993c1d;display:block;margin-top:4px}
-</style>

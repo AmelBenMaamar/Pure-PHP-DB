@@ -4,7 +4,7 @@
  * ─────────────────────────────────────────────────────────────────
  * Layout 2 colonnes : sidebar filtres (sticky) + grille produits
  * Design system : fond #faf9f5 · Georgia titres · Manrope corps
- * Accent violet #7c6cf0 · Beige doux pour les bordures #ede8df
+ * Accent violet #6B74D6 · Beige doux pour les bordures #ede8df
  * ─────────────────────────────────────────────────────────────────
  * Données PHP attendues :
  *   $category   → array ['name', 'description', 'slug']
@@ -35,7 +35,7 @@
 
         <!-- Cercle avec initiale de la catégorie -->
         <div class="category-icon" aria-hidden="true">
-            <?= strtoupper(mb_substr(e($category[\'name\']), 0, 1)) ?>
+            <?= getCategoryIcon($category['slug']) ?>
         </div>
 
         <div class="category-header-text">
@@ -410,9 +410,9 @@
     font-family: "Manrope", sans-serif; font-size: 0.8rem;
 }
 .breadcrumb-link { color: #8a7060; text-decoration: none; transition: color 0.15s; }
-.breadcrumb-link:hover { color: #7c6cf0; }
+.breadcrumb-link:hover { color: #6B74D6; }
 .breadcrumb-sep { color: #c4b8a8; user-select: none; }
-.breadcrumb-current { font-weight: 600; color: #7c6cf0; }
+.breadcrumb-current { font-weight: 600; color: #6B74D6; }
 
 /* EN-TÊTE CATÉGORIE */
 .category-header {
@@ -423,7 +423,7 @@
 .category-header-inner { display: flex; align-items: flex-start; gap: 1rem; }
 .category-icon {
     width: 48px; height: 48px; min-width: 48px;
-    border-radius: 12px; background: #ede9fe; color: #534ab7;
+    border-radius: 12px; background: #e0f7fa; color: #5B8ED6;
     font-family: Georgia, serif; font-size: 1.4rem;
     display: flex; align-items: center; justify-content: center;
 }
@@ -493,7 +493,7 @@
     text-decoration: none; transition: all 0.15s;
 }
 .category-link:hover { background: #f5f1eb; color: #1e1208; }
-.category-link.active { background: #ede9fe; color: #534ab7; font-weight: 600; }
+.category-link.active { background: #e0f7fa; color: #5B8ED6; font-weight: 600; }
 .category-link .count {
     font-size: 0.7rem; background: #f5f1eb; color: #a0907e;
     padding: 1px 7px; border-radius: 10px;
@@ -509,7 +509,7 @@
 }
 .price-range::-webkit-slider-thumb {
     -webkit-appearance: none; width: 16px; height: 16px;
-    border-radius: 50%; background: #7c6cf0;
+    border-radius: 50%; background: #6B74D6;
     border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.2); cursor: pointer;
 }
 .price-range:focus { box-shadow: none; border: none; }
@@ -558,7 +558,7 @@
     transition: all 0.15s;
 }
 .view-btn:hover { background: #f5f1eb; color: #1e1208; }
-.view-btn.active { background: #ede9fe; color: #534ab7; border-color: #c9c4f5; }
+.view-btn.active { background: #e0f7fa; color: #5B8ED6; border-color: #c9c4f5; }
 
 /* Bouton toggle filtres — masqué sur desktop */
 .toggle-filters { display: none; }
@@ -592,7 +592,7 @@
     position: absolute; top: 10px; left: 10px;
     font-family: "Manrope", sans-serif; font-size: 10px; font-weight: 500;
     padding: 4px 10px; border-radius: 10px;
-    background: rgba(255,255,255,.92); color: #534ab7;
+    background: rgba(255,255,255,.92); color: #5B8ED6;
 }
 
 .product-content { padding: 13px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
@@ -602,7 +602,7 @@
     display: inline-block;
     font-family: "Manrope", sans-serif; font-size: 9px; font-weight: 700;
     letter-spacing: 0.06em; text-transform: uppercase;
-    background: #ede9fe; color: #534ab7;
+    background: #e0f7fa; color: #5B8ED6;
     padding: 3px 8px; border-radius: 20px;
 }
 .product-rating { display: flex; align-items: center; gap: 3px; font-size: 11px; }
@@ -616,7 +616,7 @@
     -webkit-box-orient: vertical; overflow: hidden;
 }
 .product-title a { color: inherit; text-decoration: none; }
-.product-title a:hover { color: #7c6cf0; }
+.product-title a:hover { color: #6B74D6; }
 
 .product-description {
     font-family: "Manrope", sans-serif; font-size: 11px; color: #8a7060;
@@ -626,7 +626,7 @@
 }
 
 .product-seller { font-family: "Manrope", sans-serif; font-size: 11px; color: #a0907e; margin: 0; }
-.seller-link { color: #7c6cf0; text-decoration: none; }
+.seller-link { color: #6B74D6; text-decoration: none; }
 .seller-link:hover { text-decoration: underline; }
 
 .product-footer {
@@ -651,11 +651,11 @@
     cursor: pointer; display: flex; align-items: center; justify-content: center;
     transition: all 0.15s; padding: 0; color: #a0907e;
 }
-.btn-wishlist:hover { border-color: #c9c4f5; background: #ede9fe; color: #7c6cf0; transform: none; }
+.btn-wishlist:hover { border-color: #c9c4f5; background: #e0f7fa; color: #6B74D6; transform: none; }
 .btn.btn-primary.btn-sm {
     font-family: "Manrope", sans-serif; font-size: 11px;
     padding: 5px 12px; border-radius: 8px;
-    background: #ede9fe; color: #534ab7;
+    background: #e0f7fa; color: #5B8ED6;
     border: none; box-shadow: none;
     transition: background 0.15s;
 }
@@ -682,7 +682,7 @@
     padding: 6px 12px; border-radius: 8px; box-shadow: none;
 }
 .pagination-container .btn.btn-secondary.btn-sm:hover { background: #f5f1eb; transform: none; }
-.pagination-container .btn.btn-primary.btn-sm { background: #7c6cf0; color: #fff; font-size: 0.8rem; padding: 6px 12px; border-radius: 8px; box-shadow: none; }
+.pagination-container .btn.btn-primary.btn-sm { background: #6B74D6; color: #fff; font-size: 0.8rem; padding: 6px 12px; border-radius: 8px; box-shadow: none; }
 .pagination-ellipsis { font-family: "Manrope", sans-serif; font-size: 13px; color: #a0907e; padding: 0 4px; }
 
 /* ─── OVERLAY MOBILE ─── */

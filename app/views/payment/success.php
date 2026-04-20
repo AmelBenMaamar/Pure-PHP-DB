@@ -271,7 +271,7 @@ p[style*="font-size: 1.25rem; color: var(--text-secondary)"] {
     font-size: 14px !important;
     color: #6b5c4e !important;
 }
-strong[style*="color: var(--primary-600)"] { color: #7c6cf0 !important; }
+strong[style*="color: var(--primary-600)"] { color: #6B74D6 !important; }
 
 /* Cards */
 .card {
@@ -303,7 +303,7 @@ div[style*="background: var(--success-light)"][style*="color: #065f46"] {
 
 /* Bouton télécharger */
 .btn.btn-primary.btn-sm {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 7px !important;
@@ -325,8 +325,8 @@ div[style*="border-bottom: 1px solid var(--border-color)"] { border-bottom: 0.5p
 
 /* Card infos importantes */
 .card[style*="background: var(--primary-50)"] { background: #f5f3ff !important; border: 0.5px solid #ddd6c8 !important; }
-ul[style*="color: var(--primary-700)"] li { color: #534ab7 !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
-a[style*="color: var(--primary-700)"] { color: #7c6cf0 !important; }
+ul[style*="color: var(--primary-700)"] li { color: #5B8ED6 !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
+a[style*="color: var(--primary-700)"] { color: #6B74D6 !important; }
 
 /* Sidebar récap — labels */
 span[style*="color: var(--text-tertiary)"][style*="font-size: 0.875rem"] { color: #a0907e !important; font-family: 'Manrope', sans-serif !important; font-size: 12px !important; }
@@ -334,7 +334,7 @@ span[style*="font-weight: 600; font-family: var(--font-mono)"] { font-family: 'M
 
 /* Total payé */
 div[style*="border-top: 2px solid var(--border-color)"] { border-top: 0.5px solid #ede8df !important; }
-span[style*="font-weight: 700; color: var(--primary-600)"] { color: #7c6cf0 !important; font-family: Georgia, serif !important; font-weight: 400 !important; font-size: 20px !important; }
+span[style*="font-weight: 700; color: var(--primary-600)"] { color: #6B74D6 !important; font-family: Georgia, serif !important; font-weight: 400 !important; font-size: 20px !important; }
 span[style*="font-weight: 700"][style*="font-size: 1.25rem"] { font-family: Georgia, serif !important; font-weight: 400 !important; color: #1e1208 !important; }
 
 /* Méthode paiement */
@@ -347,7 +347,7 @@ div[style*="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom"] { c
 span[style*="color: var(--success)"][style*="margin-left: auto"] { color: #3a7d44 !important; font-size: 11px !important; }
 
 /* Boutons actions */
-.btn.btn-primary[style*="width: 100%"] { background: #7c6cf0 !important; border-radius: 10px !important; font-family: 'Manrope', sans-serif !important; box-shadow: none !important; }
+.btn.btn-primary[style*="width: 100%"] { background: #6B74D6 !important; border-radius: 10px !important; font-family: 'Manrope', sans-serif !important; box-shadow: none !important; }
 .btn.btn-secondary[style*="width: 100%"] { background: #f5f1eb !important; color: #6b5c4e !important; border: 0.5px solid #ddd6c8 !important; border-radius: 10px !important; font-family: 'Manrope', sans-serif !important; box-shadow: none !important; }
 
 /* Support sidebar */
@@ -356,7 +356,7 @@ div[style*="margin-top: var(--space-6)"][style*="text-align: center"] {
     border: 0.5px solid #ede8df !important;
     border-radius: 12px !important;
 }
-a[href="/contact"][style*="color: var(--primary-600)"] { color: #7c6cf0 !important; font-family: 'Manrope', sans-serif !important; }
+a[href="/contact"][style*="color: var(--primary-600)"] { color: #6B74D6 !important; font-family: 'Manrope', sans-serif !important; }
 
 /* Responsive */
 @media (max-width: 1024px) {

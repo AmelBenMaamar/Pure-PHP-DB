@@ -77,7 +77,7 @@ p[style*="font-family: monospace"] {
 
 /* Boutons */
 .btn.btn-primary.btn-lg {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 10px !important;
@@ -96,7 +96,7 @@ p[style*="font-family: monospace"] {
     font-weight: 500 !important;
     box-shadow: none !important;
 }
-.btn.btn-outline.btn-lg:hover { border-color: #7c6cf0 !important; color: #7c6cf0 !important; }
+.btn.btn-outline.btn-lg:hover { border-color: #6B74D6 !important; color: #6B74D6 !important; }
 
 /* Pied de card */
 div[style*="border-top: 1px solid var(--border-color)"] { border-top: 0.5px solid #ede8df !important; }
@@ -105,5 +105,5 @@ p[style*="font-size: 0.875rem; color: var(--text-tertiary)"] {
     font-size: 12px !important;
     color: #a0907e !important;
 }
-a[href="/contact"] { color: #7c6cf0 !important; }
+a[href="/contact"] { color: #6B74D6 !important; }
 </style>

@@ -1,6 +1,15 @@
-/* Module principal - Importer les autres modules */
-@import url('variables.css');
-@import url('reset.css');
-@import url('components.css');
-@import url('animations.css');
-@import url('responsive.css');
+/* main.css — point d'entrée CSS MarketFlow Pro
+   Importe uniquement les feuilles qui existent dans public/css/
+   Ce fichier sert de référence d'organisation ; le chargement
+   réel se fait via header.php */
+
+/* @import url('variables.css');   — à créer si refacto à venir */
+/* @import url('reset.css');       — à créer si refacto à venir */
+/* @import url('components.css');  — à créer si refacto à venir */
+
+/* Fichiers actuellement chargés par header.php : */
+/* style.css          → design system principal (maquette2) */
+/* dark-mode.css      → thème sombre                        */
+/* notifications.css  → toasts / alertes                    */
+/* animations.css     → transitions globales                */
+/* search.css         → autocomplete barre de recherche     */

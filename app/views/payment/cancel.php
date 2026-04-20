@@ -112,7 +112,7 @@ h3[style*="margin-bottom"] {
 
 /* Boutons */
 .btn.btn-primary.btn-lg {
-    background: #7c6cf0 !important;
+    background: #6B74D6 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 10px !important;
@@ -134,7 +134,7 @@ h3[style*="margin-bottom"] {
 div[style*="background: var(--primary-50)"] {
     background: #f5f3ff !important;
     border-radius: 12px !important;
-    color: #534ab7 !important;
+    color: #5B8ED6 !important;
     font-family: 'Manrope', sans-serif !important;
     font-size: 13px !important;
 }
@@ -145,5 +145,5 @@ div[style*="font-size: 0.875rem; color: var(--text-tertiary)"] {
     font-size: 12px !important;
     color: #a0907e !important;
 }
-a[href="/contact"] { color: #7c6cf0 !important; }
+a[href="/contact"] { color: #6B74D6 !important; }
 </style>

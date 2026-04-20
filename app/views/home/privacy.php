@@ -130,5 +130,5 @@ ul[style*="padding-left"] li {
 }
 
 /* Liens */
-a[style*="color: var(--primary-600)"] { color: #7c6cf0 !important; }
+a[style*="color: var(--primary-600)"] { color: #6B74D6 !important; }
 </style>

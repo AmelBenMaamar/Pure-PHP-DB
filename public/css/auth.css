@@ -1,0 +1,53 @@
+/* ================================================================
+   AUTH FORMS — Styles partagés (Login / Register)
+   Extrait des <style> inline pour respect MVC & cache
+   ================================================================ */
+.auth-wrap{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:#faf9f5}
+.auth-card{background:#fff;border:0.5px solid #ede8df;border-radius:20px;padding:40px;max-width:440px;width:100%}
+.auth-head{text-align:center;margin-bottom:28px}
+.auth-logo{width:48px;height:48px;border-radius:14px;background:#e0f7fa;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:500;color:#6B74D6;margin:0 auto 16px;line-height:1}
+.auth-title{font-family:Georgia,serif;font-size:26px;font-weight:400;color:#1e1208;margin-bottom:6px}
+.auth-sub{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060;margin:0}
+.auth-err{display:flex;align-items:center;gap:8px;background:#fce5df;border-radius:10px;padding:12px 14px;font-family:'Manrope',sans-serif;font-size:13px;color:#993c1d;margin-bottom:20px}
+.af{margin-bottom:16px}
+.al{font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;color:#1e1208;display:block;margin-bottom:6px}
+.ai{width:100%;padding:10px 14px;border:0.5px solid #ddd6c8;border-radius:10px;background:#faf9f5;font-family:'Manrope',sans-serif;font-size:13px;color:#1e1208;outline:none;box-sizing:border-box;transition:border-color 0.15s}
+.ai:focus{border-color:#6B74D6;background:#fff;box-shadow:0 0 0 3px rgba(107, 116, 214,.1)}
+.auth-fgt{font-family:'Manrope',sans-serif;font-size:12px;color:#6B74D6;text-decoration:none}
+.auth-eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#a0907e;padding:4px;display:flex}
+.auth-eye svg{width:15px;height:15px}
+.auth-btn{width:100%;padding:11px;background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%); background-size: 200% auto;color:#fff;border:none;border-radius:10px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:background 0.15s;margin-top:4px}
+.auth-btn:hover{background-position: right center}
+.auth-btn:disabled{opacity:.65;cursor:not-allowed}
+.auth-sep{display:flex;align-items:center;gap:12px;margin:24px 0}
+.auth-sep::before,.auth-sep::after{content:'';flex:1;height:0.5px;background:#ede8df}
+.auth-sep span{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
+.auth-sw{text-align:center;font-family:'Manrope',sans-serif;font-size:13px;color:#6b5c4e;margin:0 0 14px}
+.auth-sw a{color:#6B74D6;text-decoration:none;font-weight:500}
+.auth-legal{text-align:center;font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;line-height:1.7;margin:0;padding-top:16px;border-top:0.5px solid #ede8df}
+.auth-legal a{color:#6B74D6;text-decoration:none}
+@media(max-width:500px){.auth-card{padding:28px 20px}}
+
+/* ── GRADIENT sur bouton auth principal ── */
+.auth-btn {
+    background: linear-gradient(
+        90deg,
+        #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%,
+        #6BC6D6 75%, rgba(218,247,218,0.9) 89%, #6BD1D6 100%
+    ) !important;
+    background-size: 200% auto !important;
+    animation: auth-brand-slide 6s linear infinite !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+@keyframes auth-brand-slide {
+    0%   { background-position: 0%   center; }
+    100% { background-position: 200% center; }
+}
+
+.auth-btn:hover {
+    background-position: right center !important;
+    box-shadow: 0 6px 20px rgba(107, 116, 214, 0.35) !important;
+    transform: translateY(-1px);
+}

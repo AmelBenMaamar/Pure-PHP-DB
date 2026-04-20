@@ -54,10 +54,10 @@
     --pastel-purple:  #f3e8ff;
 
     /* === PALETTE SECONDAIRE (conservée) === */
-    --secondary-400: #a78bfa;
-    --secondary-500: #8b5cf6;
+    --secondary-400: #6BC6D6;
+    --secondary-500: #6B94D6;
     --secondary-600: #7c3aed;
-    --secondary-700: #6d28d9;
+    --secondary-700: #6B74D6;
 
     /* === ACCENTS (conservés) === */
     --accent-400: #fb923c;
@@ -110,7 +110,7 @@
     --bg-primary:   #ffffff;
     --bg-secondary: #f9fafb;
     --bg-tertiary:  #f3f4f6;
-    --bg-gradient:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-gradient:  linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
 
     /* === TEXTES (conservés) === */
     --text-primary:   #111827;
@@ -121,7 +121,7 @@
     /* === BORDURES (conservées) === */
     --border-color: #e5e7eb;
     --border-light: rgba(0, 0, 0, 0.06);
-    --border-hover: rgba(59, 130, 246, 0.3);
+    --border-hover: rgba(107, 148, 214, 0.3);
 
     /* === ESPACEMENTS (conservés) === */
     --space-1:  0.25rem;
@@ -160,8 +160,8 @@
     --shadow-accent:    0 10px 25px -5px rgb(249 115 22 / 0.35);
     --shadow-emerald:   0 10px 25px -5px rgb(16 185 129 / 0.35);
     --shadow-rose:      0 10px 25px -5px rgb(244 63 94 / 0.35);
-    --shadow-vibrant:   0 20px 30px -10px rgba(79, 70, 229, 0.3);
-    --shadow-glow:      0 0 30px rgba(79, 70, 229, 0.3);
+    --shadow-vibrant:   0 20px 30px -10px rgba(107, 116, 214, 0.3);
+    --shadow-glow:      0 0 30px rgba(107, 116, 214, 0.3);
     --shadow-colored:   0 25px 40px -15px rgba(147, 51, 234, 0.4);
 
     /* === TRANSITIONS (conservées) === */
@@ -171,30 +171,30 @@
     --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* === GRADIENTS AMÉLIORÉS === */
-    --gradient-primary:    linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-    --gradient-secondary:  linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-    --gradient-hero:       linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+    --gradient-primary:    linear-gradient(90deg, #6B94D6 0%, #6B74D6 100%);
+    --gradient-secondary:  linear-gradient(135deg, #6B94D6 0%, #6B74D6 100%);
+    --gradient-hero:       linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
     --gradient-categories: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-    --gradient-products:   linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
-    --gradient-features:   linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --gradient-cta:        linear-gradient(135deg, #1d4ed8 0%, #6d28d9 50%, #0d9488 100%);
+    --gradient-products:   linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BC6D6 100%);
+    --gradient-features:   linear-gradient(90deg, #6B74D6 0%, #6B94D6 100%);
+    --gradient-cta:        linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
     
     /* === NOUVEAUX GRADIENTS DYNAMIQUES === */
     --gradient-sunset:  linear-gradient(135deg, #f97316, #ec4899, #9333ea);
     --gradient-ocean:   linear-gradient(135deg, #2563eb, #14b8a6);
     --gradient-forest:  linear-gradient(135deg, #059669, #2563eb);
-    --gradient-aurora:  linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
-    --gradient-cosmic:  linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    --gradient-aurora:  linear-gradient(90deg, #6BD1D6, #6B94D6, #6B74D6);
+    --gradient-cosmic:  linear-gradient(90deg, #6BD1D6, #6B94D6, #6B74D6, rgba(218,247,218,0.9));
     --gradient-mesh:
-        radial-gradient(at 40% 20%, rgba(99, 102, 241, 0.4) 0px, transparent 60%),
-        radial-gradient(at 80% 0%,  rgba(139, 92, 246, 0.3) 0px, transparent 50%),
-        radial-gradient(at 0%  80%, rgba(59, 130, 246, 0.3) 0px, transparent 50%);
+        radial-gradient(at 40% 20%, rgba(107, 148, 214, 0.4) 0px, transparent 60%),
+        radial-gradient(at 80% 0%,  rgba(107, 198, 214, 0.3) 0px, transparent 50%),
+        radial-gradient(at 0%  80%, rgba(107, 148, 214, 0.3) 0px, transparent 50%);
 
     /* === GRADIENTS CATÉGORIES (améliorés) === */
-    --cat-1: linear-gradient(135deg, #3b82f6, #6366f1);
+    --cat-1: linear-gradient(135deg, #6BD1D6, #6B74D6);
     --cat-2: linear-gradient(135deg, #10b981, #06b6d4);
     --cat-3: linear-gradient(135deg, #f97316, #f59e0b);
-    --cat-4: linear-gradient(135deg, #8b5cf6, #ec4899);
+    --cat-4: linear-gradient(135deg, #6B94D6, #ec4899);
     --cat-5: linear-gradient(135deg, #06b6d4, #3b82f6);
     --cat-6: linear-gradient(135deg, #f43f5e, #f97316);
 
@@ -433,12 +433,14 @@ nav::before {
     background: #a3c4a0;
 }
 
-/* === CONTENEUR INTERNE === */
 .nav-inner {
     display: flex;
     align-items: center;
-    height: 72px;
-    gap: 2rem;
+    height: 56px;
+    gap: 28px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 /* === LOGO AMÉLIORÉ === */
@@ -452,28 +454,28 @@ nav::before {
 }
 
 .nav-logo:hover {
-    transform: scale(1.02);
+    transform: none;
 }
 
 .nav-logo-icon {
     width: 44px; 
     height: 44px;
     border-radius: 14px;
-    background: linear-gradient(135deg, #3b82f6 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #6BD1D6 0%, #6B74D6 100%);
     display: flex; 
     align-items: center; 
     justify-content: center;
     color: white; 
     font-weight: 900; 
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.3);
+    box-shadow: 0 4px 12px rgba(107, 116, 214, 0.3);
     flex-shrink: 0;
     transition: all var(--transition-base);
 }
 
 .nav-logo:hover .nav-logo-icon {
-    box-shadow: 0 6px 16px rgba(109, 40, 217, 0.4);
-    transform: rotate(5deg);
+    box-shadow: none;
+    opacity: 1;
 }
 
 .nav-logo-text {
@@ -517,13 +519,13 @@ nav::before {
 
 .nav-links a:hover {
     color: #0f172a;
-    background: rgba(99, 102, 241, 0.08);
+    background: rgba(107, 148, 214, 0.08);
     transform: translateY(-1px);
 }
 
 .nav-links a.active {
-    color: #3b82f6;
-    background: rgba(59, 130, 246, 0.1);
+    color: #6B94D6;
+    background: rgba(107, 116, 214, 0.1);
     font-weight: 600;
 }
 
@@ -532,7 +534,7 @@ nav::before {
     display: block;
     width: 6px; 
     height: 6px;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    background: linear-gradient(135deg, #6BD1D6, #6B74D6);
     border-radius: 50%;
     margin: 4px auto 0;
     animation: pulse 2s ease infinite;
@@ -666,7 +668,7 @@ nav::before {
     width: 36px; 
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    background: linear-gradient(90deg, #6B94D6 0%, #6B74D6 100%);
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -675,7 +677,7 @@ nav::before {
     font-size: 1rem;
     position: relative; 
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 3px 10px rgba(107, 148, 214, 0.3);
     transition: all var(--transition-base);
 }
 
@@ -685,7 +687,7 @@ nav::before {
 }
 
 .nav-avatar--admin {
-    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+    background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
     box-shadow: 0 3px 10px rgba(99, 102, 241, 0.35);
 }
 
@@ -723,7 +725,7 @@ nav::before {
     font-size: 0.6rem; 
     font-weight: 800;
     color: white;
-    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    background: linear-gradient(135deg, #6BD1D6, #6B74D6);
     padding: 2px 6px; 
     border-radius: 4px;
     letter-spacing: 0.05em; 
@@ -770,8 +772,7 @@ nav::before {
     z-index: 1001;
 }
 
-[data-dropdown]:hover .dropdown-menu,
-.dropdown-menu:hover {
+.dropdown-menu.open {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
@@ -825,7 +826,7 @@ nav::before {
     font-weight: 600;
 }
 .dropdown-item--admin:hover { 
-    background: rgba(59, 130, 246, 0.1); 
+    background: rgba(107, 116, 214, 0.1); 
 }
 .dropdown-item--admin svg { 
     opacity: 1; 
@@ -897,16 +898,16 @@ nav::before {
     font-weight: 600;
     color: white; 
     text-decoration: none;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
     transition: all 0.25s ease; 
     white-space: nowrap;
 }
 .btn-register:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 18px rgba(107, 148, 214, 0.4);
     color: white;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    background: linear-gradient(90deg, #5ab8bd 0%, #5a67c0 100%);
 }
 
 /* ================================================================
@@ -1039,7 +1040,7 @@ nav::before {
     height: 700px;
     top: -200px; 
     left: -150px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.5) 0%, rgba(99, 102, 241, 0) 70%);
+    background: radial-gradient(circle, rgba(107, 148, 214, 0.5) 0%, rgba(107, 148, 214, 0) 70%);
     border-radius: 50%;
     animation: orbMove1 12s ease-in-out infinite alternate;
     filter: blur(70px);
@@ -1052,7 +1053,7 @@ nav::before {
     height: 600px;
     bottom: -100px; 
     right: -100px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0) 70%);
+    background: radial-gradient(circle, rgba(107, 198, 214, 0.45) 0%, rgba(107, 198, 214, 0) 70%);
     border-radius: 50%;
     animation: orbMove2 15s ease-in-out infinite alternate;
     filter: blur(80px);
@@ -1066,7 +1067,7 @@ nav::before {
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(244, 63, 94, 0.3) 0%, rgba(244, 63, 94, 0) 70%);
+    background: radial-gradient(circle, rgba(107, 209, 214, 0.3) 0%, rgba(107, 209, 214, 0) 70%);
     border-radius: 50%;
     animation: orbMove3 18s ease-in-out infinite alternate;
     filter: blur(90px);
@@ -1108,7 +1109,7 @@ nav::before {
 }
 
 .hero-title .gradient-text {
-    background: linear-gradient(135deg, #60a5fa 0%, #c084fc 40%, #f472b6 70%, #fbbf24 100%);
+    background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 33%, #6B74D6 66%, rgba(218, 247, 218, 0.95) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1144,7 +1145,7 @@ nav::before {
     border: none; 
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0 10px 35px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 10px 35px rgba(107, 148, 214, 0.5);
     transition: all var(--transition-base);
     position: relative; 
     overflow: hidden;
@@ -1496,7 +1497,7 @@ nav::before {
     -webkit-text-stroke: 1.5px #f97316; 
 }
 .cat-4:hover .category-number { 
-    -webkit-text-stroke: 1.5px #8b5cf6; 
+    -webkit-text-stroke: 1.5px #6B94D6; 
 }
 .cat-5:hover .category-number { 
     -webkit-text-stroke: 1.5px #06b6d4; 
@@ -1592,7 +1593,7 @@ nav::before {
 
 .cat-1:hover .category-arrow { 
     background: #3b82f6; 
-    border-color: #3b82f6; 
+    border-color: #6B94D6; 
     color: white; 
     transform: translateX(6px); 
 }
@@ -1609,8 +1610,8 @@ nav::before {
     transform: translateX(6px); 
 }
 .cat-4:hover .category-arrow { 
-    background: #8b5cf6; 
-    border-color: #8b5cf6; 
+    background: #6B94D6; 
+    border-color: #6B94D6; 
     color: white; 
     transform: translateX(6px); 
 }
@@ -1934,7 +1935,7 @@ nav::before {
     font-family: 'Syne', sans-serif;
     font-size: 1.5rem; 
     font-weight: 800;
-    background: linear-gradient(135deg, var(--card-accent, #f97316), color-mix(in srgb, var(--card-accent, #f97316) 60%, #8b5cf6));
+    background: linear-gradient(135deg, var(--card-accent, #f97316), color-mix(in srgb, var(--card-accent, #f97316) 60%, #6B94D6));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; 
@@ -2108,7 +2109,7 @@ nav::before {
 }
 
 .feature-card:nth-child(1) .feature-icon { 
-    border: 2px solid rgba(79, 70, 229, 0.3); 
+    border: 2px solid rgba(107, 116, 214, 0.3); 
 }
 .feature-card:nth-child(2) .feature-icon { 
     border: 2px solid rgba(20, 184, 166, 0.3); 
@@ -2181,11 +2182,11 @@ nav::before {
 
 .cta-card {
     padding: 90px 70px;
-    background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 40%, #0d9488 70%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #6B74D6 40%, #0d9488 70%, #1d4ed8 100%);
     border-radius: 32px; 
     text-align: center; 
     color: white;
-    box-shadow: 0 30px 100px rgba(29, 78, 216, 0.4), 0 10px 40px rgba(109, 40, 217, 0.3);
+    box-shadow: 0 30px 100px rgba(29, 78, 216, 0.4), 0 10px 40px rgba(107, 116, 214, 0.3);
     position: relative; 
     overflow: hidden;
 }
@@ -2599,7 +2600,7 @@ footer a:hover {
         box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
     }
     50% { 
-        box-shadow: 0 0 25px 8px rgba(79, 70, 229, 0.3);
+        box-shadow: 0 0 25px 8px rgba(107, 116, 214, 0.3);
     }
 }
 
@@ -2684,57 +2685,6 @@ footer a:hover {
 /* ================================================================
    23. DARK MODE AMÉLIORÉ (dans public/css/dark-mode.css)
    ================================================================ */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-primary:   #0f172a;
-        --bg-secondary: #1e293b;
-        --bg-tertiary:  #334155;
-        --text-primary:   #f1f5f9;
-        --text-secondary: #cbd5e1;
-        --text-tertiary:  #94a3b8;
-        --border-color: #334155;
-    }
-    
-    nav { 
-        background: rgba(15, 23, 42, 0.92); 
-    }
-    
-    .card { 
-        background: var(--bg-primary); 
-        border-color: rgba(255,255,255,0.08); 
-    }
-    
-    .category-content {
-        background: rgba(30, 41, 59, 0.7);
-    }
-    
-    .cat-1 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    .cat-2 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    .cat-3 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    .cat-4 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    .cat-5 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    .cat-6 .category-content { 
-        background: rgba(30, 41, 59, 0.7); 
-    }
-    
-    .feature-card {
-        background: rgba(30, 41, 59, 0.7);
-    }
-    
-    .product-card {
-        background: rgba(30, 41, 59, 0.7);
-    }
-}
 
 /* ================================================================
    24. ACCESSIBILITÉ AMÉLIORÉE
@@ -2889,12 +2839,8 @@ nav, nav.nav-main {
 }
 nav.nav-main::before { display: none; }
 
-.nav-inner-wrap {
-    display: flex; align-items: center; height: 56px; gap: 28px;
-    max-width: 1280px; margin: 0 auto; padding: 0 40px;
-}
 .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
-.nav-logo-icon { width: 28px; height: 28px; border-radius: 8px; background: #ede9fe; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #6c63d4; }
+.nav-logo-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, #6BD1D6 0%, #6B74D6 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(107,116,214,0.25); flex-shrink: 0; }
 .nav-logo-text { font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 500; color: #1e1208; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
@@ -2911,14 +2857,14 @@ nav.nav-main::before { display: none; }
 .nav-right { margin-left: auto; display: flex; align-items: center; gap: 6px; }
 .nav-sep { width: 1px; height: 20px; background: #e8e0d0; margin: 0 4px; flex-shrink: 0; }
 
-.icon-btn { width: 36px; height: 36px; border-radius: 8px; background: transparent; border: 0.5px solid #e8e0d0; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #8a7060; transition: background 0.15s, color 0.15s; position: relative; flex-shrink: 0; }
+.icon-btn { width: 36px; height: 36px; border-radius: 8px; background: transparent; border: 0.5px solid #e8e0d0; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #8a7060; transition: background 0.2s, color 0.2s, transform 0.2s; position: relative; flex-shrink: 0; }
 .icon-btn svg { width: 16px; height: 16px; }
 .icon-btn:hover { background: #f5f1eb; color: #1e1208; }
 .icon-badge { position: absolute; top: -5px; right: -5px; min-width: 17px; height: 17px; border-radius: 10px; background: #e24b4a; color: white; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0 3px; border: 2px solid white; }
 
 .btn-login { font-family: 'Manrope', sans-serif; font-size: 13px; color: #6b5c4e; background: none; border: none; cursor: pointer; padding: 6px 10px; text-decoration: none; transition: color 0.15s; }
 .btn-login:hover { color: #1e1208; }
-.btn-register { font-family: 'Manrope', sans-serif; font-size: 13px; color: #fff; background: #7c6cf0; border: none; border-radius: 18px; padding: 7px 16px; cursor: pointer; text-decoration: none; transition: background 0.15s; }
+.btn-register { font-family: 'Manrope', sans-serif; font-size: 13px; color: #fff; background: #6B74D6; border: none; border-radius: 18px; padding: 7px 16px; cursor: pointer; text-decoration: none; transition: background 0.15s; }
 .btn-register:hover { background: #6558d4; color: #fff; }
 
 /* HERO */
@@ -2926,10 +2872,10 @@ nav.nav-main::before { display: none; }
 .hero-content { max-width: 680px; margin: 0 auto; }
 .hero-orbs { display: none; }
 .hero-title { font-family: Georgia, serif; font-size: 40px; font-weight: 400; line-height: 1.2; color: #1e1208; letter-spacing: -0.5px; margin-bottom: 16px; }
-.hero-accent { font-style: normal; color: #7c6cf0; }
+.hero-accent { font-style: normal; color: #6B74D6; }
 .hero-subtitle { font-family: 'Manrope', sans-serif; font-size: 14px; color: #8a7060; line-height: 1.8; max-width: 440px; margin: 0 auto; }
 .hero-cta { display: none; }
-.gradient-text { background: none; -webkit-text-fill-color: inherit; color: #7c6cf0; }
+.gradient-text { background: none; -webkit-text-fill-color: inherit; color: #6B74D6; }
 
 /* CATÉGORIES */
 .categories-section { background: #faf9f5; padding: 0 20px 40px; position: static; overflow: visible; }
@@ -2963,7 +2909,7 @@ nav.nav-main::before { display: none; }
 .cat-card--horizontal .cat-icon { margin-bottom: 0; }
 
 .cat-card--1 { background: #ebe8fb; }
-.cat-card--1 .cat-num { color: #7f77dd; } .cat-card--1 .cat-label { color: #534ab7; } .cat-card--1 .cat-title { color: #2a2165; } .cat-card--1 .cat-btn { background: #c9c4f5; color: #2a2165; }
+.cat-card--1 .cat-num { color: #7f77dd; } .cat-card--1 .cat-label { color: #5B8ED6; } .cat-card--1 .cat-title { color: #2a2165; } .cat-card--1 .cat-btn { background: #c9c4f5; color: #2a2165; }
 
 .cat-card--2 { background: #d8f0e8; }
 .cat-card--2 .cat-num { color: #1d9e75; } .cat-card--2 .cat-label { color: #0f6e56; } .cat-card--2 .cat-title { color: #063d26; } .cat-card--2 .cat-btn { background: #9fe0c4; color: #063d26; }
@@ -3003,8 +2949,7 @@ footer { margin-top: 0; }
     .cat-row--3-col { grid-template-columns: 1fr; }
     .hero-section { padding: 40px 20px 28px; }
     .hero-title { font-size: 28px; }
-    .nav-inner-wrap { padding: 0 16px; gap: 12px; }
-    .nav-search { display: none; }
+        .nav-search { display: none; }
 }
 
 /* ================================================================
@@ -3012,8 +2957,8 @@ footer { margin-top: 0; }
    ================================================================ */
 
 .sec-title-new { font-family: Georgia, serif; font-size: 26px; font-weight: 400; color: #1e1208; }
-.sec-link-new  { font-family: 'Manrope', sans-serif; font-size: 13px; color: #7c6cf0; text-decoration: none; }
-.sec-link-new:hover { color: #534ab7; }
+.sec-link-new  { font-family: 'Manrope', sans-serif; font-size: 13px; color: #6B74D6; text-decoration: none; }
+.sec-link-new:hover { color: #5B8ED6; }
 
 .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
 
@@ -3033,7 +2978,7 @@ footer { margin-top: 0; }
 .prod-img-new img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .prod-card-new:hover .prod-img-new img { transform: scale(1.05); }
 
-.prod-badge-new { position: absolute; top: 10px; left: 10px; font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 10px; background: rgba(255,255,255,0.92); color: #534ab7; }
+.prod-badge-new { position: absolute; top: 10px; left: 10px; font-family: 'Manrope', sans-serif; font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 10px; background: rgba(255,255,255,0.92); color: #5B8ED6; }
 
 .prod-body-new { padding: 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 
@@ -3043,13 +2988,13 @@ footer { margin-top: 0; }
 
 .prod-title-new { font-family: Georgia, serif; font-size: 15px; font-weight: 400; color: #1e1208; line-height: 1.4; margin: 0; }
 .prod-title-new a { color: inherit; text-decoration: none; }
-.prod-title-new a:hover { color: #7c6cf0; }
+.prod-title-new a:hover { color: #6B74D6; }
 
 .prod-seller-new { font-family: 'Manrope', sans-serif; font-size: 11px; color: #a0907e; }
 
 .prod-foot-new { display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid #ede8df; padding-top: 10px; margin-top: auto; }
 .prod-price-new { font-family: Georgia, serif; font-size: 18px; font-weight: 400; color: #1e1208; }
-.prod-btn-new   { font-family: 'Manrope', sans-serif; font-size: 11px; padding: 5px 12px; border-radius: 8px; background: #ede9fe; color: #534ab7; text-decoration: none; transition: background 0.15s; }
+.prod-btn-new   { font-family: 'Manrope', sans-serif; font-size: 11px; padding: 5px 12px; border-radius: 8px; background: #e0f7fa; color: #5B8ED6; text-decoration: none; transition: background 0.15s; }
 .prod-btn-new:hover { background: #c9c4f5; color: #2a2165; }
 
 /* Features */
@@ -3063,8 +3008,8 @@ footer { margin-top: 0; }
 /* CTA */
 .cta-inner-new  { background: #ebe8fb; border-radius: 16px; border: 0.5px solid #c9c4f5; padding: 48px; text-align: center; }
 .cta-title-new  { font-family: Georgia, serif; font-size: 28px; font-weight: 400; color: #2a2165; margin-bottom: 12px; }
-.cta-desc-new   { font-family: 'Manrope', sans-serif; font-size: 14px; color: #534ab7; line-height: 1.7; margin-bottom: 24px; max-width: 440px; margin-left: auto; margin-right: auto; }
-.cta-btn-new    { font-family: 'Manrope', sans-serif; font-size: 13px; color: #fff; background: #7c6cf0; border: none; border-radius: 20px; padding: 10px 28px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.15s; }
+.cta-desc-new   { font-family: 'Manrope', sans-serif; font-size: 14px; color: #5B8ED6; line-height: 1.7; margin-bottom: 24px; max-width: 440px; margin-left: auto; margin-right: auto; }
+.cta-btn-new    { font-family: 'Manrope', sans-serif; font-size: 13px; color: #fff; background: #6B74D6; border: none; border-radius: 20px; padding: 10px 28px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.15s; }
 .cta-btn-new:hover { background: #6558d4; color: #fff; }
 
 /* Responsive */
@@ -3128,7 +3073,7 @@ footer { margin-top: 0; }
 .ft-top { max-width: 1240px; margin: 0 auto; padding: 56px 40px 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 52px; border-bottom: 0.5px solid #ede8df; }
 
 .ft-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.ft-logo-ic { width: 34px; height: 34px; border-radius: 10px; background: #ede9fe; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; color: #6c63d4; }
+.ft-logo-ic { width: 34px; height: 34px; border-radius: 10px; background: #e0f7fa; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; color: #6B74D6; }
 .ft-logo-txt { font-family: Georgia, serif; font-size: 18px; font-weight: 400; color: #1e1208; }
 .ft-tagline { font-size: 13px; color: #8a7060; line-height: 1.85; max-width: 255px; margin-bottom: 28px; }
 
@@ -3136,7 +3081,7 @@ footer { margin-top: 0; }
 .ft-cta-vendeur:hover { background: #ddd8f8; }
 .ft-cta-vendeur svg { width: 14px; height: 14px; flex-shrink: 0; }
 .ft-cta-txt { font-size: 12px; color: #2a2165; font-weight: 500; }
-.ft-cta-arrow { font-size: 12px; color: #7c6cf0; margin-left: 2px; }
+.ft-cta-arrow { font-size: 12px; color: #6B74D6; margin-left: 2px; }
 
 .ft-stripe { display: flex; align-items: center; gap: 7px; }
 .ft-stripe svg { width: 13px; height: 13px; flex-shrink: 0; }
@@ -3147,16 +3092,16 @@ footer { margin-top: 0; }
 .ft-col a { display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #6b5c4e; text-decoration: none; padding: 7px 0; border-bottom: 0.5px solid transparent; transition: all 0.15s; }
 .ft-col a:hover { color: #1e1208; border-bottom-color: #ede8df; }
 .ft-col a span { font-size: 10px; color: #c9c4f5; transition: color 0.15s; }
-.ft-col a:hover span { color: #7c6cf0; }
+.ft-col a:hover span { color: #6B74D6; }
 
 .ft-bottom { max-width: 1240px; margin: 0 auto; padding: 22px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 .ft-copy { font-size: 11px; color: #a0907e; }
 .ft-made { display: flex; align-items: center; gap: 6px; }
-.ft-made-dot { width: 6px; height: 6px; border-radius: 50%; background: #ede9fe; }
+.ft-made-dot { width: 6px; height: 6px; border-radius: 50%; background: #e0f7fa; }
 .ft-made-txt { font-size: 11px; color: #a0907e; }
 .ft-socials { display: flex; gap: 6px; }
 .ft-social { width: 32px; height: 32px; border-radius: 8px; border: 0.5px solid #ede8df; background: #fff; display: flex; align-items: center; justify-content: center; color: #8a7060; text-decoration: none; transition: all 0.15s; }
-.ft-social:hover { background: #ede9fe; border-color: #c9c4f5; color: #534ab7; }
+.ft-social:hover { background: #e0f7fa; border-color: #c9c4f5; color: #5B8ED6; }
 .ft-social svg { width: 13px; height: 13px; }
 
 /* Supprimer ancien footer */
@@ -3331,14 +3276,14 @@ footer:not(.ft) { display: none; }
 }
 .nav-hamburger:hover {
     background: rgba(99, 102, 241, 0.06);
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: rgba(107, 148, 214, 0.4);
     transform: translateY(-1px);
 }
 .nav-hamburger span {
     display: block;
     width: 100%;
     height: 1.5px;
-    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    background: linear-gradient(90deg, #6366f1, #6B94D6);
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
@@ -3410,7 +3355,7 @@ footer:not(.ft) { display: none; }
         justify-content: space-between;
         align-items: center;
         padding: 20px 20px 16px;
-        border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+        border-bottom: 1px solid rgba(107, 148, 214, 0.08);
         flex-shrink: 0;
         background: linear-gradient(135deg, rgba(99,102,241,0.04), rgba(139,92,246,0.04));
     }
@@ -3508,7 +3453,7 @@ footer:not(.ft) { display: none; }
     .nav-drawer-auth {
         margin-top: auto;
         padding: 16px 12px 24px;
-        border-top: 1px solid rgba(99, 102, 241, 0.08);
+        border-top: 1px solid rgba(107, 148, 214, 0.08);
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -3540,13 +3485,13 @@ footer:not(.ft) { display: none; }
         font-weight: 600;
         color: white;
         text-decoration: none;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        background: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BD1D6 100%);
         box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         transition: all 0.25s ease;
     }
     .nav-drawer-btn-register:hover {
-        box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
-        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        box-shadow: 0 6px 18px rgba(107, 148, 214, 0.4);
+        background: linear-gradient(90deg, #5ab8bd 0%, #5a67c0 100%);
     }
 }
 
@@ -3567,7 +3512,7 @@ footer:not(.ft) { display: none; }
     content: '';
     display: block;
     height: 3px;
-    background: linear-gradient(90deg, #7c6cf0 0%, #c9c4f5 40%, #9fe0c4 70%, #7c6cf0 100%);
+    background: linear-gradient(90deg, #6B74D6 0%, #c9c4f5 40%, #9fe0c4 70%, #6B74D6 100%);
     background-size: 200% auto;
     animation: ft-shimmer 6s linear infinite;
 }
@@ -3582,12 +3527,12 @@ footer:not(.ft) { display: none; }
     height: 38px;
     border-radius: 11px;
     font-size: 16px;
-    box-shadow: 0 4px 12px rgba(124, 108, 240, 0.25);
+    box-shadow: 0 4px 12px rgba(107, 116, 214, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .ft-logo:hover .ft-logo-ic {
-    transform: rotate(6deg) scale(1.05);
-    box-shadow: 0 6px 18px rgba(124, 108, 240, 0.4);
+    transform: none;
+    box-shadow: none;
 }
 .ft-logo-txt {
     font-size: 19px;
@@ -3617,7 +3562,7 @@ footer:not(.ft) { display: none; }
 .ft-cta-vendeur:hover {
     background: #ddd8f8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(124, 108, 240, 0.18);
+    box-shadow: 0 6px 18px rgba(107, 116, 214, 0.18);
 }
 .ft-cta-txt {
     font-size: 12.5px;
@@ -3626,7 +3571,7 @@ footer:not(.ft) { display: none; }
 }
 .ft-cta-arrow {
     font-size: 13px;
-    color: #7c6cf0;
+    color: #6B74D6;
     margin-left: auto;
     transition: transform 0.2s ease;
 }
@@ -3678,7 +3623,7 @@ footer:not(.ft) { display: none; }
     left: 0;
     width: 28px;
     height: 1.5px;
-    background: #7c6cf0;
+    background: #6B74D6;
     border-radius: 2px;
 }
 
@@ -3705,7 +3650,7 @@ footer:not(.ft) { display: none; }
     display: inline-block;
 }
 .ft-col a:hover span {
-    color: #7c6cf0;
+    color: #6B74D6;
     transform: translateX(3px);
 }
 
@@ -3771,9 +3716,9 @@ footer:not(.ft) { display: none; }
     transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.2s ease;
 }
 .ft-social:hover {
-    background: #ede9fe;
+    background: #e0f7fa;
     border-color: #c9c4f5;
-    color: #534ab7;
+    color: #5B8ED6;
     transform: translateY(-3px);
 }
 .ft-social svg {
@@ -3817,3 +3762,2346 @@ footer:not(.ft) { display: none; }
 /* ================================================================
    FIN FOOTER UPGRADE v2
    ================================================================ */
+
+/* ==========================================
+   🛒 HEADER UX IMPROVEMENTS - MARKETPLACE
+   ========================================== */
+
+/* === Recherche mobile : icône compacte qui s'expand au focus === */
+@media (max-width: 768px) {
+    .nav-search {
+        display: flex !important;
+        position: relative;
+        width: 40px;
+        transition: width 0.3s ease;
+        overflow: hidden;
+    }
+    .nav-search:focus-within {
+        width: 200px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .nav-search-input {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+    }
+    .nav-search:focus-within .nav-search-input {
+        opacity: 1;
+        pointer-events: auto;
+        padding-left: 8px;
+    }
+    .nav-search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    .nav-search-btn:hover {
+        background: rgba(99, 102, 241, 0.1);
+    }
+}
+
+/* === Badges animés au changement de compte === */
+.icon-badge {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.icon-badge:empty {
+    animation: badgePop 0.4s ease-out;
+}
+@keyframes badgePop {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* === Dropdown utilisateur : accessible au focus + tactile === */
+.nav-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+.nav-user-btn:focus {
+    outline: 2px solid var(--vibrant-blue);
+    outline-offset: 2px;
+    border-radius: 14px;
+}
+
+/* === Classe utilitaire pour accessibilité === */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* === Dark mode : cohérence avec ton système existant === */
+
+/* ================================================================
+   UX PATCH v1 — Hero CTA + Trust Bar + Micro-interactions
+   Ne modifie aucune couleur ni typographie existante
+   ================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────
+   1. HERO CTA — restauration (était display:none dans maquette2)
+───────────────────────────────────────────────────────────────── */
+.hero-cta {
+    display: flex !important;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: #6B74D6;
+    border-radius: 20px;
+    padding: 10px 22px;
+    text-decoration: none;
+    border: none;
+    transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.hero-btn-primary svg {
+    width: 13px; height: 13px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+}
+.hero-btn-primary:hover {
+    background: #6558d4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(107, 116, 214, 0.3);
+}
+
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #5B8ED6;
+    background: transparent;
+    border: 0.5px solid #c9c4f5;
+    border-radius: 20px;
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.18s ease;
+}
+.hero-btn-secondary:hover {
+    background: #ebe8fb;
+    color: #2a2165;
+    transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   2. HERO TRUST BAR — 3 items de réassurance
+───────────────────────────────────────────────────────────────── */
+.hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+.hero-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    color: #8a7060;
+    line-height: 1;
+}
+.hero-trust-item svg {
+    width: 13px; height: 13px;
+    stroke: #6B74D6; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+}
+.hero-trust-sep {
+    display: inline-block;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: #c9c4f5;
+    flex-shrink: 0;
+}
+@media (max-width: 600px) {
+    .hero-trust { gap: 10px; }
+    .hero-trust-sep { display: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   3. CAT CARDS — lift + ombre cohérente + boutons
+───────────────────────────────────────────────────────────────── */
+.cat-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+}
+
+/* Bouton actif : léger décalage de texte au hover de la carte */
+.cat-btn--active {
+    transition: padding-left 0.2s ease, opacity 0.15s ease;
+}
+.cat-card:hover .cat-btn--active {
+    padding-left: 20px;
+}
+
+/* Bouton vide : clairement non-cliquable */
+.cat-btn--empty {
+    background: transparent !important;
+    border: 0.5px dashed currentColor;
+    opacity: 0.45;
+    cursor: default;
+    font-style: italic;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   4. FADE-IN DÉCALÉ DES CATÉGORIES — CSS uniquement
+───────────────────────────────────────────────────────────────── */
+@keyframes catCardIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.cat-grid .cat-card {
+    animation: catCardIn 0.38s ease-out both;
+}
+.cat-row:nth-child(1) .cat-card:nth-child(1) { animation-delay: 0.04s; }
+.cat-row:nth-child(1) .cat-card:nth-child(2) { animation-delay: 0.11s; }
+.cat-row:nth-child(2) .cat-card:nth-child(1) { animation-delay: 0.18s; }
+.cat-row:nth-child(2) .cat-card:nth-child(2) { animation-delay: 0.25s; }
+
+/* ─────────────────────────────────────────────────────────────────
+   5. PRODUITS — ombre au hover (lift sans ombre = effet bizarre)
+───────────────────────────────────────────────────────────────── */
+.prod-card-new {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.prod-card-new:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   6. TITRES DE SECTION — petite ancre visuelle violet
+───────────────────────────────────────────────────────────────── */
+.sec-title-new {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.sec-title-new::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 28px; height: 2px;
+    background: #6B74D6;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+.section-header:hover .sec-title-new::after,
+.products-section:hover .sec-title-new::after {
+    width: 52px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   7. ACCESSIBILITÉ — respect prefers-reduced-motion
+───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .cat-grid .cat-card { animation: none; }
+    .cat-card, .prod-card-new { transition: none; }
+}
+
+/* ================================================================
+   FIN UX PATCH v1
+   ================================================================ */
+
+
+/* ================================================================
+   CATALOGUE PRODUITS — extrait de products/index.php
+   (anciennement <style> inline)
+   ================================================================ */
+/* === DESIGN MAQUETTE2 — PAGES PRODUITS === */
+.hero-section .container, .cat-hero-inner, .cat-page-grid, .products-section .container {background:#faf9f5}
+h1,h2,h3{font-family:Georgia,serif;font-weight:400;color:#1e1208}
+.catalog-grid{display:grid;grid-template-columns:250px 1fr;gap:20px;align-items:start}
+.filters-sidebar{position:sticky;top:80px;height:fit-content}
+.filters-card,.card{background:#fff;border:0.5px solid #ede8df;border-radius:14px;padding:22px;box-shadow:none}
+.filter-section{margin-bottom:20px;padding-top:20px;border-top:0.5px solid #ede8df}
+.filter-section:first-child{padding-top:0;border-top:none}
+.filter-title{font-family:Georgia,serif;font-size:15px;font-weight:400;color:#1e1208;margin-bottom:10px}
+.categories-list{list-style:none;padding:0;margin:0}
+.category-item{margin-bottom:2px}
+.category-link{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:8px;font-family:'Manrope',sans-serif;font-size:13px;color:#6b5c4e;text-decoration:none;transition:all 0.15s}
+.category-link:hover{background:#faf9f5;color:#1e1208}
+.category-link.active{color:#5B8ED6;background:#e0f7fa;font-weight:500}
+.category-link .count{font-size:11px;color:#a0907e}
+.price-range{width:100%;accent-color:#6B74D6;height:4px}
+.price-labels{display:flex;justify-content:space-between;font-family:'Manrope',sans-serif;font-size:12px;color:#a0907e;margin-top:8px}
+.tags-container{display:flex;flex-wrap:wrap;gap:6px}
+.badge-secondary{background:#f5f1eb;color:#6b5c4e;border-radius:6px;font-family:'Manrope',sans-serif;font-size:11px;padding:4px 10px;text-decoration:none;transition:all 0.15s;cursor:pointer;border:none}
+.badge-secondary:hover{background:#e0f7fa;color:#5B8ED6}
+.badge-primary{background:#e0f7fa!important;color:#5B8ED6!important;border-radius:6px;font-family:'Manrope',sans-serif;font-size:11px;padding:3px 9px;text-decoration:none;border:none}
+.catalog-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:18px;padding:11px 14px;background:#fff;border:0.5px solid #ede8df;border-radius:11px}
+.results-count{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060}
+.sort-label{font-family:'Manrope',sans-serif;font-size:12px;color:#8a7060;white-space:nowrap}
+.form-select{padding:7px 12px;border:0.5px solid #ddd6c8;border-radius:8px;background:#faf9f5;font-family:'Manrope',sans-serif;font-size:12px;color:#1e1208;outline:none;cursor:pointer;min-width:155px}
+.form-select:focus{border-color:#6B74D6}
+.products-grid,.grid.grid-4{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px!important}
+.product-card{background:#fff!important;border:0.5px solid #ede8df!important;border-radius:14px!important;overflow:hidden;display:flex;flex-direction:column;box-shadow:none!important;transition:transform 0.2s ease}
+.product-card:hover{transform:translateY(-3px);box-shadow:none!important}
+.product-image-container{position:relative;width:100%;padding-bottom:62%;overflow:hidden;background:#f5f1eb;display:block;text-decoration:none}
+.product-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform 0.3s}
+.product-card:hover .product-image{transform:scale(1.04)}
+.product-content{padding:14px;display:flex;flex-direction:column;flex:1;gap:7px}
+.product-header{display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap}
+.product-rating{display:flex;gap:4px;align-items:center}
+.rating-star{color:#ba7517;font-size:12px}
+.rating-score{font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;color:#1e1208}
+.rating-count{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
+.product-title{font-family:Georgia,serif;font-size:15px;font-weight:400;color:#1e1208;line-height:1.4;margin:0;min-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.product-title a{color:inherit;text-decoration:none}
+.product-title a:hover{color:#6B74D6}
+.product-seller{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;margin:0}
+.seller-link{color:#6B74D6;text-decoration:none}
+.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:0.5px solid #ede8df;gap:8px}
+.price-container{display:flex;flex-direction:column;gap:2px}
+.product-price,.price-current{font-family:Georgia,serif;font-size:18px;font-weight:400;color:#1e1208;line-height:1}
+.product-price-original,.price-old{font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e;text-decoration:line-through}
+.product-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.btn-wishlist{width:32px;height:32px;background:#fff;border:0.5px solid #ede8df;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;font-size:13px;padding:0}
+.btn-wishlist:hover{border-color:#d4537e;background:#fbeaf0}
+.btn-wishlist.in-wishlist{background:#fbeaf0;border-color:#d4537e}
+.product-stats{display:flex;gap:12px;font-family:'Manrope',sans-serif;font-size:11px;color:#a0907e}
+.product-badge,.product-category{background:#e0f7fa;color:#5B8ED6;border-radius:6px;font-family:'Manrope',sans-serif;font-size:10px;padding:3px 8px;position:absolute;top:10px;left:10px}
+.product-description{font-family:'Manrope',sans-serif;font-size:12px;color:#8a7060;line-height:1.6;margin:0}
+.empty-state{padding:64px 32px;text-align:center;background:#fff;border:0.5px solid #ede8df;border-radius:14px}
+.empty-icon{font-size:48px;margin-bottom:16px}
+.empty-title{font-family:Georgia,serif;font-size:20px;font-weight:400;color:#1e1208;margin-bottom:10px}
+.empty-description{font-family:'Manrope',sans-serif;font-size:13px;color:#8a7060;margin-bottom:20px}
+.btn,.btn-primary,.btn.btn-primary{background:#6B74D6!important;color:#fff!important;border:none!important;border-radius:8px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:500;padding:7px 14px;text-decoration:none;transition:background 0.15s;cursor:pointer;display:inline-block}
+.btn:hover,.btn-primary:hover,.btn.btn-primary:hover{background:#6558d4!important;color:#fff!important}
+.btn-secondary,.btn.btn-secondary{background:#f5f1eb!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important;border-radius:8px;font-family:'Manrope',sans-serif;font-size:12px;padding:7px 14px;text-decoration:none;transition:all 0.15s;cursor:pointer;display:inline-block}
+.btn-secondary:hover,.btn.btn-secondary:hover{background:#ede8df!important;color:#1e1208!important}
+.btn-sm{padding:5px 10px!important;font-size:11px!important}
+.btn-ghost{background:transparent!important;color:#6b5c4e!important;border:0.5px solid #ddd6c8!important}
+.btn-ghost:hover{background:#faf9f5!important;color:#1e1208!important}
+.btn-outline{background:transparent!important;color:#6B74D6!important;border:0.5px solid #6B74D6!important}
+.btn-outline:hover{background:#e0f7fa!important}
+.btn-icon{background:#e0f7fa;color:#5B8ED6;border:none;border-radius:8px;cursor:pointer;transition:background 0.15s}
+.btn-icon:hover{background:#c9c4f5}
+.pagination-container{display:flex;justify-content:center;gap:6px;margin-top:40px;flex-wrap:wrap}
+.search-header{border-bottom:0.5px solid #ede8df;padding-bottom:20px;margin-bottom:24px}
+.search-title{font-family:Georgia,serif;font-size:26px;font-weight:400;color:#1e1208}
+.search-query{color:#6B74D6}
+.search-form-inner{display:flex;gap:10px;max-width:520px}
+.search-form-input{flex:1;padding:9px 14px;border:0.5px solid #ddd6c8;border-radius:10px;font-family:'Manrope',sans-serif;font-size:13px;background:#faf9f5;color:#1e1208;outline:none;transition:border-color 0.15s}
+.search-form-input:focus{border-color:#6B74D6;background:#fff}
+.toggle-filters{display:none}
+.filters-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:999}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1024px){
+  .catalog-grid{grid-template-columns:1fr}
+  .filters-sidebar{position:fixed;top:0;left:-100%;width:300px;height:100vh;background:#faf9f5;z-index:1000;overflow-y:auto;transition:left 0.3s;padding:20px}
+  .filters-sidebar.active{left:0}
+  .toggle-filters{display:flex;align-items:center;gap:6px}
+  .filters-overlay.active{display:block}
+}
+@media(max-width:768px){.products-grid,.grid.grid-4{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:480px){.products-grid,.grid.grid-4{grid-template-columns:1fr!important}.search-form-inner{flex-direction:column}}
+
+/* ================================================================
+   LOGO UPGRADE — icône SVG + sous-titre
+   ================================================================ */
+
+/* Icône logo : SVG cohérent avec la maquette2 */
+.nav-logo-icon {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+    background: #e0f7fa !important;
+    color: #6B74D6 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nav-logo:hover .nav-logo-icon {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Conteneur texte logo */
+.nav-logo-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1;
+}
+
+/* Sous-titre "Marketplace" */
+.nav-logo-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    color: #a0907e;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+}
+
+/* ── Barre accent gradient en haut de la nav ── */
+nav::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2.5px !important;
+    background: linear-gradient(90deg, #6B74D6 0%, #c9c4f5 40%, #9fe0c4 70%, #6B74D6 100%) !important;
+    background-size: 200% auto !important;
+    animation: ft-shimmer 8s linear infinite !important;
+}
+
+/* ── Lien "Vendre" : sobrement mis en avant ── */
+/* Dark mode cohérence */
+body.dark-mode .nav-logo-icon {
+    background: #1e1b3a !important;
+    color: #b8eef1 !important;
+}
+body.dark-mode .nav-logo-sub {
+    color: #64748b;
+}
+body.dark-mode body.dark-mode /* ================================================================
+   FIN LOGO UPGRADE
+   ================================================================ */
+
+/* ================================================================
+   HEADER IMPROVEMENTS v1
+   scroll-aware • search focus • dropdown click • active links
+   ================================================================ */
+
+/* ── 1. SCROLL STATE : ombre légère au défilement ── */
+nav.nav--scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07) !important;
+    border-bottom-color: #ddd6c8 !important;
+}
+
+/* ── 2. SEARCH : largeur fixe → s'élargit au focus ── */
+.nav-search {
+    width: 190px;
+    transition: width 0.28s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-search:focus-within {
+    width: 270px;
+    border-color: #6B74D6 !important;
+    background: #fff !important;
+    box-shadow: 0 0 0 3px rgba(107, 116, 214, 0.12);
+}
+.nav-search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0907e;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+.nav-search-btn:hover { color: #5B8ED6; }
+
+/* ── 3. DROPDOWN : ouverture via .open (JS clic) ou :hover ── */
+.dropdown-menu.open {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+}
+/* Chevron tourne quand ouvert */
+.nav-user-btn[aria-expanded="true"] .nav-chevron {
+    transform: rotate(180deg);
+    stroke: #6B74D6;
+}
+
+/* ── 4. LIEN ACTIF : fond cohérent maquette2 ── */
+.nav-links a.active {
+    color: #5B8ED6 !important;
+    background: #ebe8fb !important;
+    font-weight: 600 !important;
+    border-bottom: none !important;
+    border-radius: 6px !important;
+    padding-bottom: 4px !important;
+}
+.nav-links a.active::after { display: none !important; }
+
+/* ── 5. LOGO : hover léger ── */
+.nav-logo:hover .nav-logo-icon {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ── 6. ICON BTNS : taille cohérente desktop ── */
+@media (min-width: 769px) {
+    .icon-btn {
+        width: 34px !important;
+        height: 34px !important;
+        border-radius: 8px !important;
+    }
+    .icon-btn svg { width: 15px !important; height: 15px !important; }
+}
+
+/* ── 7. LIEN VENDRE : badge sobre ── */
+/* ── 8. TRANSITION NAV : fluide au scroll ── */
+nav {
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── 9. DARK MODE : cohérence dropdown ── */
+body.dark-mode .dropdown-menu {
+    background: #1e1b3a;
+    border-color: rgba(255,255,255,0.07);
+}
+body.dark-mode .dropdown-item { color: #b8eef1; }
+body.dark-mode .dropdown-item:hover { background: rgba(107, 116, 214,0.12); color: #fff; }
+body.dark-mode .dropdown-sep { background: rgba(255,255,255,0.06); }
+
+/* ── FIN HEADER IMPROVEMENTS v1 ── */
+
+/* ================================================================
+   NAVIGATION — MAQUETTE2 FINAL (remplace tous les blocs précédents)
+   Priorité haute via positionnement en fin de fichier
+   ================================================================ */
+
+/* ── Reset des surcharges précédentes ── */
+nav,
+nav.nav-main,
+nav.nav--scrolled {
+    all: revert;
+}
+
+/* ── Base nav ── */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 0.5px solid #ede8df;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── Barre accent dégradée en haut ── */
+nav::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2.5px !important;
+    background: linear-gradient(90deg, #6B74D6 0%, #c9c4f5 40%, #9fe0c4 70%, #6B74D6 100%) !important;
+    background-size: 200% auto !important;
+    animation: nav-shimmer 8s linear infinite !important;
+    pointer-events: none !important;
+}
+
+@keyframes nav-shimmer {
+    0%   { background-position: 0%   center; }
+    100% { background-position: 200% center; }
+}
+
+/* ── Etat scrollé ── */
+nav.nav--scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.07);
+    border-bottom-color: #ddd6c8;
+}
+
+/* ── Inner flex ── */
+.nav-inner {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    gap: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ================================================================
+   LOGO
+   ================================================================ */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: none;
+}
+
+.nav-logo-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    background: #e0f7fa !important;
+    color: #6B74D6 !important;
+    box-shadow: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+    width: 22px;
+    height: 22px;
+    height: 15px;
+    stroke: #6B74D6;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-logo:hover .nav-logo-icon {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.nav-logo-inner {
+    display: flex;
+    transform: none !important;
+    box-shadow: none !important;
+    line-height: 1;
+}
+
+.nav-logo-text {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #1e1208 !important;
+    letter-spacing: -0.01em;
+    transition: none;
+}
+
+.nav-logo-sub {
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    color: #a0907e;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+}
+
+/* ================================================================
+   LIENS NAV
+   ================================================================ */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b5c4e;
+    text-decoration: none;
+    padding: 5px 11px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    border-bottom: none !important;
+}
+
+.nav-links a:hover {
+    color: #1e1208;
+    background: #faf9f5;
+    transform: none;
+}
+
+.nav-links a.active {
+    color: #5B8ED6 !important;
+    background: #ebe8fb !important;
+    font-weight: 600 !important;
+    border-bottom: none !important;
+    border-radius: 6px !important;
+    padding-bottom: 5px !important;
+}
+
+.nav-links a.active::after {
+    display: none !important;
+}
+
+/* Lien "Vendre" */
+/* ================================================================
+   BARRE DE RECHERCHE
+   ================================================================ */
+.nav-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f1eb;
+    border: 0.5px solid #ddd6c8;
+    border-radius: 20px;
+    padding: 6px 14px;
+    width: 200px;
+    transition: width 0.28s ease, border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative;
+}
+
+.nav-search:focus-within {
+    width: 260px;
+    border-color: #6B74D6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(107, 116, 214, 0.12);
+}
+
+.nav-search-input {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #6b5c4e;
+    width: 100%;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.nav-search-input:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.nav-search-input::placeholder {
+    color: #a0907e;
+}
+
+.nav-search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a0907e;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+
+.nav-search-btn:hover {
+    color: #5B8ED6;
+}
+
+.nav-search-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ================================================================
+   PARTIE DROITE
+   ================================================================ */
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-sep {
+    width: 1px;
+    height: 20px;
+    background: #e8e0d0;
+    margin: 0 3px;
+    flex-shrink: 0;
+}
+
+/* ── Icônes ── */
+.icon-btn {
+    position: relative;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+    background: transparent;
+    border: 0.5px solid #e8e0d0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8a7060;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.icon-btn svg {
+    width: 15px !important;
+    height: 15px !important;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: none;
+}
+
+.icon-btn:hover {
+    background: #f5f1eb;
+    color: #1e1208;
+    border-color: #c9c4f5;
+    box-shadow: none;
+}
+
+/* Surcharge des états hover spécifiques (wishlist/cart) */
+.icon-btn--wishlist:hover,
+.icon-btn--cart:hover {
+    background: #f5f1eb;
+    color: #1e1208;
+    border-color: #c9c4f5;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ── Badges ── */
+.icon-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 10px;
+    background: #e24b4a;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    border: 2px solid #fff;
+    line-height: 1;
+    box-shadow: none;
+    animation: none;
+}
+
+/* ── Boutons Auth ── */
+.btn-login {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #6b5c4e;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: none;
+    transition: color 0.15s;
+    white-space: nowrap;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.btn-login:hover {
+    color: #1e1208;
+    background: transparent;
+    transform: none;
+}
+
+.btn-register {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    background: #6B74D6;
+    border: none;
+    border-radius: 20px;
+    padding: 7px 18px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.btn-register:hover {
+    background: #6558d4;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(107, 116, 214, 0.3);
+}
+
+/* ================================================================
+   UTILISATEUR CONNECTÉ — Bouton + Dropdown
+   ================================================================ */
+.nav-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px 5px 5px;
+    border-radius: 10px;
+    border: 0.5px solid #e8e0d0;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    font-family: inherit;
+}
+
+.nav-user-btn:hover {
+    background: rgba(107, 209, 214, 0.10) !important;
+    border-color: rgba(107, 209, 214, 0.2) !important;
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #e0f7fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5B8ED6;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: none;
+    transition: none;
+}
+
+.nav-avatar--admin {
+    background: linear-gradient(135deg, #e0f7fa, #c9c4f5);
+}
+
+.nav-user-btn:hover .nav-avatar {
+    transform: none;
+    box-shadow: none;
+}
+
+.nav-username {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1e1208;
+    line-height: 1;
+}
+
+.nav-role-badge {
+    font-size: 8px;
+    font-weight: 700;
+    color: #fff;
+    background: #6B74D6;
+    padding: 1px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    text-transform: uppercase;
+}
+
+.nav-chevron {
+    width: 12px;
+    height: 12px;
+    stroke: #a0907e;
+    fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease, stroke 0.2s ease;
+    flex-shrink: 0;
+}
+
+.nav-user-btn[aria-expanded="true"] .nav-chevron,
+[data-dropdown]:hover .nav-chevron {
+    transform: rotate(180deg);
+    stroke: #6B74D6;
+}
+
+/* ── Dropdown ── */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 230px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 0.5px solid #ede8df;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1001;
+}
+
+.dropdown-menu.open,
+.dropdown-menu.open-unused {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #334155;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.dropdown-item svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.6;
+    flex-shrink: 0;
+    transition: none;
+}
+
+.dropdown-item:hover {
+    background: #faf9f5;
+    color: #1e1208;
+    transform: none;
+}
+
+.dropdown-item:hover svg {
+    opacity: 1;
+    transform: none;
+}
+
+.dropdown-item--admin {
+    color: #5B8ED6;
+    background: #ebe8fb;
+    font-weight: 500;
+}
+
+.dropdown-item--admin:hover {
+    background: #ddd8f8;
+}
+
+.dropdown-item--admin svg {
+    opacity: 1;
+    stroke: #6B74D6;
+}
+
+.dropdown-item--alert {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.05);
+    font-weight: 500;
+}
+
+.dropdown-item--alert:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.dropdown-item--danger {
+    color: #dc2626;
+}
+
+.dropdown-item--danger:hover {
+    background: rgba(239, 68, 68, 0.07);
+    color: #b91c1c;
+}
+
+.dropdown-item-badge {
+    margin-left: auto;
+    background: #e24b4a;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.dropdown-sep {
+    height: 0.5px;
+    background: #ede8df;
+    margin: 4px 0;
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+body.dark-mode nav {
+    background: #13111e;
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+body.dark-mode .nav-logo-text { color: #f1eeff !important; }
+body.dark-mode .nav-logo-sub  { color: #64748b; }
+body.dark-mode .nav-logo-icon {
+    background: #1e1b3a !important;
+    color: #b8eef1 !important;
+}
+body.dark-mode .nav-logo-icon svg { stroke: #b8eef1; }
+
+body.dark-mode .nav-links a     { color: #94a3b8; }
+body.dark-mode .nav-links a:hover { color: #f1eeff; background: rgba(255,255,255,.05); }
+body.dark-mode .nav-links a.active { color: #b8eef1 !important; background: rgba(107, 116, 214,.18) !important; }
+
+body.dark-mode body.dark-mode body.dark-mode .nav-search { background: #1e1b3a; border-color: rgba(255,255,255,.08); }
+body.dark-mode .nav-search:focus-within { background: #13111e; border-color: #6B74D6; }
+body.dark-mode .nav-search-input { color: #e2e8f0; }
+
+body.dark-mode .icon-btn { border-color: rgba(255,255,255,.1) !important; color: #94a3b8; }
+body.dark-mode .icon-btn:hover { background: rgba(255,255,255,.06); color: #f1eeff; border-color: rgba(107, 116, 214,.3) !important; }
+
+body.dark-mode .nav-sep { background: rgba(255,255,255,.1); }
+body.dark-mode .btn-login { color: #94a3b8; }
+body.dark-mode .btn-login:hover { color: #f1eeff; }
+
+body.dark-mode .nav-user-btn { border-color: rgba(255,255,255,.1); }
+body.dark-mode .nav-user-btn:hover { background: rgba(107, 209, 214, 0.10); border-color: rgba(107, 209, 214, 0.2); }
+body.dark-mode .nav-avatar { background: #1e1b3a; color: #b8eef1; }
+body.dark-mode .nav-username { color: #f1eeff; }
+body.dark-mode .nav-chevron { stroke: #64748b; }
+
+body.dark-mode .dropdown-menu {
+    background: #1a1730;
+    border-color: rgba(255,255,255,.07);
+    box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+body.dark-mode .dropdown-item { color: #b8eef1; }
+body.dark-mode .dropdown-item:hover { background: rgba(107, 116, 214,.12); color: #fff; }
+body.dark-mode .dropdown-sep { background: rgba(255,255,255,.06); }
+body.dark-mode .dropdown-item--admin { background: rgba(107, 116, 214,.15); color: #b8eef1; }
+body.dark-mode .dropdown-item--danger { color: #f87171; }
+
+/* ================================================================
+   FIN NAVIGATION MAQUETTE2 FINAL
+   ================================================================ */
+
+/* ================================================================
+   HEADER AMÉLIORATIONS v2 — nav épurée + micro-interactions
+   ================================================================ */
+
+/* ── Scroll : ombre plus définie + légère saturation ── */
+nav.nav--scrolled {
+    background: rgba(255, 255, 255, 0.99) !important;
+    box-shadow:
+        0 1px 0 #ede8df,
+        0 4px 28px rgba(0, 0, 0, 0.07) !important;
+    border-bottom-color: #ddd6c8 !important;
+}
+
+/* ── Search : hint "/" visible au repos, disparaît au focus ── */
+@media (min-width: 769px) {
+    .nav-search-hint {
+        font-family: 'Manrope', sans-serif;
+        font-size: 11px;
+        color: #c9c4f5;
+        background: #fff;
+        border: 0.5px solid #ddd6c8;
+        border-radius: 4px;
+        padding: 1px 6px;
+        line-height: 1.6;
+        flex-shrink: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
+        white-space: nowrap;
+    }
+    .nav-search:focus-within .nav-search-hint {
+        opacity: 0;
+    }
+}
+
+/* ── Avatar : dégradé subtil au hover ── */
+.nav-user-btn:hover .nav-avatar {
+    background: linear-gradient(135deg, #e0f7fa, #c9c4f5) !important;
+    color: #2a2165 !important;
+}
+
+/* ── Icônes panier/wishlist : bordure violette au hover ── */
+.icon-btn--wishlist:hover,
+.icon-btn--cart:hover {
+    border-color: #c9c4f5 !important;
+    background: #f5f1eb !important;
+    color: #5B8ED6 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* ── Logo : transition plus douce ── */
+.nav-logo {
+    transition: opacity 0.15s ease;
+}
+.nav-logo:hover {
+    opacity: 0.88;
+}
+
+/* ── Active link : soulignement violet fin en bas ── */
+.nav-links a.active {
+    border-bottom: 1.5px solid #6B74D6 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #5B8ED6 !important;
+    font-weight: 600 !important;
+    padding-bottom: 2px !important;
+}
+
+/* ── Dark mode : cohérence hint + active ── */
+body.dark-mode .nav-search-hint {
+    background: #1e1b3a;
+    border-color: rgba(255,255,255,.1);
+    color: rgba(196,191,255,.4);
+}
+body.dark-mode .nav-links a.active {
+    border-bottom-color: #b8eef1 !important;
+    color: #b8eef1 !important;
+    background: transparent !important;
+}
+
+/* ================================================================
+   FIN HEADER AMÉLIORATIONS v2
+   ================================================================ */
+
+/* ================================================================
+   HOME PAGE v4 — nouvelles sections + micro-corrections
+   ================================================================ */
+
+/* ── Hero : barre de stats dynamique ── */
+.hero-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #8a7060;
+    flex-wrap: wrap;
+}
+.hero-stats-pill {
+    background: #e0f7fa;
+    color: #5B8ED6;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+.hero-stats-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #c9c4f5;
+    flex-shrink: 0;
+}
+
+/* ── Catégories : en-tête de section ── */
+.cat-section-header {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 36px 20px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.cat-section-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a0907e;
+}
+.cat-section-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #6B74D6;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.cat-section-link:hover { color: #5B8ED6; }
+
+/* ── Section "Comment ça marche" ── */
+.how-section {
+    background: #fff;
+    padding: 52px 0 48px;
+    border-top: 0.5px solid #ede8df;
+    border-bottom: 0.5px solid #ede8df;
+}
+.how-title {
+    font-family: Georgia, serif !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    color: #1e1208 !important;
+    text-align: center;
+    margin-bottom: 40px !important;
+    letter-spacing: -0.01em;
+}
+.how-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 820px;
+    margin: 0 auto;
+}
+.how-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 24px;
+}
+.how-num {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #e8e0d0;
+    line-height: 1;
+    margin-bottom: 14px;
+    transition: color 0.25s ease;
+    display: block;
+}
+.how-step:hover .how-num {
+    color: #6B74D6;
+}
+.how-step-title {
+    font-family: Georgia, serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #1e1208 !important;
+    margin-bottom: 8px !important;
+    margin-top: 0 !important;
+}
+.how-step-desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #8a7060;
+    line-height: 1.8;
+    margin: 0;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.how-connector {
+    width: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 26px;
+    color: #c9c4f5;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: -2px;
+}
+.how-connector::after {
+    content: '· · ·';
+    color: #c9c4f5;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* ── Produits : sous-titre de section ── */
+.sec-subtitle-new {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    color: #a0907e;
+    margin-top: 4px;
+    display: block;
+}
+
+/* ── CTA : badge + actions multiples ── */
+.cta-badge-new {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5B8ED6;
+    background: #fff;
+    border: 0.5px solid #c9c4f5;
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 18px;
+}
+.cta-actions-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cta-link-new {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #6B74D6;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.cta-link-new:hover { color: #5B8ED6; }
+
+/* ── Features : fix responsive tablette ── */
+@media (max-width: 900px) {
+    .feat-grid-new {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media (max-width: 600px) {
+    .feat-grid-new {
+        grid-template-columns: 1fr !important;
+    }
+    .how-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+    .how-connector {
+        margin-top: 0;
+        width: auto;
+        transform: rotate(90deg);
+    }
+    .hero-stats-bar {
+        gap: 8px;
+    }
+    .hero-stats-dot { display: none; }
+    .cta-actions-new { flex-direction: column; gap: 12px; }
+    .cat-section-header { padding: 28px 20px 14px; }
+}
+/* ── FIN HOME PAGE v4 ── */
+
+/* ── Suppression hint "/" recherche ── */
+.nav-search-hint { display: none !important; }
+
+/* ── Logo icon : ombre et transition améliorées ── */
+.nav-logo-icon {
+    background: linear-gradient(135deg, #e0f7fa 0%, #ddd8f8 100%) !important;
+    box-shadow: 0 2px 8px rgba(107, 116, 214,0.18) !important;
+}
+.nav-logo-icon svg {
+    filter: drop-shadow(0 1px 1px rgba(83,74,183,0.15));
+}
+
+/* ================================================================
+   CATEGORIES PAGE — Interactivités CSS v2
+   ================================================================ */
+
+/* ── 1. CARTE : transition plus douce avec effet rebond ── */
+.cat-card {
+    transition:
+        transform    0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow   0.28s ease,
+        border-color 0.2s  ease;
+    will-change: transform, box-shadow;
+    outline: none;
+}
+
+.cat-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ── 2. ICÔNE SVG : rotation + scale au hover ── */
+.cat-icon {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: inline-flex;
+    will-change: transform;
+}
+
+.cat-card:hover .cat-icon {
+    transform: rotate(-6deg) scale(1.18);
+}
+
+/* ── 3. NUMÉRO FILIGRANE : monte + s'éclaircit ── */
+.cat-num {
+    transition:
+        opacity   0.3s ease,
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-card:hover .cat-num {
+    opacity: 0.32;
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* ── 4. TITRE : léger décalage droite ── */
+.cat-title {
+    transition: transform 0.25s ease, color 0.2s ease;
+    display: block;
+}
+
+.cat-card:hover .cat-title {
+    transform: translateX(3px);
+}
+
+/* ── 5. LABEL : légère montée ── */
+.cat-label {
+    transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.cat-card:hover .cat-label {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* ── 6. BOUTON ACTIF : flèche + shimmer ── */
+.cat-btn--active {
+    transition:
+        padding-left   0.25s ease,
+        background     0.2s  ease,
+        letter-spacing 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-card:hover .cat-btn--active {
+    padding-left: 22px;
+    letter-spacing: 0.01em;
+}
+
+.cat-btn--active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transition: left 0.45s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.cat-card:hover .cat-btn--active::after {
+    left: 140%;
+}
+
+/* ── 7. GLOW PAR THÈME ── */
+.cat-card--1:hover { box-shadow: 0 18px 44px rgba(83,  74, 183, 0.18); border-color: rgba(83,  74, 183, 0.2); }
+.cat-card--2:hover { box-shadow: 0 18px 44px rgba(31, 158, 117, 0.18); border-color: rgba(31, 158, 117, 0.2); }
+.cat-card--3:hover { box-shadow: 0 18px 44px rgba(194,  65,  12, 0.18); border-color: rgba(194,  65,  12, 0.2); }
+.cat-card--4:hover { box-shadow: 0 18px 44px rgba(186, 117,  23, 0.18); border-color: rgba(186, 117,  23, 0.2); }
+.cat-card--5:hover { box-shadow: 0 18px 44px rgba(216,  90,  48, 0.18); border-color: rgba(216,  90,  48, 0.2); }
+.cat-card--6:hover { box-shadow: 0 18px 44px rgba( 55, 138, 221, 0.18); border-color: rgba( 55, 138, 221, 0.2); }
+.cat-card--7:hover { box-shadow: 0 18px 44px rgba(212,  83, 126, 0.18); border-color: rgba(212,  83, 126, 0.2); }
+.cat-card--8:hover { box-shadow: 0 18px 44px rgba(216,  90,  48, 0.18); border-color: rgba(216,  90,  48, 0.2); }
+
+/* ── 8. FOCUS CLAVIER ACCESSIBLE ── */
+.cat-card:focus-visible {
+    outline: 2px solid #6B74D6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(107, 116, 214, 0.15);
+}
+
+/* ── 9. CLIC : compression tactile ── */
+.cat-card:active {
+    transform: translateY(-2px) scale(0.99);
+    transition-duration: 0.08s;
+}
+
+/* ── 10. FADE-IN DÉCALÉ rangées 3 et 4 ── */
+.cat-row:nth-child(3) .cat-card:nth-child(1) { animation-delay: 0.14s; }
+.cat-row:nth-child(3) .cat-card:nth-child(2) { animation-delay: 0.20s; }
+.cat-row:nth-child(3) .cat-card:nth-child(3) { animation-delay: 0.26s; }
+.cat-row:nth-child(4) .cat-card:nth-child(1) { animation-delay: 0.22s; }
+.cat-row:nth-child(4) .cat-card:nth-child(2) { animation-delay: 0.30s; }
+
+/* ── 11. STAT HERO : scale au hover ── */
+.cat-stat-val {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.cat-stat:hover .cat-stat-val {
+    transform: scale(1.08);
+}
+
+/* ── 12. CTA BAS DE PAGE ── */
+.cat-cta {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cat-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(107, 116, 214, 0.12);
+}
+
+.cat-cta-btn {
+    transition:
+        background    0.18s ease,
+        color         0.18s ease,
+        transform     0.2s  cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow    0.2s  ease,
+        padding-right 0.2s  ease;
+}
+
+.cat-cta-btn:hover {
+    transform: translateY(-2px);
+    padding-right: 24px;
+    box-shadow: 0 6px 18px rgba(107, 116, 214, 0.25);
+}
+
+/* ── 13. REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+    .cat-card,
+    .cat-icon,
+    .cat-num,
+    .cat-title,
+    .cat-label,
+    .cat-btn--active,
+    .cat-cta,
+    .cat-cta-btn {
+        transition: none !important;
+        animation: none !important;
+    }
+    .cat-card:hover { transform: none; }
+}
+
+/* ================================================================
+   FIN CATEGORIES INTERACTIVITES v2
+   ================================================================ */
+
+/* ================================================================
+   GRADIENT PALETTE v1 — ICON BTNS + AUTH BTNS
+   ================================================================ */
+
+:root {
+    --brand-gradient: linear-gradient(
+        90deg,
+        #6BD1D6 0%,
+        #6B94D6 25%,
+        #6B74D6 50%,
+        #6BC6D6 75%,
+        rgba(218, 247, 218, 0.9) 89%,
+        #6BD1D6 100%
+    );
+}
+
+/* ── ICÔNES : bordure gradient au repos, fond gradient au hover ── */
+.icon-btn {
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    transition: all 0.22s ease !important;
+}
+
+/* ── Hover icônes nav : fond cyan clair + icône gradient + scale ── */
+.icon-btn:hover {
+    background: rgba(107, 209, 214, 0.10) !important;
+    border-color: rgba(107, 209, 214, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.icon-btn:hover svg {
+    stroke: url(#iconGrad) !important;
+    transform: scale(1.2);
+    filter: none;
+}
+
+/* Wishlist / cart : même traitement unifié */
+.icon-btn--wishlist:hover,
+.icon-btn--cart:hover {
+    background: rgba(107, 209, 214, 0.10) !important;
+    border-color: rgba(107, 209, 214, 0.2) !important;
+    box-shadow: none !important;
+}
+
+/* ── BTN-LOGIN : texte gradient ── */
+.btn-login {
+    background: var(--brand-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 600 !important;
+}
+
+.btn-login:hover {
+    opacity: 0.75;
+    background: var(--brand-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    transform: none !important;
+}
+
+/* ── BTN-REGISTER : fond gradient animé ── */
+.btn-register {
+    background: var(--brand-gradient) !important;
+    background-size: 200% auto !important;
+    color: #fff !important;
+    border: none !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(107, 116, 214, 0.3) !important;
+    transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.btn-register:hover {
+    background-position: right center !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(107, 116, 214, 0.4) !important;
+}
+
+/* ── Dark mode ── */
+body.dark-mode .icon-btn {
+    background:
+        linear-gradient(#13111e, #13111e) padding-box,
+        var(--brand-gradient) border-box !important;
+}
+
+body.dark-mode .icon-btn:hover {
+    background: rgba(107, 209, 214, 0.10) !important;
+    border-color: rgba(107, 209, 214, 0.25) !important;
+    color: #f1f5f9 !important;
+}
+
+/* ================================================================
+   FIN GRADIENT PALETTE v1
+   ================================================================ */
+
+/* ================================================================
+   GRADIENT BRAND v2 — application systématique
+   Remplace les aplats #6B74D6 par le dégradé animé
+   ================================================================ */
+
+:root {
+    --brand-gradient: linear-gradient(
+        90deg,
+        #6BD1D6 0%,
+        #6B94D6 25%,
+        #6B74D6 50%,
+        #6BC6D6 75%,
+        rgba(218, 247, 218, 0.9) 89%,
+        #6BD1D6 100%
+    );
+    --brand-gradient-size: 200% auto;
+
+    /* Couleur de texte sur fond gradient */
+    --on-brand: #ffffff;
+
+    /* Teinte de survol */
+    --brand-hover-shadow: 0 6px 22px rgba(107, 116, 214, 0.38);
+}
+
+/* ── Bouton primaire : dégradé animé ── */
+.btn-primary,
+.btn.btn-primary,
+.cta-btn-new,
+.hero-btn-primary,
+.nav-drawer-btn-register {
+    background: var(--brand-gradient) !important;
+    background-size: var(--brand-gradient-size) !important;
+    color: var(--on-brand) !important;
+    border: none !important;
+    animation: brand-slide 6s linear infinite !important;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover,
+.cta-btn-new:hover,
+.hero-btn-primary:hover,
+.nav-drawer-btn-register:hover {
+    background-position: right center !important;
+    box-shadow: var(--brand-hover-shadow) !important;
+    color: var(--on-brand) !important;
+    transform: translateY(-2px) !important;
+}
+
+@keyframes brand-slide {
+    0%   { background-position: 0%   center; }
+    100% { background-position: 200% center; }
+}
+
+/* ── Barre de titre section : dégradé ── */
+.sec-title-new::after,
+.section-title::after {
+    background: var(--brand-gradient) !important;
+    background-size: var(--brand-gradient-size) !important;
+}
+
+/* ── Focus ring : couleur brand ── */
+*:focus-visible {
+    outline-color: #6B94D6 !important;
+    box-shadow: 0 0 0 3px rgba(107, 148, 214, 0.25) !important;
+}
+
+/* ── Badge de rôle nav ── */
+.nav-role-badge {
+    background: var(--brand-gradient) !important;
+    background-size: var(--brand-gradient-size) !important;
+}
+
+/* ── Barre accent nav (override statique → animé) ── */
+nav::before {
+    background: var(--brand-gradient) !important;
+    background-size: 300% auto !important;
+    animation: brand-slide 8s linear infinite !important;
+}
+
+/* ── Footer barre accent ── */
+.ft::before {
+    background: var(--brand-gradient) !important;
+    background-size: 300% auto !important;
+    animation: brand-slide 8s linear infinite !important;
+}
+
+/* ── Bouton s'inscrire nav ── */
+.btn-register {
+    background: var(--brand-gradient) !important;
+    background-size: 200% auto !important;
+    animation: brand-slide 6s linear infinite !important;
+    color: #fff !important;
+}
+
+/* ── Avatar admin ── */
+.nav-avatar--admin {
+    background: var(--brand-gradient) !important;
+    background-size: 200% auto !important;
+}
+
+/* ================================================================
+   FIN GRADIENT BRAND v2
+   ================================================================ */
+
+/* ================================================================
+   PRODUITS POPULAIRES — UX UPGRADE + GRADIENT BRAND
+   ================================================================ */
+
+/* ── Variables dégradé ── */
+:root {
+    --grad: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218,247,218,0.9) 89%, #6BC6D6 100%);
+    --grad-solid: linear-gradient(90deg, #6BD1D6 0%, #6B94D6 25%, #6B74D6 50%, #6BC6D6 75%, rgba(218, 247, 218, 0.9) 89%, #6BC6D6 100%);
+}
+
+/* ── Carte : ombre + bordure dégradée au hover ── */
+.prod-card-new {
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.prod-card-new::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1.5px;
+    background: var(--grad-solid);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+.prod-card-new:hover::before { opacity: 1; }
+.prod-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(107, 116, 214, 0.13);
+}
+
+/* ── Bouton "Voir" → dégradé ── */
+.prod-btn-new {
+    background: var(--grad-solid);
+    background-size: 200% 100%;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: background-position 0.4s ease, transform 0.2s ease;
+    background-position: 0% 50%;
+}
+.prod-btn-new:hover {
+    background-position: 100% 50%;
+    transform: translateX(2px);
+    color: #fff !important;
+}
+
+/* ── Prix → texte dégradé ── */
+.prod-price-new {
+    background: var(--grad-solid);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+/* ── Badge catégorie → texte dégradé + fond blanc renforcé ── */
+.prod-badge-new {
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px);
+    background-clip: unset;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-image: var(--grad-solid);
+    -webkit-background-clip: text;
+    font-weight: 600;
+    font-size: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    /* reset background pour le fond blanc */
+    background: rgba(255,255,255,0.96);
+}
+/* Trick : texte dégradé sur badge avec pseudo */
+.prod-badge-new {
+    position: absolute;
+    top: 10px; left: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(107,116,214,0.15);
+    background-clip: unset;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: var(--grad-solid);
+}
+
+/* ── Étoiles → dégradé ── */
+.prod-stars {
+    background: linear-gradient(90deg, #6BD1D6, #6B74D6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 13px;
+}
+
+/* ── Titre au hover → dégradé ── */
+.prod-title-new a:hover {
+    background: var(--grad-solid);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Soulignement titre section → dégradé élargi ── */
+.sec-title-new::after {
+    background: var(--grad-solid) !important;
+    width: 32px;
+    height: 2.5px;
+    transition: width 0.35s ease;
+}
+.section-header:hover .sec-title-new::after,
+.products-section:hover .sec-title-new::after {
+    width: 60px;
+}
+
+/* ── Lien "Voir tout" → dégradé ── */
+.sec-link-new {
+    background: var(--grad-solid);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+.sec-link-new:hover { opacity: 0.8; }
+
+/* ── Wishlist btn : ring dégradé au hover ── */
+.wishlist-btn:hover {
+    box-shadow: 0 0 0 2px transparent,
+                0 4px 16px rgba(107,116,214,0.25);
+    border: 1.5px solid #6B94D6;
+}
+.wishlist-btn.active {
+    border: 1.5px solid #6BD1D6;
+    box-shadow: 0 0 0 3px rgba(107,209,214,0.2);
+}
+
+/* ── Séparateur footer carte ── */
+.prod-foot-new {
+    border-top: 1px solid #ede8df;
+    margin-top: 8px;
+    padding-top: 12px;
+}
+
+/* ── Grille : gap légèrement augmenté ── */
+.products-grid {
+    gap: 18px !important;
+}
+
+/* ── Dark mode ── */
+body.dark-mode .prod-card-new {
+    background: #1e1e2e;
+    border-color: #2a2a3e;
+}
+body.dark-mode .prod-card-new::before {
+    opacity: 1;
+}
+body.dark-mode .prod-title-new { color: #e8e0d4; }
+body.dark-mode .prod-foot-new { border-color: #2a2a3e; }
+
+
+/* ── FIX : suppression du ::before défectueux → box-shadow à la place ── */
+.prod-card-new::before {
+    display: none !important;
+    content: none !important;
+}
+.prod-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 0 1.5px #6B94D6,
+        0 14px 36px rgba(107, 116, 214, 0.13);
+}
+
+
+/* ── nav-user-btn hover forcé ── */
+nav .nav-right .nav-dropdown .nav-user-btn:hover {
+    background: rgba(107, 209, 214, 0.10) !important;
+    border-color: rgba(107, 209, 214, 0.2) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ── Dark mode toggle : lift au hover ── */
+#dark-mode-toggle:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 10px rgba(107, 209, 214, 0.15) !important;
+}
+
+/* ── Dark mode toggle : lift au hover ── */
+#dark-mode-toggle:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 10px rgba(107, 209, 214, 0.15) !important;
+}
+
+/* ================================================================
+   LOGO UPGRADE v2 — Georgia + double-arrow icon
+   ================================================================ */
+
+/* Texte principal : Georgia pour le caractère éditorial */
+.nav-logo-text {
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #1e1208 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1 !important;
+}
+
+/* Icône : fond dégradé subtil + ombre douce */
+.nav-logo-icon {
+    background: linear-gradient(135deg, #e0f7fa 0%, #ddd8f8 100%) !important;
+    box-shadow: 0 2px 8px rgba(107, 116, 214, 0.18) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Hover logo : légère élévation */
+.nav-logo:hover .nav-logo-icon {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 14px rgba(107, 116, 214, 0.28) !important;
+}
+.nav-logo:hover {
+    opacity: 1 !important;
+}
+
+/* Sous-titre "Marketplace" : reste discret */
+.nav-logo-sub {
+    font-family: 'Manrope', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    color: #a0907e !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+}
+
+/* Footer logo : cohérence */
+.ft-logo-ic {
+    background: linear-gradient(135deg, #e0f7fa 0%, #ddd8f8 100%) !important;
+    box-shadow: 0 2px 8px rgba(107, 116, 214, 0.15) !important;
+}
+.ft-logo-txt {
+    font-family: Georgia, serif !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Dark mode */
+body.dark-mode .nav-logo-icon {
+    background: linear-gradient(135deg, #1e2a3a 0%, #1e1b3a 100%) !important;
+    box-shadow: 0 2px 8px rgba(107, 209, 214, 0.15) !important;
+}
+body.dark-mode .nav-logo-text { color: #f1eeff !important; }
+body.dark-mode .nav-logo-sub  { color: #64748b !important; }
+
+/* ================================================================
+   FIN LOGO UPGRADE v2
+   ================================================================ */
+
+
+/* ================================================================
+   BOUNCE — Icônes nav + footer
+   (transform: none retiré des hover pour laisser l'animation jouer)
+   ================================================================ */
+
+.icon-btn {
+    will-change: transform;
+}
+
+.icon-btn:hover {
+    animation: icon-bounce-nav 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.ft-social {
+    will-change: transform;
+}
+
+.ft-social:hover {
+    animation: icon-bounce-nav 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes icon-bounce-nav {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-9px); }
+    50%  { transform: translateY(-4px); }
+    70%  { transform: translateY(-7px); }
+    90%  { transform: translateY(-1px); }
+    100% { transform: translateY(0); }
+}
+
+/* ================================================================
+   FIN BOUNCE NAV
+   ================================================================ */
+
+/* ── nav-user-btn : même comportement que icon-btn ── */
+.nav-user-btn:hover .nav-chevron {
+    stroke: url(#iconGrad) !important;
+    transform: scale(1.2);
+    transition: stroke 0.15s, transform 0.15s;
+}
+.nav-user-btn:hover .nav-avatar {
+    background: linear-gradient(135deg, #6BD1D6, #6B94D6, #6B74D6) !important;
+    color: #fff !important;
+    transform: scale(1.1);
+    transition: all 0.15s;
+}
+
+/* ── nav-user-btn : bounce identique aux icon-btn ── */
+.nav-user-btn {
+    will-change: transform;
+}
+.nav-user-btn:hover {
+    animation: icon-bounce-nav 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+.nav-user-btn:active {
+    transform: translateY(0) scale(0.93) !important;
+    transition-duration: 0.08s !important;
+}
+
+/* ── nav-user-btn : box-shadow identique aux icon-btn ── */
+.nav-user-btn:hover {
+    box-shadow: 0 4px 12px rgba(107, 116, 214, 0.15) !important;
+}
+
+/* ── dark mode : nav-user-btn hover identique aux icon-btn ── */
+body.dark-mode .nav-user-btn:hover .nav-chevron {
+    stroke: url(#iconGrad) !important;
+    transform: scale(1.2);
+}
+body.dark-mode .nav-user-btn:hover .nav-avatar {
+    background: linear-gradient(135deg, #6BD1D6, #6B94D6, #6B74D6) !important;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+body.dark-mode .nav-user-btn:hover {
+    box-shadow: 0 4px 12px rgba(107, 116, 214, 0.15) !important;
+}
+
+/* ── nav-user-btn : bordure gradient identique aux icon-btn ── */
+.nav-user-btn {
+    background:
+        linear-gradient(#ffffff, #ffffff) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    transition: all 0.22s ease !important;
+}
+body.dark-mode .nav-user-btn {
+    background:
+        linear-gradient(#1e1b3a, #1e1b3a) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+}
+
+/* ── nav-user-btn hover : fond cyan + bordure gradient combinés ── */
+.nav-user-btn:hover {
+    background:
+        linear-gradient(rgba(107, 209, 214, 0.10), rgba(107, 209, 214, 0.10)) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+}
+body.dark-mode .nav-user-btn:hover {
+    background:
+        linear-gradient(rgba(107, 209, 214, 0.10), rgba(107, 209, 214, 0.10)) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+}
+
+/* ── nav-avatar hover : bordure gradient identique au stroke des icon-btn ── */
+.nav-user-btn:hover .nav-avatar {
+    background:
+        linear-gradient(#e0f7fa, #e0f7fa) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    transform: scale(1.1);
+    transition: all 0.22s ease;
+}
+body.dark-mode .nav-user-btn:hover .nav-avatar {
+    background:
+        linear-gradient(#1e1b3a, #1e1b3a) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    transform: scale(1.1);
+}
+
+/* ── nav-avatar lettre : gradient au hover ── */
+.nav-user-btn:hover .nav-avatar {
+    background:
+        linear-gradient(#e0f7fa, #e0f7fa) padding-box,
+        var(--brand-gradient) border-box !important;
+    color: transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ── nav-avatar hover : gradient background + lettre blanche ── */
+.nav-user-btn:hover .nav-avatar {
+    background:
+        var(--brand-gradient) padding-box,
+        var(--brand-gradient) border-box !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 1.5px solid transparent !important;
+    transform: scale(1.1);
+}
+
+/* ── nav-avatar hover final : fond cyan + bordure gradient + lettre violette ── */
+.nav-user-btn:hover .nav-avatar {
+    background:
+        rgba(107, 209, 214, 0.10) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    color: #6B74D6 !important;
+    -webkit-text-fill-color: #6B74D6 !important;
+    transform: scale(1.1);
+}
+body.dark-mode .nav-user-btn:hover .nav-avatar {
+    background:
+        rgba(107, 209, 214, 0.10) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    color: #b8eef1 !important;
+    -webkit-text-fill-color: #b8eef1 !important;
+}
+
+/* ── nom utilisateur : gradient au hover ── */
+.nav-user-btn:hover .nav-username {
+    background: var(--brand-gradient) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ── nav-avatar : lettre gradient via pseudo-élément ── */
+.nav-user-btn:hover .nav-avatar {
+    font-size: 0 !important;
+}
+.nav-user-btn:hover .nav-avatar::after {
+    content: attr(data-letter);
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ── Supprime le cadre bleu au focus/expanded ── */
+.nav-user-btn:focus,
+.nav-user-btn[aria-expanded="true"] {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* ── nav-avatar : lettre couleur gradient + réaffiche ── */
+.nav-user-btn:hover .nav-avatar {
+    font-size: 11px !important;
+    color: #6B74D6 !important;
+    -webkit-text-fill-color: #6B74D6 !important;
+}
+
+/* ── nav-avatar-letter : gradient au hover ── */
+.nav-user-btn:hover .nav-avatar-letter {
+    background: var(--brand-gradient) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ── nav-logo-icon : cadre gradient identique aux icon-btn ── */
+.nav-logo-icon {
+    background:
+        linear-gradient(135deg, #e0f7fa 0%, #ddd8f8 100%) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+    border-radius: 10px !important;
+}
+body.dark-mode .nav-logo-icon {
+    background:
+        linear-gradient(135deg, #1e1b3a 0%, #16213e 100%) padding-box,
+        var(--brand-gradient) border-box !important;
+    border: 1.5px solid transparent !important;
+}

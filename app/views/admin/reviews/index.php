@@ -83,7 +83,7 @@ h1 { font-family: Georgia, serif !important; font-weight: 400 !important; color:
     font-size: 12px !important;
     box-shadow: none !important;
 }
-.btn.btn-ghost:hover { border-color: #7c6cf0 !important; color: #7c6cf0 !important; background: #f5f3ff !important; }
+.btn.btn-ghost:hover { border-color: #6B74D6 !important; color: #6B74D6 !important; background: #f5f3ff !important; }
 
 /* Card état vide */
 .card.text-center p { font-family: 'Manrope', sans-serif !important; color: #a0907e !important; font-size: 13px !important; }
@@ -98,7 +98,7 @@ h1 { font-family: Georgia, serif !important; font-weight: 400 !important; color:
 
 /* Lien titre produit */
 a[style*="font-weight: 600"] {
-    color: #7c6cf0 !important;
+    color: #6B74D6 !important;
     font-family: Georgia, serif !important;
     font-weight: 400 !important;
     font-size: 15px !important;

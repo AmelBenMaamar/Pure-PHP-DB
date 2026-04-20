@@ -22,6 +22,21 @@ $router->get('/logout', 'AuthController@logout');
 // Pages info
 $router->get('/sellers', 'HomeController@sellers');
 $router->get('/seller/{username}/products', 'ProductController@sellerProducts');
+// ================================================================
+// VENDEURS (Auth seller/admin)
+// ================================================================
+
+$router->get('/seller/dashboard', 'SellerController@dashboard');
+$router->get('/seller/products', 'SellerController@products');
+$router->get('/seller/products/create', 'SellerController@createProduct');
+$router->post('/seller/products/store', 'SellerController@storeProduct');
+$router->get('/seller/products/{id}/edit', 'SellerController@editProduct');
+$router->post('/seller/products/{id}/update', 'SellerController@updateProduct');
+$router->post('/seller/products/{id}/delete', 'SellerController@deleteProduct');
+$router->get('/seller/sales', 'SellerController@sales');
+$router->get('/seller/earnings', 'SellerController@earnings');
+$router->post('/seller/payout', 'SellerController@requestPayout');
+$router->get('/seller/analytics', 'SellerController@analytics');
 $router->get('/seller/{username}', 'SellerController@publicProfile');
 $router->get('/about', 'HomeController@about');
 $router->get('/contact', 'HomeController@contact');
@@ -109,21 +124,6 @@ $router->get('/orders', 'OrderController@index');
 $router->get('/orders/{orderNumber}', 'OrderController@show');
 $router->get('/orders/{orderNumber}/download/{itemId}', 'OrderController@download');
 
-// ================================================================
-// VENDEURS (Auth seller/admin)
-// ================================================================
-
-$router->get('/seller/dashboard', 'SellerController@dashboard');
-$router->get('/seller/products', 'SellerController@products');
-$router->get('/seller/products/create', 'SellerController@createProduct');
-$router->post('/seller/products/store', 'SellerController@storeProduct');
-$router->get('/seller/products/{id}/edit', 'SellerController@editProduct');
-$router->post('/seller/products/{id}/update', 'SellerController@updateProduct');
-$router->post('/seller/products/{id}/delete', 'SellerController@deleteProduct');
-$router->get('/seller/sales', 'SellerController@sales');
-$router->get('/seller/earnings', 'SellerController@earnings');
-$router->post('/seller/payout', 'SellerController@requestPayout');
-$router->get('/seller/analytics', 'SellerController@analytics');
 
 // ================================================================
 // ADMIN (Auth admin)
