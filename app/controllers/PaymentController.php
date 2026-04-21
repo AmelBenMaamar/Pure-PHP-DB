@@ -64,6 +64,12 @@ class PaymentController extends Controller {
                 // Récupérer les détails complets
                 $orderDetails = $this->orderModel->getOrderDetails($order['order_number'], $order['buyer_id']);
 
+                if (!$orderDetails) {
+                    error_log('getOrderDetails retourne null pour order_number=' . $order['order_number'] . ' buyer_id=' . $order['buyer_id']);
+                    redirectWithMessage('/orders', 'Commande confirmée ! Retrouvez-la dans vos commandes.', 'success');
+                    return;
+                }
+
                 $this->view('payment/success', [
                     'title' => 'Paiement réussi !',
                     'order' => $orderDetails,
@@ -80,6 +86,12 @@ class PaymentController extends Controller {
                 $this->cart->clear();
 
                 $orderDetails = $this->orderModel->getOrderDetails($order['order_number'], $order['buyer_id']);
+
+                if (!$orderDetails) {
+                    error_log('getOrderDetails null après markAsPaid, order_number=' . $order['order_number']);
+                    redirectWithMessage('/orders', 'Commande confirmée ! Retrouvez-la dans vos commandes.', 'success');
+                    return;
+                }
 
                 $this->view('payment/success', [
                     'title' => 'Paiement réussi !',
