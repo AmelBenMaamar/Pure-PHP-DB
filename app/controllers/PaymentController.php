@@ -212,7 +212,7 @@ class PaymentController extends Controller {
 // 📧 EMAIL CONFIRMATION COMMANDE
             $buyer = $this->db->prepare("SELECT email, username, full_name FROM users WHERE id = ?");
             $buyer->execute([$order['buyer_id']]);
-            $buyerData = $buyer->fetch(PDO::FETCH_ASSOC);
+            $buyerData = $buyer->fetch(\PDO::FETCH_ASSOC);
 
             $rawItems = $this->orderModel->getOrderItems($orderId);
             $items = array_map(fn($i) => [
@@ -241,7 +241,7 @@ class PaymentController extends Controller {
         
         // Trouver la commande par payment_intent
         $stmt = $this->db->prepare("
-            SELECT id FROM orders WHERE payment_id = ? AND payment_status = 'pending'
+            SELECT id FROM orders WHERE stripe_payment_id = ? AND payment_status = 'pending'
         ");
         $stmt->execute([$paymentIntent->id]);
         $order = $stmt->fetch();
@@ -261,7 +261,7 @@ class PaymentController extends Controller {
         $stmt = $this->db->prepare("
             UPDATE orders 
             SET payment_status = 'failed'
-            WHERE payment_id = ?
+            WHERE stripe_payment_id = ?
         ");
         $stmt->execute([$paymentIntent->id]);
     }
@@ -276,7 +276,7 @@ class PaymentController extends Controller {
         $stmt = $this->db->prepare("
             UPDATE orders 
             SET payment_status = 'refunded'
-            WHERE payment_id = ?
+            WHERE stripe_payment_id = ?
         ");
         $stmt->execute([$charge->payment_intent]);
 
@@ -372,7 +372,7 @@ class PaymentController extends Controller {
 
         $order = $this->orderModel->find($orderId);
 
-        if (!$order || !$order['payment_id']) {
+        if (!$order || !$order['stripe_payment_id']) {
             redirectWithMessage('/admin/orders', 'Commande introuvable', 'error');
             return;
         }
@@ -380,7 +380,7 @@ class PaymentController extends Controller {
         try {
             // Créer le remboursement Stripe
             $refund = \Stripe\Refund::create([
-                'payment_intent' => $order['payment_id'],
+                'payment_intent' => $order['stripe_payment_id'],
                 'reason' => 'requested_by_customer',
                 'metadata' => [
                     'order_id' => $orderId,
