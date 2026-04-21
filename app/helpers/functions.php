@@ -205,3 +205,9 @@ function sendMailApi(string $toEmail, string $subject, string $htmlContent, stri
     error_log('sendMailApi: ' . $errMsg);
     return $errMsg;
 }
+
+function sanitizeFilename(string $name): string {
+    $name = preg_replace('/[^a-zA-Z0-9_\-\. ]/', '', $name);
+    $name = str_replace(' ', '_', trim($name));
+    return $name ?: 'fichier';
+}

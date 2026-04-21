@@ -11,6 +11,7 @@
 // CONFIGURATION DATABASE
 // ================================================================
 define('DATABASE_URL', getenv('DATABASE_URL'));
+define('ROOT_PATH', dirname(__DIR__));
 
 // ================================================================
 // CONFIGURATION URLs
