@@ -143,7 +143,7 @@
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
                         <span style="color: var(--text-tertiary);">Date</span>
                         <span style="font-weight: 600;">
-                            <?= date('d/m/Y à H:i', strtotime($order['paid_at'])) ?>
+                            <?= !empty($order['paid_at']) ? date('d/m/Y à H:i', strtotime($order['paid_at'])) : date('d/m/Y à H:i') ?>
                         </span>
                     </div>
 

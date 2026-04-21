@@ -62,7 +62,7 @@ class PaymentController extends Controller {
                 $this->cart->clear();
 
                 // Récupérer les détails complets
-                $orderDetails = $this->orderModel->getOrderDetails($order['order_number']);
+                $orderDetails = $this->orderModel->getOrderDetails($order['order_number'], $order['buyer_id']);
 
                 $this->view('payment/success', [
                     'title' => 'Paiement réussi !',
@@ -74,15 +74,12 @@ class PaymentController extends Controller {
 
             // Si pas encore confirmé, confirmer maintenant
             if ($session->payment_status === 'paid') {
-                $this->orderModel->confirmPayment(
-                    $orderId,
-                    $session->payment_intent
-                );
+                $this->orderModel->markAsPaid($orderId, $session->payment_intent);
 
                 // Vider le panier
                 $this->cart->clear();
 
-                $orderDetails = $this->orderModel->getOrderDetails($order['order_number']);
+                $orderDetails = $this->orderModel->getOrderDetails($order['order_number'], $order['buyer_id']);
 
                 $this->view('payment/success', [
                     'title' => 'Paiement réussi !',
@@ -193,10 +190,7 @@ class PaymentController extends Controller {
         }
 
         // Confirmer le paiement
-        $result = $this->orderModel->confirmPayment(
-            $orderId,
-            $session->payment_intent
-        );
+        $result = ['success' => $this->orderModel->markAsPaid($orderId, $session->payment_intent)];
 
         if ($result['success']) {
             error_log('Order confirmed successfully: ' . $orderId);
@@ -247,7 +241,7 @@ class PaymentController extends Controller {
         $order = $stmt->fetch();
 
         if ($order) {
-            $this->orderModel->confirmPayment($order['id'], $paymentIntent->id);
+            $this->orderModel->markAsPaid($order['id'], $paymentIntent->id);
         }
     }
 
