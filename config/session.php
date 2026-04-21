@@ -48,7 +48,7 @@ if ($isProduction) {
  * - Lax : Cookie envoyé pour navigation GET uniquement
  * - None : Aucune restriction (déconseillé)
  */
-ini_set('session.cookie_samesite', 'Strict');
+ini_set('session.cookie_samesite', 'Lax');
 
 /**
  * 🔒 USE_STRICT_MODE
