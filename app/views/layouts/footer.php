@@ -88,7 +88,7 @@
         const dropdown = new MarketFlow.Dropdown('#userMenuBtn');
         dropdown.addItem('Mon profil', () => window.location.href = '/profile');
         dropdown.addItem('Mes commandes', () => window.location.href = '/orders');
-        <?php if ($_SESSION['user_type'] === 'seller'): ?>
+        <?php if (($_SESSION['user_type'] ?? '') === 'seller'): ?>
         dropdown.addItem('Dashboard vendeur', () => window.location.href = '/seller/dashboard');
         <?php endif; ?>
         dropdown.addItem('Déconnexion', () => window.location.href = '/logout');
