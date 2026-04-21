@@ -70,7 +70,7 @@ class PaymentController extends Controller {
                     return;
                 }
 
-                $this->view('payment/success', [
+                $this->render('payment/success', [
                     'title' => 'Paiement réussi !',
                     'order' => $orderDetails,
                     'session' => $session
@@ -93,7 +93,7 @@ class PaymentController extends Controller {
                     return;
                 }
 
-                $this->view('payment/success', [
+                $this->render('payment/success', [
                     'title' => 'Paiement réussi !',
                     'order' => $orderDetails,
                     'session' => $session
@@ -112,7 +112,7 @@ class PaymentController extends Controller {
      * Page d'annulation de paiement
      */
     public function cancel() {
-        $this->view('payment/cancel', [
+        $this->render('payment/cancel', [
             'title' => 'Paiement annulé'
         ]);
     }
